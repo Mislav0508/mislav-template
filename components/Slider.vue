@@ -7,11 +7,15 @@
       :class="[ i === index ? 'activeSlide' :  i === index - 1 || (index === 0 && i === images.length - 1) ? 'lastSlide' : 'nextSlide' ]"
       >
       <img :src="image" alt="img" >
-      <h1 :class="[ i === index ? 'activeTitle' : '' ]">{{ i === index ? 'activeSlide' :  i === index - 1 || (index === 0 && i === images.length - 1) ? 'lastSlide' : 'nextSlide' }} </h1>
+      <h2 :class="[ i === index ? 'activeTitle' : '' ]">{{ captions[i] }} </h2>
       <p :class="[ i === index ? 'activeSubtitle' : '' ]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, veniam?</p>
     </div>
-    <i class="arrow left" @click="prev"></i>
-    <i class="arrow right" @click="next"></i>
+    <div class="arrow-container-left" @click="prev">
+      <i class="arrow left"></i>      
+    </div>
+    <div class="arrow-container-right"  @click="next">
+      <i class="arrow right"></i>
+    </div>
     
     <v-container style="position: absolute; bottom: 10vh;"   class="d-flex justify-center">
       <div v-for="(image, i) in images" :key="i"
@@ -32,6 +36,7 @@ export default {
   data () {
       return {
           index: 0,
+          interval: null,
           position: 'nextSlide',
           rectLast: null,
           rectActive: null,
@@ -67,7 +72,18 @@ export default {
       if (this.index > lastIndex) {
         this.index = 0
       }
+      clearInterval(this.interval)
+      this.interval = setInterval(() => {
+        this.next() 
+      }, 10000);
+
     }
+  },
+  mounted() {
+    this.interval = setInterval(() => {
+      this.next() 
+    }, 10000);
+    
   }
 }
 </script>
@@ -76,12 +92,12 @@ export default {
 .slider{
   position: relative;
   width: 100vw;
-  height: 90vh;
+  min-height: 90vh;
+  max-height: 90vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  border: 1px solid blue;
-  
+  justify-content: center;  
+  background: rgba(0, 0, 0, 0.8);
 }
 .slide{
   opacity: 0;
@@ -97,8 +113,7 @@ export default {
   opacity: 1;
   position: absolute;
   transform: translateX(0);
-  transition: all 1s ease-out;
-
+  transition: all 2s ease-out;
 }
 @keyframes lastSlide {
   
@@ -106,7 +121,7 @@ export default {
 .slide.lastSlide {
   position: absolute;
   transform: translateX(-100%);
-  transition: all 1s ease-out;
+  transition: all 2s ease-out;
 }
 @keyframes nextSlide {
   0% {}
@@ -115,22 +130,20 @@ export default {
 .slide.nextSlide {
   position: absolute;
   transform: translateX(100%);
-  transition: all 1s ease-out;
+  transition: all 2s ease-out;
 }
 img{
   width: 100vw;
+  min-height: 90vh;
   max-height: 90vh;
+  object-fit: cover;
 }
-h1,p{
+h2,p{
   position: absolute;
   color: var(--primary);
 }
-h1{
-  font-size: 5vw;
-}
 p{
-  margin-top: 15vh;
-    font-size: 1vw;
+  margin-top: 18vh;
 }
 @keyframes activeTitle {
   0%   { opacity: 0; transform: translateY(25vh);}
@@ -147,19 +160,20 @@ p{
   100% {opacity: 1; transform: translateY(0vh);}
 }
 .activeSubtitle{
+  text-align: center;
   animation-name: activeSubtitle;
   animation-duration: 2s;
+  padding: clamp(3rem, 2vw, 4rem);
 }
 .slider-line{
   position: relative;
-  min-width: 2rem;
+  min-width: clamp(2rem, 2vw, 2.5rem);
   min-height: 3px;
   background: var(--primary);
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(255,101,47,.2);
-  transition: all .3s ease-in-out;
   cursor: pointer;
-  margin: 0 0.3vw;
+  margin: 0 0.4rem;
   opacity: 0.5;
 }
 .slider-line:hover{
@@ -168,32 +182,44 @@ p{
 #slider-line-active{
   opacity: 1;
 }
+.arrow-container-left{
+  top: 43vh; 
+  left: 4vw;
+  position: absolute;
+  padding: 1rem 1rem 1rem 0;
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
+.arrow-container-right{
+  top: 43vh;
+  right: 4vw;
+  position: absolute;
+  padding: 1rem 0rem 1rem 1rem;
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
 .arrow {
   border: solid var(--primary);
   border-width: 0 3px 3px 0;
   display: inline-block;
-  padding: 0.5vw;
-  position: absolute;
+  padding: 0.6rem;
+  position: relative;
   cursor: pointer;
-  z-index: 999;
-  transition: all 0.1s linear;
-  top: 43vh;
-  
+  z-index: 5;
+  transition: all 0.3s linear;
 }
 .right {
   transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  right: 4vw;
+  -webkit-transform: rotate(-45deg);  
 }
-.right:hover{
+.arrow-container-right:hover{
   right: 3.5vw;
 }
 .left {
   transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-  left: 4vw
+  -webkit-transform: rotate(135deg);  
 }
-.left:hover{
+.arrow-container-left:hover{
   left: 3.5vw
 }
 

@@ -1,3 +1,17 @@
 :root{
   --primary:white;
+  --secondary: black
 }
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+p{
+  font-size: 18px;
+}
+h2 {
+  font-size: clamp(2rem, 5vw, 10rem);
+  font-weight: 600;
+}
+
