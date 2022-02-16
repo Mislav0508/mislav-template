@@ -63,7 +63,7 @@ export default {
 
 <style scoped>
 .navbar{
-  z-index: 99;
+  z-index: 9999;
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -73,7 +73,7 @@ export default {
   transition: all .5s ease;  
 }
 .navbar-scroll{
-  z-index: 99;
+  z-index: 9999;
   overflow: hidden;
   position: fixed;
   top: 0;

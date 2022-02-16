@@ -2,9 +2,9 @@
   <v-container fluid class="whole-container">
     <v-row>
 
-      <v-col cols="12" xl="4" lg="4" md="4" sm="4" class="pa-5" style='z-index:20001;background-color: #222222;'>
+      <v-col cols="12" xl="4" lg="4" md="4" sm="4" class="pa-xl-5" style='z-index:999;background-color: #222222;'>
         
-        <v-container class="px-15 py-7">
+        <v-container class="px-15 py-xl-7">
 
           <h2>Deluxe Room</h2>
           <p class="mb-0">From</p>
@@ -12,7 +12,7 @@
 
           <v-row class="mb-4">
 
-            <v-col cols="6" xl="4" lg="4" md="6" sm="6">
+            <v-col cols="6" xl="4" lg="6" md="6" sm="6" class="font-weight-bold">
               <p class="mb-1">bed: </p>
               <p class="mb-1">capacity: </p>
               <p class="mb-1">room size: </p>
@@ -20,7 +20,7 @@
               <p class="mb-1">recommend: </p>
             </v-col>
 
-            <v-col cols="6" xl="4" lg="4" md="6" sm="6">
+            <v-col cols="6" xl="4" lg="6" md="6" sm="6">
               <p class="mb-1">king bed </p>
               <p class="mb-1">3 adults 1 children </p>
               <p class="mb-1">55m2 </p>
@@ -30,7 +30,7 @@
 
           </v-row>
 
-          <v-btn outlined tile color="white">
+          <v-btn outlined tile large color="white" width="180" type="button" class="no-uppercase">
             view detail
           </v-btn>
 
@@ -74,7 +74,7 @@ export default {
         "/images/home/midSlider/midSlider-5.jpg",
       ],
       imgSize: [ 2, 1, 1, 2, 2 ] ,
-      translateX: 60
+      translateX: 50
     }
   },
   beforeMount() {
@@ -87,13 +87,13 @@ export default {
   methods: {
     next() {
       if (this.translateX < -40) return
-      this.translateX = this.translateX - 20
+      this.translateX = this.translateX - 40
       var myElement = document.querySelector('.sliderMid');
       myElement.style.transform = "translateX(" + this.translateX + "rem)"
     },
     prev() {
-      if (this.translateX >= 60) return
-      this.translateX = this.translateX + 20
+      if (this.translateX >= 50) return
+      this.translateX = this.translateX + 40
       var myElement = document.querySelector('.sliderMid');
       myElement.style.transform = "translateX(" + this.translateX + "rem)"
     }
@@ -109,11 +109,10 @@ export default {
 }
   p{
     font-size: 14px;
-    font-weight: 800;
     line-height: 1.9rem;
   }
   h2{
-    font-size: clamp(28px, 5vw, 42px);
+    font-size: 26px;
     line-height: 1.4em;
   }
 .sliderMid{
@@ -123,12 +122,12 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.9s ease-out;
   /* transform: translateX(45vw); */
 }
 .slideMid{
   display: flex;
-  transition: transform 0.3s ease;
+  transition: transform 0.9s ease-out;
   /* z-index: 9999999; */
 }
 .imagesL{
@@ -138,7 +137,7 @@ export default {
   min-height: 55vh;
   max-height: 55vh;
   z-index: 0;
-  transition: transform 0.3s ease;
+  transition: transform 0.9s ease-out;
   /* transform: translateX(0); */
 }
 .imagesS{
@@ -146,7 +145,7 @@ export default {
   min-height: 55vh;
   max-height: 55vh;
   z-index: 0;
-  transition: transform 0.3s ease;
+  transition: transform 0.9s ease-out;
   /* transform: translateX(0); */
 }
 /* ARROWS */
@@ -154,15 +153,19 @@ export default {
   top: 25vh; 
   left: 3vw;
   position: absolute;
-  padding: 1rem;
+  padding: 0.5rem 0.6rem 0.6rem 1rem;  
   cursor: pointer;
   transition: all 0.1s linear;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 100%;
 }
 .arrow-container-right{
   top: 25vh;
   right: 3vw;
   position: absolute;
-  padding: 1rem 0rem 1rem 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 100%;
+  padding: 0.5rem 1rem 0.6rem  0.6rem;
   cursor: pointer;
   transition: all 0.1s linear;
 }
@@ -170,7 +173,7 @@ export default {
   border: solid var(--primary);
   border-width: 0 3px 3px 0;
   display: inline-block;
-  padding: 0.6rem;
+  padding: 0.3rem;
   position: relative;
   cursor: pointer;
   z-index: 5;
@@ -181,14 +184,21 @@ export default {
   -webkit-transform: rotate(-45deg);  
 }
 .arrow-container-right:hover{
-  transform: translateX(0.5vw);
+  transform: translateX(0.4vw);
+  background: rgba(0, 0, 0, 0.5);
+
 }
 .left {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);  
 }
 .arrow-container-left:hover{
-  transform: translateX(-0.5vw);
+  transform: translateX(-0.4vw);
+  background: rgba(0, 0, 0, 0.5);
 }
 
+.no-uppercase {
+  text-transform: unset !important;
+  font-weight: bold;
+}
 </style>
