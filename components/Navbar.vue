@@ -82,6 +82,7 @@ export default {
   background: var(--primary);
   color: var(--secondary);
   transition: all .5s ease;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 ::v-deep .v-application--wrap {
   min-height: fit-content;
@@ -139,7 +140,7 @@ export default {
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 1px;
-  font-family: Raleway, Helvetica, Arial, sans-serif;
+  /* font-family: Raleway, Helvetica, Arial, sans-serif; */
 }
 .link::after {
   content: '';

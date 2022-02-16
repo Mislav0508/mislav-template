@@ -1,8 +1,8 @@
 <template>
   <v-container fluid class="whole-container">
-    <v-row>
+    <v-row class="d-flex flex-wrap">
 
-      <v-col cols="12" xl="4" lg="4" md="4" sm="4" class="pa-xl-5" style='z-index:999;background-color: #222222;'>
+      <v-col cols="12" xl="4" lg="4" md="4" sm="12" class="pa-xl-5" style='z-index:999;background-color: #222222;'>
         
         <v-container class="px-15 py-xl-7">
 
@@ -38,7 +38,7 @@
 
       </v-col>
       
-      <v-col cols="12" xl="8" lg="8" md="8" sm="4" class="ma-0 pa-0">
+      <v-col cols="12" xl="8" lg="8" md="8" sm="12" class="ma-0 pa-0">
         
           <div class="sliderMid">
 
