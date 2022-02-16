@@ -70,7 +70,7 @@ export default {
   min-width: 100vw;
   max-width: 100vw;
   max-height: 10vh;
-  transition: all .4s ease-in-out;  
+  transition: all .5s ease;  
 }
 .navbar-scroll{
   z-index: 99;
@@ -81,7 +81,7 @@ export default {
   max-height: 10vh;
   background: var(--primary);
   color: var(--secondary);
-  transition: all .4s ease-in-out;
+  transition: all .5s ease;
 }
 ::v-deep .v-application--wrap {
   min-height: fit-content;

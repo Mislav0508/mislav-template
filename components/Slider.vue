@@ -147,22 +147,24 @@ p{
 }
 @keyframes activeTitle {
   0%   { opacity: 0; transform: translateY(25vh);}
+  25%   { opacity: 0; transform: translateY(25vh);}
   50%  {opacity: 0; transform: translateY(10vh)}
   100% {opacity: 1; transform: translateY(0vh);}
 }
 .activeTitle{
   animation-name: activeTitle;
-  animation-duration: 1.5s;
+  animation-duration: 3s;
 }
 @keyframes activeSubtitle {
   0%   { opacity: 0; transform: translateY(25vh);}
+  25%   { opacity: 0; transform: translateY(25vh);}
   50%  {opacity: 0; transform: translateY(10vh)}
   100% {opacity: 1; transform: translateY(0vh);}
 }
 .activeSubtitle{
   text-align: center;
   animation-name: activeSubtitle;
-  animation-duration: 2s;
+  animation-duration: 3.5s;
   padding: clamp(3rem, 2vw, 4rem);
 }
 .slider-line{

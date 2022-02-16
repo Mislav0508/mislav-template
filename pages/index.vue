@@ -51,14 +51,14 @@
       
     </v-container>
 
-    <HomeBlock2 />
-    
+    <MidSlider />
+
   </div>
 
 </template>
 <script>
 import Slider from "../components/Slider.vue"
-import HomeBlock2 from "../components/HomeBlock2.vue"
+import MidSlider from "../components/MidSlider.vue"
 import aosMixin from "../mixins/aos"
 export default {
   mixins: [aosMixin],
