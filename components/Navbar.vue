@@ -192,13 +192,13 @@ export default {
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 1px;
-  /* font-family: Raleway, Helvetica, Arial, sans-serif; */
+  font-family: 'Raleway', sans-serif;
 }
 .link::after {
   content: '';
   display: block;
   width: 0;
-  height: 2px;
+  height: 1px;
   background: var(--primary);
   transition: width .3s;
 }
@@ -233,14 +233,14 @@ export default {
   font-weight: 600;
   font-size: 1.2rem;
   letter-spacing: 1px;
-  font-family: Raleway, Helvetica, Arial, sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0.5vh 0;
 }
 .link-sidebar::after {
   content: '';
   display: block;
   width: 0;
-  height: 2px;
+  height: 1px;
   background: var(--secondary);
   transition: width .3s;
 }
@@ -264,7 +264,7 @@ export default {
   z-index: 9999;
 }
 .menu-btn__burger {
-  min-width: 1.7rem;
+  min-width: 1.5rem;
   min-height: 2px;
   background: var(--primary);
   border-radius: 5px;
@@ -275,7 +275,7 @@ export default {
 .menu-btn__burger::after {
   content: '';
   position: absolute;
-  min-width: 1.7rem;
+  min-width: 1.5rem;
   height: 2px;
   background: var(--primary);  
   border-radius: 5px;
@@ -284,10 +284,10 @@ export default {
 }
 
 .menu-btn__burger::before {
-  transform: translateY(-10px);
+  transform: translateY(-7px);
 }
 .menu-btn__burger::after {
-  transform: translateY(10px);
+  transform: translateY(7px);
 }
 /* ANIMATION */
 .menu-btn.open .menu-btn__burger {
@@ -305,7 +305,7 @@ export default {
 }
 /* menu-btn__burger_dark */
 .menu-btn__burger_dark {
-  min-width: 1.7rem;
+  min-width: 1.5rem;
   min-height: 2px;
   background: var(--secondary);
   border-radius: 5px;
@@ -316,7 +316,7 @@ export default {
 .menu-btn__burger_dark::after {
   content: '';
   position: absolute;
-  min-width: 1.7rem;
+  min-width: 1.5rem;
   height: 2px;
   background: var(--secondary);  
   border-radius: 5px;
@@ -325,10 +325,10 @@ export default {
 }
 
 .menu-btn__burger_dark::before {
-  transform: translateY(-10px);  
+  transform: translateY(-7px);  
 }
 .menu-btn__burger_dark::after {
-  transform: translateY(10px);
+  transform: translateY(7px);
 }
 /* ANIMATION */
 .menu-btn.open .menu-btn__burger_dark {

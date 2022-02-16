@@ -110,10 +110,12 @@ export default {
   p{
     font-size: 14px;
     line-height: 1.9rem;
+    color: var(--primary);
   }
   h2{
     font-size: 26px;
     line-height: 1.4em;
+    color: var(--primary);
   }
 .sliderMid{
   background: var(--secondary);

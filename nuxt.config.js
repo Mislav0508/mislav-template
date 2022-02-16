@@ -42,7 +42,8 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     '@nuxtjs/fontawesome',
-    "@nuxtjs/svg"
+    "@nuxtjs/svg",
+    '@nuxtjs/google-fonts'
   ],
   fontawesome: {
     icons: {

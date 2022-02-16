@@ -114,11 +114,13 @@ h2 {
   text-transform: uppercase;
   font-style: normal;
   margin-bottom: 2rem;
+  color: var(--primary);
 }
 p{
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 2px;
+  color: var(--primary);
 }
 .footer-link{
   text-decoration: none;
