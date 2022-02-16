@@ -41,7 +41,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    '@nuxtjs/fontawesome'
+    '@nuxtjs/fontawesome',
+    "@nuxtjs/svg"
   ],
   fontawesome: {
     icons: {

@@ -4,12 +4,18 @@
     <v-container :class="[ position > 0 ? 'navbar-scroll' : 'navbar']">
 
     <v-row class="d-flex justify-md-space-around align-center">    
-
-      <v-col class="d-none d-lg-block" xl="2" lg="2" md="0" sm="10" >
+<!-- style="border:1px solid red" -->
+      <v-col class="d-flex justify-center" cols="6" xl="3" lg="2" md="1" sm="2">
+        <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]" >
+        <div v-html="rawLogo" :class="position > 0 ? 'd-block d-sm-none logoSecondary' : 'd-block d-sm-none logoPrimary'"/>          
+        </NuxtLink>
       </v-col>  
 
-      <v-col class="d-none d-md-flex justify-space-between align-center" cols="12" xl="4" lg="4" md="6" sm="0">
-        <img src="/images/testLogo.png" alt="" class="logo"/>
+      <v-col class="d-none d-sm-flex justify-space-around align-center" cols="1" xl="3" lg="4" md="5" sm="8">
+        
+        <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">
+        <div v-html="rawLogo" :class="position > 0 ? 'logoSecondary' : 'logoPrimary'"/>          
+        </NuxtLink>
         <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Home</NuxtLink>
         <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Our rooms</NuxtLink>
         <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">About us</NuxtLink>
@@ -18,9 +24,9 @@
         <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Contact</NuxtLink>
       </v-col>
 
-      <v-col cols="10" xl="3" lg="3" md="1" sm="10"></v-col>
+      <v-col cols="4" xl="2" lg="4" md="1" sm="1"></v-col>
 
-      <v-col cols="2" xl="3" lg="3" md="1" sm="2">
+      <v-col cols="2" xl="3" lg="1" md="1" sm="1">
         <div role="button" 
         :class="sidebar ? 'menu-btn open ' : 'menu-btn'" 
         @click="sidebar = !sidebar">
@@ -31,6 +37,9 @@
       </v-row>
 
       <div :class="!sidebar ? 'sidebar' : 'sidebar show-sidebar'">
+        <NuxtLink to="/" style="position:fixed;top:-10vh;">
+          <img src="/images/logo.svg" alt="" style="transform:scale(0.15)">
+        </NuxtLink>
         <NuxtLink to="/" class="link-sidebar">Home</NuxtLink>
         <NuxtLink to="/" class="link-sidebar">Our rooms</NuxtLink>
         <NuxtLink to="/" class="link-sidebar">About us</NuxtLink>
@@ -48,11 +57,13 @@
 </template>
 
 <script>
+import rawLogo from "~/static/images/logo.svg?raw";
 export default {
   props: { position: Number },
   data() {
     return {
-      sidebar: false
+      sidebar: false,
+      rawLogo
     }
   },
   watch: {
@@ -69,7 +80,8 @@ export default {
   top: 0;
   min-width: 100vw;
   max-width: 100vw;
-  max-height: 10vh;
+  max-height: 74px;
+  min-height: 74px;
   transition: all .5s ease;  
 }
 .navbar-scroll{
@@ -78,7 +90,8 @@ export default {
   position: fixed;
   top: 0;
   min-width: 100vw;
-  max-height: 10vh;
+  max-height: 74px;
+  min-height: 74px;
   background: var(--primary);
   color: var(--secondary);
   transition: all .5s ease;
@@ -87,10 +100,40 @@ export default {
 ::v-deep .v-application--wrap {
   min-height: fit-content;
 }
-.logo{
-  max-width: 4vw;
-  max-height: 3vh;
+/* LOGOS */
+.logoSecondary{
+  max-width: 0vw;
+  max-height: 0vh;
+  transform: scale(0.1) translateY(-8rem) translateX(-100vw);  
 }
+.logoSecondary >>> svg{
+  max-width: 70vw;
+  max-height: 25vh;
+  transform: scale(2);
+}
+.logoSecondary >>> g{
+  fill: var(--secondary);
+}
+.logoPrimary{
+  max-width: 0vw;
+  max-height: 0vh;
+  transform: scale(0.1) translateY(-8rem) translateX(-100vw);  
+}
+.logoPrimary >>> svg{
+  max-width: 70vw;
+  max-height: 25vh;
+  transform: scale(2);
+}
+.logoPrimary >>> g{
+  fill: var(--primary);
+}
+@media only screen and (max-width: 600px) {
+  .logoSecondary >>> svg,.logoPrimary >>> svg{
+  transform: scale(5);
+}
+}
+/* LOGOS END */
+
 /* SIDEBAR */
 .sidebar{
   position: fixed;
@@ -113,10 +156,19 @@ export default {
   transform: translate(0);
   border-right: 3px solid var(--secondary);
 }
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 1458px) {
+  .sidebar{
+    min-width: 25vw;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .sidebar{
+    min-width: 30vw;
+  }
+}
+@media only screen and (max-width: 848px) {
   .sidebar{
     min-width: 40vw;
-    min-height: 100vh;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -179,7 +231,7 @@ export default {
   text-decoration: none;
   color: var(--secondary);
   font-weight: 600;
-  font-size: clamp(1rem, 1vw, 6rem);
+  font-size: 1.2rem;
   letter-spacing: 1px;
   font-family: Raleway, Helvetica, Arial, sans-serif;
   margin: 0.5vh 0;
