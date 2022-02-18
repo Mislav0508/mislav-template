@@ -2,25 +2,25 @@
   <v-container fluid class="whole-container">
     <v-row class="d-flex flex-wrap">
 
-      <v-col cols="12" xl="4" lg="4" md="4" sm="12" class="pa-xl-5" style='z-index:999;background-color: #222222;'>
+      <v-col cols="12" xl="4" lg="4" md="4" sm="12" class="containers-L pa-xl-5 d-xl-flex justify-center align-center" style='z-index:999;background-color: #222222;'>
         
-        <v-container class="px-15 py-xl-7">
+        <v-col class="px-xl-15 py-xl-7">
 
-          <h2>Deluxe Room</h2>
+          <h3 class="mb-3">Deluxe Room</h3>
           <p class="mb-0">From</p>
           <h3 class="font-weight-bold mb-10">$250</h3>
 
-          <v-row class="mb-4">
+          <v-row class="mb-4 ">
 
-            <v-col cols="6" xl="4" lg="6" md="6" sm="6" class="font-weight-bold">
-              <p class="mb-1">bed: </p>
-              <p class="mb-1">capacity: </p>
-              <p class="mb-1">room size: </p>
-              <p class="mb-1">view: </p>
-              <p class="mb-1">recommend: </p>
+            <v-col cols="6" xl="4" lg="6" md="5" sm="3" >
+              <p class="font-weight-bold mb-1">bed: </p>
+              <p class="font-weight-bold mb-1">capacity: </p>
+              <p class="font-weight-bold mb-1">room size: </p>
+              <p class="font-weight-bold mb-1">view: </p>
+              <p class="font-weight-bold mb-1">recommend: </p>
             </v-col>
 
-            <v-col cols="6" xl="4" lg="6" md="6" sm="6">
+            <v-col cols="6" xl="5" lg="6" md="7" sm="5">
               <p class="mb-1">king bed </p>
               <p class="mb-1">3 adults 1 children </p>
               <p class="mb-1">55m2 </p>
@@ -30,15 +30,17 @@
 
           </v-row>
 
-          <v-btn outlined tile large color="white" width="180" type="button" class="no-uppercase">
+          <v-row>
+            <v-btn outlined tile large color="white" width="180" type="button" class="no-uppercase">
             view detail
-          </v-btn>
+            </v-btn>
+          </v-row>
 
-        </v-container>
+        </v-col>
 
       </v-col>
       
-      <v-col cols="12" xl="8" lg="8" md="8" sm="12" class="ma-0 pa-0">
+      <v-col cols="12" xl="8" lg="8" md="8" sm="12" class="containers-R ma-0 pa-0">
         
           <div class="sliderMid">
 
@@ -48,15 +50,15 @@
 
           </div>
 
-          <div class="arrow-container-left" @click="prev">
-            <i class="arrow left"></i>      
-          </div>
-          <div class="arrow-container-right"  @click="next">
-            <i class="arrow right"></i>
-          </div>
 
       </v-col>
 
+      <div class="arrow-container-left" @click="prev">
+        <i class="arrow left"></i>      
+      </div>
+      <div class="arrow-container-right"  @click="next">
+        <i class="arrow right"></i>
+      </div>
     </v-row>
   </v-container>
 </template>
@@ -105,22 +107,50 @@ export default {
 .whole-container{
   background-color: #222222;
   color: var(--primary);
+}
+.containers-L, .containers-R{
   min-height: 55vh;
+  max-height: 55vh;
+}
+@media screen and (max-width: 1264px) {
+  .containers-L, .containers-R{
+    max-height: 65vh;
+  }
+  .sliderMid{
+    max-height: 65vh;
+  }
+  .imagesL{
+    max-height: 65vh;
+  }
+  .imagesS{
+    max-height: 65vh;
+  }
+}
+@media screen and (max-width: 960px) {
+  .containers-L{
+    max-height: 40vh;
+    min-height: 40vh;
+  }
+}
+@media screen and (max-width: 600px) {
+  .containers-L{
+    max-height: 80vh;
+    min-height: 80vh;
+    min-height: 55vh;
+    max-height: 55vh;
+  }
 }
   p{
-    font-size: 14px;
-    line-height: 1.9rem;
     color: var(--primary);
   }
-  h2{
-    font-size: 26px;
-    line-height: 1.4em;
+  h3{
     color: var(--primary);
   }
 .sliderMid{
   background: var(--secondary);
   width: 100%;
   min-height: 55vh;
+  max-height: 55vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -153,7 +183,7 @@ export default {
 /* ARROWS */
 .arrow-container-left{
   top: 25vh; 
-  left: 3vw;
+  left: 35vw;
   position: absolute;
   padding: 0.5rem 0.6rem 0.6rem 1rem;  
   cursor: pointer;
@@ -170,6 +200,26 @@ export default {
   padding: 0.5rem 1rem 0.6rem  0.6rem;
   cursor: pointer;
   transition: all 0.1s linear;
+}
+@media screen and (max-width: 960px) {
+  .arrow-container-left{
+    top: 80vh; 
+    left: 3vw;
+  }
+  .arrow-container-right{
+    top: 80vh; 
+    right: 3vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .arrow-container-left{
+    top: 105vh; 
+    left: 3vw;
+  }
+  .arrow-container-right{
+    top: 105vh; 
+    right: 3vw;
+  }
 }
 .arrow {
   border: solid var(--primary);

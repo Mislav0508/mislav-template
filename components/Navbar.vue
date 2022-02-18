@@ -1,7 +1,7 @@
 <template >
 
   <div >
-    <v-container :class="[ position > 0 ? 'navbar-scroll' : 'navbar']">
+    <v-container :class="[ position > 0 ? 'navbar-scroll d-flex align-center' : 'navbar d-flex align-center']">
 
     <v-row class="d-flex justify-md-space-around align-center">    
 <!-- style="border:1px solid red" -->
@@ -17,7 +17,7 @@
         <div v-html="rawLogo" :class="position > 0 ? 'logoSecondary' : 'logoPrimary'"/>          
         </NuxtLink>
         <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Home</NuxtLink>
-        <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Our rooms</NuxtLink>
+        <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Our Rooms</NuxtLink>
         <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">About us</NuxtLink>
         <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Blog</NuxtLink>
         <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Explore</NuxtLink>
@@ -132,6 +132,11 @@ export default {
   transform: scale(5);
 }
 }
+@media only screen and (min-width: 1410px) {
+  .logoSecondary >>> svg,.logoPrimary >>> svg{
+  transform: scale(1.2);
+  }
+}
 /* LOGOS END */
 
 /* SIDEBAR */
@@ -189,7 +194,7 @@ export default {
 .link{
   text-decoration: none;
   color: var(--primary);
-  font-weight: 600;
+  font-weight: 550 !important;
   font-size: 13px;
   letter-spacing: 1px;
   font-family: 'Raleway', sans-serif;
@@ -208,7 +213,7 @@ export default {
 .link-scroll{
   text-decoration: none;
   color: var(--secondary);
-  font-weight: 600;
+  font-weight: 550 !important;
   font-size: 13px;
   letter-spacing: 1px;
   font-family: Raleway, Helvetica, Arial, sans-serif;
@@ -217,7 +222,7 @@ export default {
   content: '';
   display: block;
   width: 0;
-  height: 2px;
+  height: 1px;
   background: var(--secondary);
   transition: width .3s;
 }

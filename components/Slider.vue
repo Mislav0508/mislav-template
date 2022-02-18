@@ -7,7 +7,7 @@
       :class="[ i === index ? 'activeSlide' :  i === index - 1 || (index === 0 && i === images.length - 1) ? 'lastSlide' : 'nextSlide' ]"
       >
       <img :src="image" alt="img" >
-      <h2 :class="[ i === index ? 'activeTitle' : '' ]">{{ captions[i] }} </h2>
+      <h1 :class="[ i === index ? 'activeTitle' : '' ]">{{ captions[i] }} </h1>
       <p :class="[ i === index ? 'activeSubtitle' : '' ]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, veniam?</p>
     </div>
     <div class="arrow-container-left" @click="prev">
@@ -75,14 +75,14 @@ export default {
       clearInterval(this.interval)
       this.interval = setInterval(() => {
         this.next() 
-      }, 10000);
+      }, 100000);
 
     }
   },
   mounted() {
     this.interval = setInterval(() => {
       this.next() 
-    }, 10000);
+    }, 100000);
     
   }
 }
@@ -139,7 +139,7 @@ img{
   object-fit: cover;
   filter: brightness(80%);
 }
-h2,p{
+h1,p{
   position: absolute;
   color: var(--primary);
 }
@@ -166,7 +166,7 @@ p{
   text-align: center;
   animation-name: activeSubtitle;
   animation-duration: 3.5s;
-  padding: clamp(3rem, 2vw, 4rem);
+  padding: clamp(3rem, 10vw, 2rem);
 }
 .slider-line{
   position: relative;

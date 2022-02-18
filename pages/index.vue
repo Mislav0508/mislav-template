@@ -1,55 +1,52 @@
 <template>
   <div>
     <Slider />
-    <v-container >
       
-      <v-row class="d-flex align-center justify-center py-lg-15">
+    <v-row class="d-flex align-center justify-space-around py-lg-15" >
 
-        <v-col cols="12" xl="2" lg="1" md="0"></v-col>
+      <v-col cols="12" xl="2" lg="2" md="0"></v-col>
 
-        <v-col cols="12" xl="3" lg="5" md="6" sm="" class="d-flex align-center justify-start flex-wrap px-10 py-15" >
-          <p class="font-weight-bold"
-          >ABOUT MISLAV-TEMPLATE</p>
-          <h2 data-aos="fade-left" 
-          data-aos-duration="600"
-          data-aos-easing="ease-out"
-          data-aos-delay="500"
-          data-aos-once="true">Mislav's Hotel More than a stay</h2>
-          <p data-aos="fade-left" 
-          data-aos-duration="600"
-          data-aos-easing="ease-out"
-          data-aos-delay="1000"
-          data-aos-once="true">Pitchfork selfies master cleanse Kickstarter seitan retro. Drinking vinegar stumptown yr pop-up artisan sunt. Deep v cliche lomo biodiesel Neutra selfies. Shorts fixie consequat flexitarian four loko tempor duis single-origin coffee. Banksy, elit small batch freegan sed.</p>
-          <v-img src="/images/home/signature.png" class="signature my-3"
-          data-aos="fade-left" 
-          data-aos-duration="600"
-          data-aos-easing="ease-out"
-          data-aos-delay="1500"
-          data-aos-once="true"></v-img>
-          <h6 class="font-weight-bold" 
-          data-aos="fade-left" 
-          data-aos-duration="600"
-          data-aos-easing="ease-out"
-          data-aos-delay="2000"
-          data-aos-once="true"
-          >MISLAV CRNKOVIĆ - GENERAL MANAGER</h6>
-        </v-col>
+      <v-col cols="12" xl="3" lg="3" md="6" sm="" class="d-flex align-center justify-start flex-wrap px-10 py-15">
+        <p class="font-weight-bold"
+        >ABOUT MISLAV-TEMPLATE</p>
+        <h2 class="pb-5" data-aos="fade-left" 
+        data-aos-duration="600"
+        data-aos-easing="ease-out"
+        data-aos-delay="500"
+        data-aos-once="true">Mislav's Hotel More than a stay</h2>
+        <p data-aos="fade-left" 
+        data-aos-duration="600"
+        data-aos-easing="ease-out"
+        data-aos-delay="1000"
+        data-aos-once="true">Pitchfork selfies master cleanse Kickstarter seitan retro. Drinking vinegar stumptown yr pop-up artisan sunt. Deep v cliche lomo biodiesel Neutra selfies. Shorts fixie consequat flexitarian four loko tempor duis single-origin coffee. Banksy, elit small batch freegan sed.</p>
+        <v-img src="/images/home/signature.png" class="signature my-3"
+        data-aos="fade-left" 
+        data-aos-duration="600"
+        data-aos-easing="ease-out"
+        data-aos-delay="1500"
+        data-aos-once="true"></v-img>
+        <p class="font-weight-bold" data-aos="fade-left" 
+        data-aos-duration="600"
+        data-aos-easing="ease-out"
+        data-aos-delay="2000"
+        data-aos-once="true"
+        >MISLAV CRNKOVIĆ - GENERAL MANAGER</p>
+      </v-col>
 
-        <v-col cols="12" xl="5" lg="5" md="6" sm="">
-          <div class="img-container d-flex align-center justify-center">
-            <v-img
-              class="block-2-img"
-              lazy-src="https://picsum.photos/id/11/10/6"
-              src="/images/home/pexels-oliver-sjöström-1433052.jpg"
-            ></v-img>
-          </div>
-        </v-col>
+      <v-col cols="12" xl="3" lg="3" md="6" sm="">
+        <div class="img-container d-flex align-center justify-center">
+          <v-img
+            class="block-2-img"
+            lazy-src="https://picsum.photos/id/11/10/6"
+            src="/images/home/pexels-oliver-sjöström-1433052.jpg"
+          ></v-img>
+        </div>
+      </v-col>
 
-        <v-col cols="12" xl="2" lg="1" md="0"></v-col>
+      <v-col cols="12" xl="2" lg="2" md="0"></v-col>
 
-      </v-row>
+    </v-row>
       
-    </v-container>
 
     <MidSlider 
     data-aos="slide-up" 
@@ -57,47 +54,43 @@
     data-aos-easing="ease-out"
     data-aos-once="true"/>
 
-    <v-container>
-
       <!-- BLOCK - 2 -->
 
-      <v-row>
+    <v-row>
 
-        <v-col cols="12" xl="2" lg="2" md="1" sm="12" class="py-10"></v-col>
+      <v-col cols="12" xl="2" lg="2" md="1" sm="12" class="py-10"></v-col>
 
-        <v-col cols="12" xl="4" lg="4" md="5" sm="6" 
-        data-aos="zoom-in" 
+      <v-col cols="12" xl="4" lg="4" md="5" sm="6" 
+      data-aos="zoom-in" 
+      data-aos-duration="1000"
+      data-aos-easing="ease-out"
+      data-aos-once="true">
+        <div class="img-container d-flex align-center justify-center pa-md-15">
+          <v-img
+            class="block-2-img"
+            lazy-src="https://picsum.photos/id/11/10/6"
+            src="/images/home/home_pic3.jpg"
+          ></v-img>
+        </div>
+      </v-col>
+
+      <v-col cols="12" xl="4" lg="4" md="5" sm="6" class="d-flex align-start justify-center flex-column pa-15">
+        <p class="font-weight-bold">5 STARS MICHALIN</p>
+        <h2 class="pb-3" data-aos="fade-left" 
         data-aos-duration="1000"
         data-aos-easing="ease-out"
-        data-aos-once="true">
-          <div class="img-container d-flex align-center justify-center pa-md-15">
-            <v-img
-              class="block-2-img"
-              lazy-src="https://picsum.photos/id/11/10/6"
-              src="/images/home/home_pic3.jpg"
-            ></v-img>
-          </div>
-        </v-col>
+        data-aos-delay="200"
+        data-aos-once="true">Experience Deliciously from Our Chefs</h2>
+        <p data-aos="fade-left" 
+        data-aos-duration="1000"
+        data-aos-easing="ease-out"
+        data-aos-delay="500"
+        data-aos-once="true">Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica.</p>
+      </v-col>
 
-        <v-col cols="12" xl="4" lg="4" md="5" sm="6" class="d-flex align-start justify-center flex-column pa-15">
-          <p class="font-weight-bold">5 STARS MICHALIN</p>
-          <h2 data-aos="fade-left" 
-          data-aos-duration="1000"
-          data-aos-easing="ease-out"
-          data-aos-delay="200"
-          data-aos-once="true">Experience Deliciously from Our Chefs</h2>
-          <p data-aos="fade-left" 
-          data-aos-duration="1000"
-          data-aos-easing="ease-out"
-          data-aos-delay="500"
-          data-aos-once="true">Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica.</p>
-        </v-col>
+      <v-col cols="12" xl="2" lg="2" md="1" sm="12"></v-col>
 
-        <v-col cols="12" xl="2" lg="2" md="1" sm="12"></v-col>
-
-      </v-row>
-
-    </v-container>
+    </v-row>
 
     <!-- BLOCK - 3 -->
 
@@ -125,7 +118,7 @@
         data-aos-easing="ease-out"
         data-aos-delay="500"
         data-aos-once="true">Visit Our fantastic villas</h2>
-        <p class="white--text text-left font-weight-normal" data-aos="fade-up" 
+        <p class="white--text text-left font-weight-normal py-3" data-aos="fade-up" 
         data-aos-duration="1000"
         data-aos-easing="ease-out"
         data-aos-delay="1000"
@@ -169,7 +162,7 @@
         data-aos-easing="ease-out"
         data-aos-delay="500"
         data-aos-once="true">Signature, Simply Delicious</h2>
-        <p class="white--text text-left font-weight-normal" data-aos="fade-up" 
+        <p class="white--text text-left font-weight-normal py-3" data-aos="fade-up" 
         data-aos-duration="1000"
         data-aos-easing="ease-out"
         data-aos-delay="1000"
@@ -188,17 +181,15 @@
     </v-container>
 
     <!-- BLOCK - 5 -->
-
-    <v-container >
       
-      <v-row class="d-flex align-center justify-center py-lg-15">
+      <v-row class="d-flex align-center justify-space-around py-lg-15">
 
-        <v-col cols="12" xl="2" lg="1" md="0"></v-col>
+        <v-col cols="12" xl="2" lg="2" md="0"></v-col>
 
         <v-col cols="12" xl="3" lg="5" md="6" sm="" class="d-flex align-center justify-start flex-wrap px-10 py-15" >
           <p class="font-weight-bold"
           >ABOUT MISLAV-TEMPLATE</p>
-          <h2 data-aos="fade-left" 
+          <h2 class="pb-3" data-aos="fade-left" 
           data-aos-duration="600"
           data-aos-easing="ease-out"
           data-aos-delay="500"
@@ -208,16 +199,16 @@
           data-aos-easing="ease-out"
           data-aos-delay="1000"
           data-aos-once="true">Pitchfork selfies master cleanse Kickstarter seitan retro. Drinking vinegar stumptown yr pop-up artisan sunt. Deep v cliche lomo biodiesel Neutra selfies. Shorts fixie consequat flexitarian four loko tempor duis single-origin coffee. Banksy, elit small batch freegan sed.</p>
-          <h5 class="font-weight-bold" 
+          <p class="font-weight-bold" 
           data-aos="fade-left" 
           data-aos-duration="600"
           data-aos-easing="ease-out"
           data-aos-delay="2000"
           data-aos-once="true"
-          >Discover More</h5>
+          >Discover More</p>
         </v-col>
 
-        <v-col cols="12" xl="5" lg="5" md="6" sm="">
+        <v-col cols="12" xl="3" lg="3" md="6" sm="">
           <div class="img-container d-flex align-center justify-center">
             <v-img
               class="block-2-img"
@@ -227,11 +218,9 @@
           </div>
         </v-col>
 
-        <v-col cols="12" xl="2" lg="1" md="0"></v-col>
+        <v-col cols="12" xl="2" lg="2" md="0"></v-col>
 
-      </v-row>
-      
-    </v-container>
+      </v-row>    
 
   </div>
 
@@ -288,14 +277,26 @@ export default {
     min-width: 100vw;
     max-width: 100vw;
   }
+  .text-container{
+    top: 20%;
+  }
 }
-p{
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 1.9rem;
+@media only screen and (min-width: 1600px) {
+  .block-2-img{
+  min-height: 45vh;
+  max-height: 45vh;
+  min-width: 25vw;
+  max-width: 25vw;
 }
-h2{
-  font-size: clamp(28px, 5vw, 42px);
-  line-height: 1.4em;
 }
+@media only screen and (min-width: 2600px) {
+  /* .block-2-img{
+  min-height: 45vh;
+  max-height: 45vh;
+  min-width: 15vw;
+  max-width: 15vw;
+} */
+}
+
+
 </style>

@@ -8,27 +8,27 @@
 
     <!-- MIDDLE CONTAINER -->
 
-    <v-col cols="12" xl="12" lg="12" md="12" sm="12" class="middle-footer-container d-flex flex-wrap text-center">
+    <v-col cols="12" xl="12" lg="12" md="12" sm="12" class="middle-footer-container d-flex flex-wrap text-center" >
 
-      <v-col cols="12" xl="2" lg="2" md="2" sm="12"></v-col>
+      <v-col cols="12" xl="2" lg="2" md="2" sm="0"></v-col>
 
-      <v-col cols="12" xl="2" lg="2" md="2" sm="12" style="border-bottom: 1px solid white">
+      <v-col cols="6" xl="2" lg="2" md="2" sm="6" style="border-bottom: 1px solid white">
         <h2>our address</h2>
         <p class="font-weight-bold">Mislav's Beach Hotel</p>
         <p>Pod Sveti Mikulj 7</p>
         <p>Novi Vinodolski</p>
       </v-col>
-      <v-col cols="12" xl="2" lg="2" md="2" sm="12" style="border-bottom: 1px solid white">
+      <v-col cols="6" xl="2" lg="2" md="2" sm="6" style="border-bottom: 1px solid white">
         <h2>reservation</h2>
         <p>Tel.: +41 (0)54 2344 00</p>
         <p>Fax: +41 (0)542344 99</p>
         <p>mislav0508@hotmail.com</p>
       </v-col>
-      <v-col cols="12" xl="2" lg="2" md="2" sm="12" style="border-bottom: 1px solid white">
+      <v-col cols="6" xl="2" lg="2" md="2" sm="6" style="border-bottom: 1px solid white">
         <h2>newsletter</h2>
         <v-btn outlined class="white--text">Sign up</v-btn>
       </v-col>
-      <v-col cols="12" xl="2" lg="2" md="2" sm="12" style="border-bottom: 1px solid white">
+      <v-col cols="6" xl="2" lg="2" md="2" sm="6" style="border-bottom: 1px solid white">
         <h2>awards</h2>
         <v-row class="d-flex align-center justify-center">
           <v-img
@@ -46,20 +46,20 @@
         </v-row>
       </v-col>
 
-      <v-col cols="12" xl="2" lg="2" md="2" sm="12"></v-col>
+      <v-col cols="12" xl="2" lg="2" md="2" sm="0"></v-col>
 
       <!-- BOTTOM CONTAINER -->
-      <v-col cols="12" xl="12" lg="12" md="12" sm="12" class=" d-flex">
+      <v-col cols="12" xl="12" lg="12" md="12" sm="12" class=" d-md-flex">
 
-        <v-col cols="0" xl="2" lg="2" md="2" sm="1"></v-col>
+        <v-col cols="0" xl="2" lg="2" md="2" sm="0"></v-col>
 
-        <v-col cols="12" xl="3" lg="3" md="3" sm="4">
+        <v-col cols="12" xl="3" lg="3" md="3" sm="12">
           <p>© Copyright Media Dev - Mislav Crnković</p>
         </v-col>
 
         <v-col cols="12" xl="2" lg="1" md="0" sm="1"></v-col>
 
-        <v-col cols="12" xl="3" lg="4" md="5" sm="6" class="d-flex justify-space-around flex-wrap">
+        <v-col cols="12" xl="3" lg="4" md="5" sm="12" class="d-flex justify-space-around flex-wrap">
           <NuxtLink to="/" class="footer-link">Home</NuxtLink>
           <NuxtLink to="/" class="footer-link">Our rooms</NuxtLink>
           <NuxtLink to="/" class="footer-link">About us</NuxtLink>
@@ -68,7 +68,7 @@
           <NuxtLink to="/" class="footer-link">Contact</NuxtLink>
         </v-col>
 
-        <v-col cols="0" xl="2" lg="2" md="2" sm="12"></v-col>
+        <v-col cols="0" xl="2" lg="2" md="2" sm="0"></v-col>
         <!-- BOTTOM CONTAINER END -->
 
       </v-col>
@@ -89,17 +89,17 @@ export default {
 
 <style scoped>
 .svg-class{
-  min-height: 45vh;
+  min-height: 50vh;
 }
 .footer-container{
   position: relative;
   width: 100vw;
-  min-height: 45vh;
+  min-height: 50vh;
   bottom: 0;
   overflow: hidden;
   z-index: 9998;
   color: var(--primary);
-
+  padding: 0;
 }
 .middle-footer-container{
   position: absolute;
@@ -108,7 +108,7 @@ export default {
 }
 
 h2 {
-  font-size: 12px;
+  font-size: clamp(12px, 0.7vw, 16px);
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -117,7 +117,7 @@ h2 {
   color: var(--primary);
 }
 p{
-  font-size: 12px;
+  font-size: clamp(12px, 0.5vw, 14px);
   font-weight: 400;
   letter-spacing: 2px;
   color: var(--primary);
@@ -127,9 +127,28 @@ p{
   color: var(--primary);
 
 }
+@media only screen and (max-width: 1396px) {
+  .svg-class{
+  min-height: 65vh;
+}
+.footer-container{
+  min-height: 65vh;
+}
+}
 @media only screen and (max-width: 960px) {
   .svg-class{
-  min-height: 125vh;
+  min-height: 100vh;
+}
+.footer-container{
+  min-height: 100vh;
+}
+}
+@media only screen and (max-width: 410px) {
+  .svg-class{
+  min-height: 120vh;
+}
+.footer-container{
+  min-height: 120vh;
 }
 }
 </style>
