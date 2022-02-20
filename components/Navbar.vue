@@ -17,7 +17,7 @@
         <div v-html="rawLogo" :class="position > 0 ? 'logoSecondary' : 'logoPrimary'"/>          
         </NuxtLink>
         <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Home</NuxtLink>
-        <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Our Rooms</NuxtLink>
+        <NuxtLink to="/rooms" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Our Rooms</NuxtLink>
         <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">About us</NuxtLink>
         <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Blog</NuxtLink>
         <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Explore</NuxtLink>

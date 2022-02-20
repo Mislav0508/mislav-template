@@ -52,7 +52,9 @@ export default {
             "Second slide",
             "Third slide",
             "Fourth slide",
-          ]
+          ],
+          touchstartX: 0,
+          touchendX: 0
       }
     }, 
   methods: {
@@ -61,6 +63,10 @@ export default {
       },
       next() {
         this.index = this.index + 1
+      },
+      handleGesture() {
+      if (this.touchendX < this.touchstartX) this.next()
+      if (this.touchendX > this.touchstartX) this.prev()
       }
   },
   watch: {
@@ -76,35 +82,43 @@ export default {
       this.interval = setInterval(() => {
         this.next() 
       }, 100000);
-
+    },
+    touchstartX() {
+       
     }
   },
   mounted() {
     this.interval = setInterval(() => {
       this.next() 
     }, 100000);
-    
+
+    const slider = document.querySelector('.slider')
+
+    slider.addEventListener('touchstart', e => {
+      this.touchstartX = e.changedTouches[0].screenX
+    })
+
+    slider.addEventListener('touchend', e => {
+      this.touchendX = e.changedTouches[0].screenX
+      handleGesture()
+    })
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .slider{
   position: relative;
   width: 100vw;
   min-height: 90vh;
   max-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;  
+  @include flexCenter;
   background: rgba(0, 0, 0, 0.8);
 }
 .slide{
   opacity: 0;
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCenter;
 }
 @keyframes activeSlide {
   
@@ -178,9 +192,9 @@ p{
   cursor: pointer;
   margin: 0 0.4rem;
   opacity: 0.5;
-}
-.slider-line:hover{
-  opacity: 1;
+  &:hover{
+    opacity: 1;
+  }
 }
 #slider-line-active{
   opacity: 1;
@@ -192,6 +206,9 @@ p{
   padding: 1rem 1rem 1rem 0;
   cursor: pointer;
   transition: all 0.1s linear;
+  &:hover{
+    left: 3.5vw
+  }
 }
 .arrow-container-right{
   top: 43vh;
@@ -200,6 +217,9 @@ p{
   padding: 1rem 0rem 1rem 1rem;
   cursor: pointer;
   transition: all 0.1s linear;
+  &:hover{
+    right: 3.5vw;
+  }
 }
 .arrow {
   border: solid var(--primary);
@@ -215,15 +235,9 @@ p{
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);  
 }
-.arrow-container-right:hover{
-  right: 3.5vw;
-}
 .left {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);  
-}
-.arrow-container-left:hover{
-  left: 3.5vw
 }
 
 </style>

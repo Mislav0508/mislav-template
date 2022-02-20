@@ -6,7 +6,7 @@
 
       <v-col cols="12" xl="2" lg="2" md="0"></v-col>
 
-      <v-col cols="12" xl="3" lg="3" md="6" sm="" class="d-flex align-center justify-start flex-wrap px-10 py-15">
+      <v-col cols="12" xl="3" lg="3" md="6" sm="" class="d-flex align-start justify-start flex-wrap flex-column px-10 py-15">
         <p class="font-weight-bold"
         >ABOUT MISLAV-TEMPLATE</p>
         <h2 class="pb-5" data-aos="fade-left" 
@@ -186,7 +186,7 @@
 
         <v-col cols="12" xl="2" lg="2" md="0"></v-col>
 
-        <v-col cols="12" xl="3" lg="5" md="6" sm="" class="d-flex align-center justify-start flex-wrap px-10 py-15" >
+        <v-col cols="12" xl="3" lg="5" md="6" sm="" class="d-flex align-start justify-start flex-wrap flex-column px-10 py-15" >
           <p class="font-weight-bold"
           >ABOUT MISLAV-TEMPLATE</p>
           <h2 class="pb-3" data-aos="fade-left" 
@@ -235,7 +235,10 @@ export default {
       return {
         
       }
-    }
+    },
+  mounted() {
+    
+  }
 }
 </script>
 <style scoped>

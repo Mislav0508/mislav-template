@@ -103,7 +103,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+//  @import '~assets/css/main.scss';
 .whole-container{
   background-color: #222222;
   color: var(--primary);
@@ -151,9 +152,7 @@ export default {
   width: 100%;
   min-height: 55vh;
   max-height: 55vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter;
   transition: transform 0.9s ease-out;
   /* transform: translateX(45vw); */
 }
@@ -190,6 +189,10 @@ export default {
   transition: all 0.1s linear;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 100%;
+  &:hover{
+    transform: translateX(-0.4vw);
+    background: rgba(0, 0, 0, 0.5);
+  }
 }
 .arrow-container-right{
   top: 25vh;
@@ -200,6 +203,10 @@ export default {
   padding: 0.5rem 1rem 0.6rem  0.6rem;
   cursor: pointer;
   transition: all 0.1s linear;
+  &:hover{
+    transform: translateX(0.4vw);
+    background: rgba(0, 0, 0, 0.5);
+  }
 }
 @media screen and (max-width: 960px) {
   .arrow-container-left{
@@ -214,7 +221,7 @@ export default {
 @media screen and (max-width: 600px) {
   .arrow-container-left{
     top: 105vh; 
-    left: 3vw;
+    left: 3vw;    
   }
   .arrow-container-right{
     top: 105vh; 
@@ -235,19 +242,11 @@ export default {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);  
 }
-.arrow-container-right:hover{
-  transform: translateX(0.4vw);
-  background: rgba(0, 0, 0, 0.5);
-
-}
 .left {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);  
 }
-.arrow-container-left:hover{
-  transform: translateX(-0.4vw);
-  background: rgba(0, 0, 0, 0.5);
-}
+
 
 .no-uppercase {
   text-transform: unset !important;
