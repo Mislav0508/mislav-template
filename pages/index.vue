@@ -52,7 +52,18 @@
     data-aos="slide-up" 
     data-aos-duration="1200"
     data-aos-easing="ease-out"
-    data-aos-once="true"/>
+    data-aos-once="true"
+    :id="ids"
+    :type="types"
+    :price="prices"
+    :bed="beds"
+    :capacity="capacities"
+    :room_size="room_sizes"
+    :view="views"
+    :recommend="recommends"
+    :image="images"
+    :translate="translateX"
+    :imageSize="imgSizes"/>
 
       <!-- BLOCK - 2 -->
 
@@ -233,7 +244,23 @@ export default {
   mixins: [aosMixin],
   data () {
       return {
-        
+        ids: 1,
+        types: "Deluxe Room",
+        prices: "$250",
+        beds: "king bed",
+        capacities: "3 adults 1 children",
+        room_sizes: "55",
+        views: "sea view",
+        recommends: "great for business trip",
+        images: [
+          "/images/home/midSlider/midSlider-1.jpg",
+          "/images/home/midSlider/midSlider-2.jpg",
+          "/images/home/midSlider/midSlider-3.jpg",
+          "/images/home/midSlider/midSlider-4.jpg",
+          "/images/home/midSlider/midSlider-5.jpg",
+        ],
+        imgSizes: [ 2, 1, 1, 2, 2 ],
+        translateX: 50,
       }
     },
   mounted() {
@@ -241,7 +268,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .signature{
   max-width: clamp(9rem, 20vw, 13rem);
 }
@@ -259,9 +286,7 @@ export default {
   filter: brightness(70%);
 }
 .text-container{
-  position: absolute;
-  top: 40%;
-  left: 25%;
+  @include text-container;
 }
 @media only screen and (max-width: 960px) {
   .block-2-img{

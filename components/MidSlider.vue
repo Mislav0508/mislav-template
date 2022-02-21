@@ -1,14 +1,14 @@
 <template>
   <v-container fluid class="whole-container">
-    <v-row class="d-flex flex-wrap">
+    <v-row class="d-flex flex-wrap" style="position: relative;">
 
       <v-col cols="12" xl="4" lg="4" md="4" sm="12" class="containers-L pa-xl-5 d-xl-flex justify-center align-center" style='z-index:999;background-color: #222222;'>
         
         <v-col class="px-xl-15 py-xl-7">
 
-          <h3 class="mb-3">Deluxe Room</h3>
+          <h3 class="mb-3">{{ type }}</h3>
           <p class="mb-0">From</p>
-          <h3 class="font-weight-bold mb-10">$250</h3>
+          <h3 class="font-weight-bold mb-10">{{ price }}</h3>
 
           <v-row class="mb-4 ">
 
@@ -21,11 +21,11 @@
             </v-col>
 
             <v-col cols="6" xl="5" lg="6" md="7" sm="5">
-              <p class="mb-1">king bed </p>
-              <p class="mb-1">3 adults 1 children </p>
-              <p class="mb-1">55m2 </p>
-              <p class="mb-1">sea view </p>
-              <p class="mb-1">great for business trip</p>
+              <p class="mb-1">{{ bed }}</p>
+              <p class="mb-1">{{ capacity }}</p>
+              <p class="mb-1">{{ room_size }}m<sup>2</sup> </p>
+              <p class="mb-1">{{ view }}</p>
+              <p class="mb-1">{{ recommend }}</p>
             </v-col>
 
           </v-row>
@@ -44,8 +44,8 @@
         
           <div class="sliderMid">
 
-            <div class="slideMid" v-for="(image, i) in images" :key="i">
-              <img :src="image" alt="img" :class="imgSize[i] == 1 ? 'imagesS' : 'imagesL'">
+            <div class="slideMid" v-for="(img, i) in image" :key="i">
+              <img :src="img" alt="img" :class="imageSize[i] == 1 ? 'imagesS' : 'imagesL'">
             </div>
 
           </div>
@@ -56,7 +56,7 @@
       <div class="arrow-container-left" @click="prev">
         <i class="arrow left"></i>      
       </div>
-      <div class="arrow-container-right"  @click="next">
+      <div class="arrow-container-right" @click="next()">
         <i class="arrow right"></i>
       </div>
     </v-row>
@@ -65,39 +65,51 @@
 
 <script>
 export default {
+  props: { 
+    id: Number,
+    type: String,
+    price: String,
+    bed: String,
+    capacity: String,
+    room_size: String,
+    view: String,
+    recommend: String,
+    image: Array,
+    translate: Number,
+    imageSize: Array
+   },
   data () {
     return {
-      index: 0,
-      images: [
-        "/images/home/midSlider/midSlider-1.jpg",
-        "/images/home/midSlider/midSlider-2.jpg",
-        "/images/home/midSlider/midSlider-3.jpg",
-        "/images/home/midSlider/midSlider-4.jpg",
-        "/images/home/midSlider/midSlider-5.jpg",
-      ],
-      imgSize: [ 2, 1, 1, 2, 2 ] ,
-      translateX: 50
+      translateX: null
     }
   },
   beforeMount() {
     
   },
   mounted() {
-    var myElement = document.querySelector('.sliderMid');
-    myElement.style.transform = "translateX(" + this.translateX + "rem)"
+    this.translateX = this.translate
+
+    var myElements = document.querySelectorAll('.sliderMid');
+
+    myElements.forEach((element, i) => {
+      myElements[i].style.transform = "translateX(" + this.translateX + "rem)"
+    })
+
   },
   methods: {
     next() {
       if (this.translateX < -40) return
       this.translateX = this.translateX - 40
-      var myElement = document.querySelector('.sliderMid');
-      myElement.style.transform = "translateX(" + this.translateX + "rem)"
+      var myElements = document.querySelectorAll('.sliderMid');
+      let id = this._props.id
+      myElements[id - 1].style.transform = "translateX(" + this.translateX + "rem)"
     },
     prev() {
       if (this.translateX >= 50) return
       this.translateX = this.translateX + 40
-      var myElement = document.querySelector('.sliderMid');
-      myElement.style.transform = "translateX(" + this.translateX + "rem)"
+      var myElements = document.querySelectorAll('.sliderMid');
+      let id = this._props.id
+      myElements[id - 1].style.transform = "translateX(" + this.translateX + "rem)"
     }
   }
 }
@@ -210,21 +222,21 @@ export default {
 }
 @media screen and (max-width: 960px) {
   .arrow-container-left{
-    top: 80vh; 
+    top: 65vh; 
     left: 3vw;
   }
   .arrow-container-right{
-    top: 80vh; 
+    top: 65vh; 
     right: 3vw;
   }
 }
 @media screen and (max-width: 600px) {
   .arrow-container-left{
-    top: 105vh; 
+    top: 80vh; 
     left: 3vw;    
   }
   .arrow-container-right{
-    top: 105vh; 
+    top: 80vh; 
     right: 3vw;
   }
 }
