@@ -61,11 +61,11 @@
 
         <v-col cols="12" xl="3" lg="4" md="5" sm="12" class="d-flex justify-space-around flex-wrap">
           <NuxtLink to="/" class="footer-link">Home</NuxtLink>
-          <NuxtLink to="/" class="footer-link">Our rooms</NuxtLink>
-          <NuxtLink to="/" class="footer-link">About us</NuxtLink>
-          <NuxtLink to="/" class="footer-link">Blog</NuxtLink>
-          <NuxtLink to="/" class="footer-link">Explore</NuxtLink>
-          <NuxtLink to="/" class="footer-link">Contact</NuxtLink>
+          <NuxtLink to="/rooms" class="footer-link">Our rooms</NuxtLink>
+          <NuxtLink to="/about" class="footer-link">About us</NuxtLink>
+          <NuxtLink to="/gallery" class="footer-link">Gallery</NuxtLink>
+          <NuxtLink to="/explore" class="footer-link">Explore</NuxtLink>
+          <NuxtLink to="/contact" class="footer-link">Contact</NuxtLink>
         </v-col>
 
         <v-col cols="0" xl="2" lg="2" md="2" sm="0"></v-col>

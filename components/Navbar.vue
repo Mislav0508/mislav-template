@@ -1,27 +1,27 @@
 <template >
 
   <div >
-    <v-container :class="[ position > 0 ? 'navbar-scroll d-flex align-center' : 'navbar d-flex align-center']">
+    <v-container :class="[ position > 0 || this.route !== '/index' ? 'navbar-scroll d-flex align-center' : 'navbar d-flex align-center']" :style=" position <= 0 ? 'box-shadow: none;' : ''">
 
     <v-row class="d-flex justify-md-space-around align-center">    
-<!-- style="border:1px solid red" -->
+
       <v-col class="d-flex justify-center" cols="6" xl="3" lg="2" md="1" sm="2">
-        <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]" >
-        <div v-html="rawLogo" :class="position > 0 ? 'd-block d-sm-none logoSecondary' : 'd-block d-sm-none logoPrimary'"/>          
+        <NuxtLink to="/" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]" >
+        <div v-html="rawLogo" :class="position > 0 || this.route !== '/index' ? 'd-block d-sm-none logoSecondary' : 'd-block d-sm-none logoPrimary'"/>          
         </NuxtLink>
       </v-col>  
 
       <v-col class="d-none d-sm-flex justify-space-around align-center" cols="1" xl="3" lg="4" md="5" sm="8">
         
-        <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">
-        <div v-html="rawLogo" :class="position > 0 ? 'logoSecondary' : 'logoPrimary'"/>          
+        <NuxtLink to="/" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]" >
+        <div v-html="rawLogo" :class="position > 0 || this.route !== '/index' ? 'logoSecondary' : 'logoPrimary'"/>          
         </NuxtLink>
-        <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Home</NuxtLink>
-        <NuxtLink to="/rooms" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Our Rooms</NuxtLink>
-        <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">About us</NuxtLink>
-        <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Blog</NuxtLink>
-        <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Explore</NuxtLink>
-        <NuxtLink to="/" :class="[ position > 0 ? 'link-scroll' : 'link' ]">Contact</NuxtLink>
+        <NuxtLink to="/" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]">Home</NuxtLink>
+        <NuxtLink to="/rooms" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]">Our Rooms</NuxtLink>
+        <NuxtLink to="/about" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]">About us</NuxtLink>
+        <NuxtLink to="/gallery" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]">Gallery</NuxtLink>
+        <NuxtLink to="/explore" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]">Explore</NuxtLink>
+        <NuxtLink to="/contact" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]">Contact</NuxtLink>
       </v-col>
 
       <v-col cols="4" xl="2" lg="4" md="1" sm="1"></v-col>
@@ -30,7 +30,7 @@
         <div role="button" 
         :class="sidebar ? 'menu-btn open ' : 'menu-btn'" 
         @click="sidebar = !sidebar">
-          <div :class="position > 0 ? 'menu-btn__burger_dark' : 'menu-btn__burger'" ></div>
+          <div :class="position > 0 || this.route !== '/index' ? 'menu-btn__burger_dark' : 'menu-btn__burger'" ></div>
         </div>
       </v-col>
 
@@ -41,11 +41,11 @@
           <img src="/images/logo.svg" alt="" style="transform:scale(0.15)">
         </NuxtLink>
         <NuxtLink to="/" class="link-sidebar">Home</NuxtLink>
-        <NuxtLink to="/" class="link-sidebar">Our rooms</NuxtLink>
-        <NuxtLink to="/" class="link-sidebar">About us</NuxtLink>
-        <NuxtLink to="/" class="link-sidebar">Blog</NuxtLink>
-        <NuxtLink to="/" class="link-sidebar">Explore</NuxtLink>
-        <NuxtLink to="/" class="link-sidebar">Contact</NuxtLink>
+        <NuxtLink to="/rooms" class="link-sidebar">Our rooms</NuxtLink>
+        <NuxtLink to="/about" class="link-sidebar">About us</NuxtLink>
+        <NuxtLink to="/gallery" class="link-sidebar">Gallery</NuxtLink>
+        <NuxtLink to="/explore" class="link-sidebar">Explore</NuxtLink>
+        <NuxtLink to="/contact" class="link-sidebar">Contact</NuxtLink>
       </div>
       <div :class="sidebar ? 'overlay' : ''" @click="sidebar = false"></div>
 
@@ -63,16 +63,32 @@ export default {
   data() {
     return {
       sidebar: false,
-      rawLogo
+      rawLogo,
+      route: null
     }
   },
+  mounted() {
+    this.route = $nuxt.$route.path
+    console.log(this.route);
+  },
   watch: {
-    
+    async $route (to, from) {
+      this.route = "/" + to.name
+      console.log(this.route);
+    }
   }
 }
 </script>
 
 <style scoped>
+a.nuxt-link-exact-active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--secondary);
+  transition: width .3s;
+}
 .navbar{
   z-index: 9999;
   overflow: hidden;

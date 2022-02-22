@@ -1,10 +1,10 @@
 <template>
   <div>
-    <v-container class="block-1-rooms d-flex align-center">
+    <v-container class="block-1-rooms d-flex align-center pt-lg-15 mt-lg-10 mt-sm-7">
 
       <v-col cols="4" xl="2" lg="2" md="1" sm="1"></v-col>
 
-      <v-col cols="4" xl="10" lg="10" md="1" sm="1">
+      <v-col cols="4" xl="10" lg="10" md="11" sm="11">
         <h2 data-aos="fade-up" 
         data-aos-duration="1000"
         data-aos-easing="ease-out"
@@ -92,8 +92,30 @@
       :image="images[i]"
       :translate="translateX[i]"
       :imageSize="imgSizes[i]"
-      
+      data-aos="slide-up" 
+      data-aos-duration="1200"
+      data-aos-easing="ease-out"
+      data-aos-once="true"
       />
+
+      <v-container class="block-1-rooms d-flex align-center">
+
+        <v-col cols="4" xl="2" lg="2" md="1" sm="1"></v-col>
+
+        <v-col cols="4" xl="10" lg="10" md="1" sm="1">
+          <h2 data-aos="fade-up" 
+          data-aos-duration="1000"
+          data-aos-easing="ease-out"
+          data-aos-delay="500"
+          data-aos-once="true">The Retreat Spa</h2>
+          <p data-aos="fade-up" 
+          data-aos-duration="1000"
+          data-aos-easing="ease-out"
+          data-aos-delay="1000"
+          data-aos-once="true">A hallmark of the Retreat Hotel experience, the Retreat Spa transports your mind and body to new dimensions of peace and rejuvenation.</p>
+        </v-col>      
+
+      </v-container>
 
   </div>
 </template>
@@ -154,7 +176,7 @@ export default {
 
 <style lang="scss" scoped>
 .block-1-rooms{
-  min-height: 35vh;
+  min-height: 30vh;
 }
 .block-3-img{
   @include block-3-img;
