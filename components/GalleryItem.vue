@@ -1,9 +1,9 @@
 <template>
 
-  <v-container :class="card">
+  <v-container @click="handleClick">
 
     <div class="d-flex align-stretch justify-center flex-column text-center ">
-      <v-row class="pa-10">
+      <v-row class="pa-5">
 
       <v-row class="img-container d-flex align-center justify-center">
         <div class="add"></div>
@@ -29,6 +29,8 @@
 
     </div>
 
+
+
   </v-container>
 
 </template>
@@ -37,14 +39,20 @@
 export default {
   props: { 
     image: String,
+    index: Number,
     tags: Array,
     title: String,
-    date: String,
-    card: String
+    date: String
    },
   data() {
     return {
       
+    }
+  },
+  methods: {
+    handleClick: function () {
+      this.$emit('modal-true', true)
+      this.$emit('current-index', this.index)
     }
   }
 }
@@ -104,6 +112,7 @@ h3{
   z-index: 9;
   opacity: 0;
   cursor: pointer;
+  
 }
 // horizontal
 .add::before{

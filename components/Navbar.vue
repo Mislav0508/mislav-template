@@ -175,7 +175,7 @@ a.nuxt-link-exact-active::after {
 }
 .show-sidebar {
   transform: translate(0);
-  border-right: 3px solid var(--secondary);
+  border-right: 2px solid var(--secondary);
 }
 @media only screen and (max-width: 1458px) {
   .sidebar{

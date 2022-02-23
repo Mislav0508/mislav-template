@@ -214,7 +214,7 @@
           data-aos="fade-left" 
           data-aos-duration="600"
           data-aos-easing="ease-out"
-          data-aos-delay="2000"
+          data-aos-delay="1500"
           data-aos-once="true"
           >Discover More</p>
         </v-col>

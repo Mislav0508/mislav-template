@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-container class="block-1-rooms d-flex align-center pt-lg-15 mt-lg-10 mt-sm-7">
+  <div >
+    <v-container class="block-1-rooms d-flex align-center pt-lg-15 mt-lg-10 mt-sm-7" >
 
       <v-col cols="4" xl="2" lg="2" md="1" sm="1"></v-col>
 
@@ -21,11 +21,29 @@
     <v-container class="grid-container">
       <GalleryItem v-for="(img, i) in images" :key="i"
       :image="images[i]"
+      :index="i"
       :tags="tags[i]"
       :title="titles[i]"
       :date="dates[i]"
-      :class="cardClasses[i]"/>
+      :class="cardClasses[i]"
+      @modal-true="modal_true"
+      @current-index="setIndex"
+      />
+
+      <div class="modal" v-if="modal" >
+        <div class="overlay" @click="modal = false"></div>
+        <img :src="images[index]" alt="" class="modal-img" >
+        <div class="arrow-container-left" @click="prev">
+          <i class="arrow left"></i>      
+        </div>
+        <div class="arrow-container-right"  @click="next">
+          <i class="arrow right"></i>
+        </div>
+      </div>
+
     </v-container>
+
+
   </div>
 </template>
 
@@ -35,6 +53,8 @@ export default {
   components: { GalleryItem },
   data() {
     return {
+      modal: false,
+      index: 0,
       images: [
         "/images/gallery/horizontal/kuhinja_1.jpg",
         "/images/gallery/vertical/spavaca_5.jpg",
@@ -83,6 +103,28 @@ export default {
         "card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9",
       ]
     }
+  },
+  methods: {
+    setIndex: function (val) {
+      this.index = val
+    },
+    modal_true: function (val) {
+      this.modal = val
+    },
+    next: function () {
+      if (this.index >= this.images.length - 1) {
+        this.setIndex(0)
+      } else {
+        this.setIndex(this.index + 1)
+      }
+    },
+    prev: function () {
+      if (this.index <= 0) {
+        this.setIndex(this.images.length - 1)
+      } else {
+        this.setIndex(this.index - 1)
+      }
+    },
   }
 
 }
@@ -92,7 +134,6 @@ export default {
 .block-1-rooms{
   min-height: 30vh;
 }
-// ako row pocinje onda gledam +1 ako zavrsava onda -1
 .card1 { grid-area: 1 / 1 / 2 / 2; }
 .card2 { grid-area: 1 / 2 / 3 / 3; }
 .card3 { grid-area: 1 / 3 / 2 / 4; }
@@ -119,5 +160,55 @@ export default {
     flex-direction: column;
     max-width: 90vw;
   }
+}
+// MODAL
+.modal{
+  position: fixed;
+  z-index: 99999999999999999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  @include flexCenter
+}
+.modal-img{
+  width: 100%;
+  height: auto;
+  max-width: 70vw;
+  max-height: 70vh;
+  border: 3px solid white;
+  object-fit: cover;
+}
+@media only screen and (max-width: 960px) {
+  .modal-img {
+    min-width: 80vw;
+    min-height: 90vh;
+  }
+}
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: rgba(0,0,0,0.7);
+  overflow: hidden;
+}
+// ARROWS
+.arrow-container-left{
+  @include arrow-container-left
+}
+.arrow-container-right{
+  @include arrow-container-right
+}
+.arrow {
+  @include arrow
+}
+.right {
+  @include right 
+}
+.left {
+  @include left
 }
 </style>

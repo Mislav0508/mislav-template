@@ -199,45 +199,21 @@ p{
 #slider-line-active{
   opacity: 1;
 }
+// ARROWS
 .arrow-container-left{
-  top: 43vh; 
-  left: 4vw;
-  position: absolute;
-  padding: 1rem 1rem 1rem 0;
-  cursor: pointer;
-  transition: all 0.1s linear;
-  &:hover{
-    left: 3.5vw
-  }
+  @include arrow-container-left
 }
 .arrow-container-right{
-  top: 43vh;
-  right: 4vw;
-  position: absolute;
-  padding: 1rem 0rem 1rem 1rem;
-  cursor: pointer;
-  transition: all 0.1s linear;
-  &:hover{
-    right: 3.5vw;
-  }
+  @include arrow-container-right
 }
 .arrow {
-  border: solid var(--primary);
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 0.6rem;
-  position: relative;
-  cursor: pointer;
-  z-index: 5;
-  transition: all 0.3s linear;
+  @include arrow
 }
 .right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);  
+  @include right 
 }
 .left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);  
+  @include left
 }
 
 </style>
