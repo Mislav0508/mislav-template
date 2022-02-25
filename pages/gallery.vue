@@ -32,7 +32,7 @@
 
       <div class="modal" v-if="modal" >
         <div class="overlay" @click="modal = false"></div>
-        <img :src="images[index]" alt="" class="modal-img" >
+        <img :src="images[index]" alt="" class="modal-img" @click="next">
         <div class="arrow-container-left" @click="prev">
           <i class="arrow left"></i>      
         </div>

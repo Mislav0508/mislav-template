@@ -37,9 +37,7 @@
       </v-row>
 
       <div :class="!sidebar ? 'sidebar' : 'sidebar show-sidebar'">
-        <NuxtLink to="/" style="position:fixed;top:-10vh;">
-          <img src="/images/logo.svg" alt="" style="transform:scale(0.15)">
-        </NuxtLink>
+        <img src="/images/logo.svg" alt="" style="position:fixed;top:-10vh;transform:scale(0.15)">
         <NuxtLink to="/" class="link-sidebar">Home</NuxtLink>
         <NuxtLink to="/rooms" class="link-sidebar">Our rooms</NuxtLink>
         <NuxtLink to="/about" class="link-sidebar">About us</NuxtLink>
@@ -69,12 +67,11 @@ export default {
   },
   mounted() {
     this.route = $nuxt.$route.path
-    console.log(this.route);
   },
   watch: {
     async $route (to, from) {
       this.route = "/" + to.name
-      console.log(this.route);
+      this.sidebar = false
     }
   }
 }
@@ -175,7 +172,7 @@ a.nuxt-link-exact-active::after {
 }
 .show-sidebar {
   transform: translate(0);
-  border-right: 2px solid var(--secondary);
+  border-right: 15px solid rgb(230, 230, 230);
 }
 @media only screen and (max-width: 1458px) {
   .sidebar{
@@ -251,7 +248,7 @@ a.nuxt-link-exact-active::after {
 .link-sidebar{
   text-decoration: none;
   color: var(--secondary);
-  font-weight: 600;
+  font-weight: 800;
   font-size: 1.2rem;
   letter-spacing: 1px;
   font-family: "Roboto", sans-serif;

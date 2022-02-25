@@ -1,13 +1,16 @@
 <template>
 
-  <v-container @click="handleClick">
+  <v-container @click="handleClick" data-aos="fade-up" 
+          data-aos-duration="500"
+          data-aos-easing="ease-out"
+          data-aos-once="true">
 
     <div class="d-flex align-stretch justify-center flex-column text-center ">
       <v-row class="pa-5">
 
       <v-row class="img-container d-flex align-center justify-center">
         <div class="add"></div>
-        <img :src="image" alt="img" class="card-img">
+        <img :src="image" alt="img" class="gallery-item-img">
       </v-row>
 
       <v-row class="d-flex justify-space-around py-5">
@@ -29,14 +32,14 @@
 
     </div>
 
-
-
   </v-container>
 
 </template>
 
 <script>
+import aosMixin from "../mixins/aos"
 export default {
+  mixins: [aosMixin],
   props: { 
     image: String,
     index: Number,
@@ -62,7 +65,7 @@ export default {
 .block-1-rooms{
   min-height: 30vh;
 }
-.card-img {
+.gallery-item-img {
   width: 100%;
   min-width: 15vw;
   height: 100%;
@@ -74,7 +77,7 @@ export default {
   
 }
 @media screen and (max-width: 1264px) {
-  .card-img {
+  .gallery-item-img {
     min-width: 20vw;
   }
 }
@@ -85,34 +88,10 @@ h3{
 }
 // PLUS SIGN
 .img-container{
-  position: relative;
-  transition: all 0.35s linear;
-  &:hover{
-    filter: brightness(60%);
-  }
-  // horizontal
-  &:hover .add::before{
-    left: 61.5%;
-  }
-  // vertical
-  &:hover .add::after {
-    top: 55%;
-    left: 55%;
-  }
-  &:hover .add {
-    opacity: 1;
-  }
+  @include img-container;
 }
 .add {
-  width: 100px;
-  height: 100px;
-  color: var(--primary);
-  transition: all 0.35s ease;
-  position: absolute;
-  z-index: 9;
-  opacity: 0;
-  cursor: pointer;
-  
+  @include add;  
 }
 // horizontal
 .add::before{

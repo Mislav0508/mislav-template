@@ -36,7 +36,7 @@
       <v-col cols="12" xl="3" lg="3" md="6" sm="">
         <div class="img-container d-flex align-center justify-center">
           <v-img
-            class="block-2-img"
+            class="square-img-small"
             lazy-src="https://picsum.photos/id/11/10/6"
             src="/images/home/pexels-oliver-sjöström-1433052.jpg"
           ></v-img>
@@ -78,7 +78,7 @@
       data-aos-once="true">
         <div class="img-container d-flex align-center justify-center pa-md-15">
           <v-img
-            class="block-2-img"
+            class="square-img-small"
             lazy-src="https://picsum.photos/id/11/10/6"
             src="/images/home/home_pic3.jpg"
           ></v-img>
@@ -111,7 +111,7 @@
       <v-row >
 
         <v-img
-          class="block-3-img"
+          class="block-img-margin-left"
           lazy-src="https://picsum.photos/id/11/10/6"
           src="/images/home/home_pic4.jpg"
           style="transform:translateX(-3%)"
@@ -155,7 +155,7 @@
       <v-row >
 
         <v-img
-          class="block-3-img"
+          class="block-img-margin-left"
           lazy-src="https://picsum.photos/id/11/10/6"
           src="/images/home/home_pic5.jpg"
           style="transform:translateX(3%)"
@@ -222,7 +222,7 @@
         <v-col cols="12" xl="3" lg="3" md="6" sm="">
           <div class="img-container d-flex align-center justify-center">
             <v-img
-              class="block-2-img"
+              class="square-img-small"
               lazy-src="https://picsum.photos/id/11/10/6"
               src="/images/home/pexels-oliver-sjöström-1433052.jpg"
             ></v-img>
@@ -272,24 +272,17 @@ export default {
 .signature{
   max-width: clamp(9rem, 20vw, 13rem);
 }
-.block-2-img{
-  min-height: 45vh;
-  max-height: 45vh;
-  min-width: 30vw;
-  max-width: 30vw;
+.square-img-small{
+  @include square-img-small;
 }
-.block-3-img{
-  min-height: 70vh;
-  max-height: 70vh;
-  min-width: 100vw;
-  max-width: 100vw;
-  filter: brightness(70%);
+.block-img-margin-left{
+  @include block-img-margin-left;
 }
 .text-container{
   @include text-container;
 }
 @media only screen and (max-width: 960px) {
-  .block-2-img{
+  .square-img-small{
     min-height: 60vh;
     max-height: 60vh;
     min-width: 40vw;
@@ -301,7 +294,7 @@ export default {
   }
 }
 @media only screen and (max-width: 600px) {
-  .block-2-img{
+  .square-img-small{
     min-width: 100vw;
     max-width: 100vw;
   }
@@ -310,7 +303,7 @@ export default {
   }
 }
 @media only screen and (min-width: 1600px) {
-  .block-2-img{
+  .square-img-small{
   min-height: 45vh;
   max-height: 45vh;
   min-width: 25vw;
@@ -318,7 +311,7 @@ export default {
 }
 }
 @media only screen and (min-width: 2600px) {
-  /* .block-2-img{
+  /* .square-img-small{
   min-height: 45vh;
   max-height: 45vh;
   min-width: 15vw;

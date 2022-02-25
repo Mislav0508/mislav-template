@@ -1,10 +1,7 @@
 <template>
   <v-container fluid class="footer-container p-0 m-0 d-flex align-end">
 
-    <svg viewBox="0 -20 700 110" width="100%" preserveAspectRatio="none" class="svg-class">
-      <path transform="translate(0, -20)" d="M0,10 c80,-22 240,0 350,18 c90,17 260,7.5 350,-20 v50 h-700" fill="#222222" />
-      <path d="M0,10 c80,-18 230,-12 350,7 c80,13 260,17 350,-5 v100 h-700z" fill="#222222" />
-    </svg>
+    <img class="footer-img" src="/images/footer/wave.jpg" alt="">
 
     <!-- MIDDLE CONTAINER -->
 
@@ -88,8 +85,9 @@ export default {
 </script>
 
 <style scoped>
-.svg-class{
-  min-height: 50vh;
+.footer-img{
+  max-height: 50vh;
+  min-width: 100vw;
 }
 .footer-container{
   position: relative;
@@ -128,27 +126,42 @@ p{
 
 }
 @media only screen and (max-width: 1396px) {
-  .svg-class{
-  min-height: 65vh;
+  .footer-img{
+    max-height: 65vh;
+    min-width: 100vw;
+  }
+  .footer-container{
+    min-height: 65vh;
+  }
 }
-.footer-container{
-  min-height: 65vh;
+@media only screen and (max-width: 1264px) {
+  .footer-img{
+    max-height: 75vh;
+    min-width: 100vw;
+  }
 }
+@media only screen and (max-width: 1150px) {
+  .footer-img{
+    min-height: 65vh;
+    min-width: 100vw;
+  }
 }
 @media only screen and (max-width: 960px) {
-  .svg-class{
-  min-height: 100vh;
+  .footer-img{
+    min-height: 95vh;
+    min-width: 100vw;
+  }
 }
-.footer-container{
-  min-height: 100vh;
+@media only screen and (max-width: 450px) {
+  .footer-img{
+    min-height: 115vh;
+    min-width: 100vw;
+  }
 }
-}
-@media only screen and (max-width: 410px) {
-  .svg-class{
-  min-height: 120vh;
-}
-.footer-container{
-  min-height: 120vh;
-}
+@media only screen and (max-width: 390px) {
+  .footer-img{
+    min-height: 155vh;
+    min-width: 100vw;
+  }
 }
 </style>

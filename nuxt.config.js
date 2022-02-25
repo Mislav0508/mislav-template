@@ -1,8 +1,10 @@
 import colors from 'vuetify/es5/util/colors'
+require('dotenv').config()
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+  ssr: true,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -34,7 +36,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/assets/css/main.css'
+    '@/assets/css/main.css',
+    { src: './plugins/vue-carousel.js', mode: 'client' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -58,6 +61,9 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/style-resources',
+    '@nuxtjs/dotenv',
+    ['nuxt-gmaps', { key: process.env.MAPS_EMBED_API }]
+  
   ],
   styleResources: {
     scss: [

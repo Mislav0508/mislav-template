@@ -25,7 +25,7 @@
       <v-row >
 
         <v-img
-          class="block-3-img"
+          class="block-img-margin-left"
           lazy-src="https://picsum.photos/id/11/10/6"
           src="/images/home/home_pic4.jpg"
           style="transform:translateX(-3%)"
@@ -63,9 +63,9 @@
 
     <v-container class="block-1-rooms d-flex align-center">
 
-      <v-col cols="4" xl="2" lg="2" md="1" sm="1"></v-col>
+      <v-col cols="1" xl="2" lg="2" md="1" sm="1"></v-col>
 
-      <v-col cols="4" xl="10" lg="10" md="1" sm="1">
+      <v-col cols="10" xl="10" lg="10" md="10" sm="10">
         <h2 data-aos="fade-up" 
         data-aos-duration="1000"
         data-aos-easing="ease-out"
@@ -100,9 +100,9 @@
 
       <v-container class="block-1-rooms d-flex align-center">
 
-        <v-col cols="4" xl="2" lg="2" md="1" sm="1"></v-col>
+        <v-col cols="1" xl="2" lg="2" md="1" sm="1"></v-col>
 
-        <v-col cols="4" xl="10" lg="10" md="1" sm="1">
+        <v-col cols="10" xl="10" lg="10" md="10" sm="10">
           <h2 data-aos="fade-up" 
           data-aos-duration="1000"
           data-aos-easing="ease-out"
@@ -178,8 +178,8 @@ export default {
 .block-1-rooms{
   min-height: 30vh;
 }
-.block-3-img{
-  @include block-3-img;
+.block-img-margin-left{
+  @include block-img-margin-left;
 }
 .text-container{
   @include text-container;

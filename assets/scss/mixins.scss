@@ -3,7 +3,8 @@
   justify-content: center;
   align-items: center;
 }
-@mixin block-3-img {
+// BLOCKS
+@mixin block-img-margin-left {
   min-height: 70vh;
   max-height: 70vh;
   min-width: 100vw;
@@ -15,12 +16,19 @@
   top: 40%;
   left: 25%;
 }
+// IMAGES
+@mixin square-img-small {
+  min-height: 45vh;
+  max-height: 45vh;
+  min-width: 30vw;
+  max-width: 30vw;
+}
 // ARROWS
 @mixin arrow-container-left {
   // top: 43vh; 
   left: 4vw;
   position: absolute;
-  padding: 1rem 1rem 1rem 0;
+  padding: 100vh 1rem 100vh 0;
   cursor: pointer;
   transition: all 0.1s linear;
   &:hover{
@@ -31,7 +39,7 @@
   // top: 43vh;
   right: 4vw;
   position: absolute;
-  padding: 1rem 0rem 1rem 1rem;
+  padding: 100vh 0rem 100vh 1rem;
   cursor: pointer;
   transition: all 0.1s linear;
   &:hover{
@@ -55,4 +63,34 @@
 @mixin left {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);   
+}
+// PLUS SIGN
+@mixin img-container {
+  position: relative;
+  transition: all 0.35s linear;
+  &:hover{
+    filter: brightness(60%);
+  }
+  // horizontal
+  &:hover .add::before{
+    left: 61.5%;
+  }
+  // vertical
+  &:hover .add::after {
+    top: 55%;
+    left: 55%;
+  }
+  &:hover .add {
+    opacity: 1;
+  }
+}
+@mixin add {
+  width: 100px;
+  height: 100px;
+  color: var(--primary);
+  transition: all 0.35s ease;
+  position: absolute;
+  z-index: 9;
+  opacity: 0;
+  cursor: pointer;
 }
