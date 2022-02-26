@@ -8,7 +8,8 @@
 
       <v-row class="d-flex align-stretch justify-center flex-column text-center px-5 pb-5">
 
-      <v-row class="img-container d-flex align-center justify-center">
+      <v-row class="img-container d-flex align-center justify-center" 
+      @click="$router.push(`/rooms/${type.replace(/\s+/g, '')}`)">
         <div class="add"></div>
         <img :src="image" alt="img" class="card-img">
       </v-row>

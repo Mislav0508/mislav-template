@@ -249,7 +249,7 @@ a.nuxt-link-exact-active::after {
   text-decoration: none;
   color: var(--secondary);
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   letter-spacing: 1px;
   font-family: "Roboto", sans-serif;
   margin: 0.5vh 0;

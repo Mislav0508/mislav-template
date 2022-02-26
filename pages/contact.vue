@@ -1,10 +1,11 @@
 <template>
   <div>
-    <v-container class="block-1-rooms d-flex align-center pt-lg-15 mt-lg-10 mt-sm-7">
 
-      <v-col cols="4" xl="2" lg="2" md="1" sm="1"></v-col>
+    <v-container class="block-1-rooms d-flex align-center pt-lg-15 mt-10">
 
-      <v-col cols="4" xl="10" lg="10" md="11" sm="11">
+      <v-col cols="0" xl="2" lg="2" md="1" sm="1"></v-col>
+
+      <v-col cols="12" xl="10" lg="10" md="11" sm="11">
         <h2 data-aos="fade-right" 
         data-aos-duration="1000"
         data-aos-easing="ease-out"
@@ -20,7 +21,6 @@
     </v-container>
 
     <v-container fluid class="px-0">
-
       <GMap
         ref="gMap"
         language="en"
@@ -45,13 +45,72 @@
         </GMapMarker>
         <GMapCircle :options="circleOptions"/>
       </GMap>
-
     </v-container>
+
+    <v-container>
+      <v-row>
+
+        <v-col cols="0" xl="2" lg="2" md="2" sm="0"></v-col>
+
+        <v-col cols="12" xl="8" lg="8" md="8" sm="12" class="d-flex align-center justify-center py-5">
+
+          <v-col cols="4" xl="4" lg="4" md="4" sm="4">
+            <h3>Our Address</h3>
+            <p>Pod Sveti Mikulj, Novi Vinodolski <br> renata@apartments.com</p>
+          </v-col>
+          <v-col cols="4" xl="4" lg="4" md="4" sm="4">
+            <h3>By Car</h3>
+            <p>Approximately 1 and a half hours from Zagreb, or 40 minutes from Rijeka</p>
+          </v-col>
+          <v-col cols="4" xl="4" lg="4" md="4" sm="0">
+            <h3>By Plane</h3>
+            <p>40min away from the nearest airport in Rijeka</p>
+          </v-col>
+
+        </v-col>
+
+        <v-col cols="0" xl="2" lg="2" md="2" sm="1"></v-col>
+
+      </v-row>
+    </v-container>
+
+    <v-container class="py-10 mb-sm-10">
+      <v-row class="d-flex align-center justify-center">
+
+        <v-col cols="12" xl="2" lg="2" md="1" sm="12"></v-col>
+
+        <v-col cols="12" xl="5" lg="5" md="6" sm="12">
+          <ContactForm />
+        </v-col>
+
+        <v-col cols="12" xl="3" lg="3" md="4" sm="12">
+          <v-card
+            elevation="2"
+            tile
+            class="pa-5 text-center"
+          >
+            <h3 class="pb-5">Renatas Apartments</h3>
+            <p>Pod Sveti Mikulj 7</p>
+            <p>Novi Vinodolski</p>
+            <p>Tel.: +41 (0)54 2344 00</p>
+            <p>Fax: +41 (0)542344 99</p>
+            <p>revs@hotellerbeach.com</p>
+          </v-card>
+          
+        </v-col>
+
+        <v-col cols="12" xl="2" lg="2" md="1" sm="12"></v-col>
+
+      </v-row>
+    </v-container>
+
+
   </div>
 </template>
 
 <script>
 import aosMixin from "../mixins/aos"
+import ContactForm from "../components/ContactForm.vue"
 export default {
   mixins: [aosMixin],
   data() {

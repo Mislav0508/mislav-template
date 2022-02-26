@@ -121,8 +121,8 @@
 </template>
 
 <script>
-import MidSlider from "../components/MidSlider.vue"
-import aosMixin from "../mixins/aos"
+import MidSlider from "../../components/MidSlider.vue"
+import aosMixin from "../../mixins/aos"
 export default {
   mixins: [aosMixin],
   data () {
