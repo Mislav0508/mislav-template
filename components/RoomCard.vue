@@ -6,7 +6,7 @@
     data-aos-once="true"
     >
 
-      <v-row class="d-flex align-stretch justify-center flex-column text-center px-5 pb-5">
+      <v-row class="d-flex align-stretch justify-center flex-column text-center px-5 pb-5" style="overflow:hidden;">
 
       <NuxtLink :to="`/rooms/${type.replace(/\s+/g, '')}`">
         <v-row class="img-container d-flex align-center justify-center" >

@@ -1,5 +1,5 @@
 <template>
-  <v-app style="overflow: hidden;">
+  <v-app style="overflow-y: scroll;overflow-x:hidden;">
     <Navbar :position="position"/>
     <Nuxt />
     <Footer />
