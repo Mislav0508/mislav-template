@@ -40,13 +40,14 @@
         color="#222222"
         clearable
         v-model="message"
+        :rules="messageRules"
         label="Message"
         type="text"
         name="message"
         required
       ></v-text-field>
 
-      <v-btn color="white" type="submit" :disabled="!name || !email || !message" class="grid-submit-btn">Send</v-btn>
+      <v-btn large color="white" type="submit" :disabled="!name || !email || !message" class="grid-submit-btn mt-5">Send</v-btn>
 
       <v-alert
       v-if="successAlert"
@@ -72,6 +73,9 @@ export default {
       v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
     ],
     message: '',
+    messageRules: [
+      v => !!v || 'Message is required'
+    ],
     successAlert: false,
     error: "greška"
   }),

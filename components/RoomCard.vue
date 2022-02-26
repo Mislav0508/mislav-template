@@ -8,13 +8,14 @@
 
       <v-row class="d-flex align-stretch justify-center flex-column text-center px-5 pb-5">
 
-      <v-row class="img-container d-flex align-center justify-center" 
-      @click="$router.push(`/rooms/${type.replace(/\s+/g, '')}`)">
-        <div class="add"></div>
-        <img :src="image" alt="img" class="card-img">
-      </v-row>
+      <NuxtLink :to="`/rooms/${type.replace(/\s+/g, '')}`">
+        <v-row class="img-container d-flex align-center justify-center" >
+          <div class="add"></div>
+          <img :src="image" alt="img" class="card-img">
+        </v-row>
+      </NuxtLink>
 
-      <v-row class="d-flex align-center justify-center py-5">
+      <v-row class="d-flex align-center justify-center py-5 mt-5">
         <h2>{{ type }}</h2>
       </v-row>
 

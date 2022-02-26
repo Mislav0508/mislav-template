@@ -109,7 +109,7 @@
       <p class="pt-3">COULD ALSO BE OF INTEREST TO YOU</p>
     </v-container>
 
-    <v-container class="d-flex align-center justify-center flex-wrap ">
+    <v-container class="d-flex align-center justify-center flex-wrap pb-15">
 
       
       

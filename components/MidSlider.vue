@@ -31,16 +31,19 @@
           </v-row>
 
           <v-row>
-            <v-btn outlined tile large color="white" width="180" type="button" class="no-uppercase">
-            view detail
-            </v-btn>
+            <NuxtLink :to="`/rooms/${type.replace(/\s+/g, '')}}`"
+            style="text-decoration:none">
+              <v-btn outlined tile large color="white" width="180" type="button" class="no-uppercase">
+              view detail
+              </v-btn>
+            </NuxtLink>
           </v-row>
 
         </v-col>
 
       </v-col>
       
-      <v-col cols="12" xl="8" lg="8" md="8" sm="12" class="containers-R ma-0 pa-0">
+      <v-col cols="12" xl="8" lg="8" md="8" sm="12" class="containers-R ma-0 pa-0 d-flex align-center">
         
           <div class="sliderMid">
 
@@ -51,14 +54,14 @@
           </div>
 
 
-      </v-col>
-
       <div class="arrow-container-left" @click="prev">
         <i class="arrow left"></i>      
       </div>
       <div class="arrow-container-right" @click="next()">
         <i class="arrow right"></i>
       </div>
+      </v-col>
+
     </v-row>
   </v-container>
 </template>
@@ -141,8 +144,8 @@ export default {
 }
 @media screen and (max-width: 960px) {
   .containers-L{
-    max-height: 40vh;
-    min-height: 40vh;
+    max-height: 50vh;
+    min-height: 50vh;
   }
 }
 @media screen and (max-width: 600px) {
@@ -193,7 +196,7 @@ export default {
 }
 /* ARROWS */
 .arrow-container-left{
-  top: 25vh; 
+  // top: 25vh; 
   left: 35vw;
   position: absolute;
   padding: 0.5rem 0.6rem 0.6rem 1rem;  
@@ -207,7 +210,7 @@ export default {
   }
 }
 .arrow-container-right{
-  top: 25vh;
+  // top: 25vh;
   right: 3vw;
   position: absolute;
   background: rgba(0, 0, 0, 0.4);
@@ -222,12 +225,7 @@ export default {
 }
 @media screen and (max-width: 960px) {
   .arrow-container-left{
-    top: 65vh; 
     left: 3vw;
-  }
-  .arrow-container-right{
-    top: 65vh; 
-    right: 3vw;
   }
 }
 @media screen and (max-width: 600px) {
