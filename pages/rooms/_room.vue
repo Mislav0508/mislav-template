@@ -8,10 +8,10 @@
         <h1>{{ title }}</h1>
         <p>{{ subtitle }}</p>
       </v-row>
-      <v-row class="anchors">
-        <p>DETAIL</p>
-        <p class="px-10">AMENITIES & SERVICES</p>
-        <p>GALLERY</p>
+      <v-row class="anchors" style="cursor:pointer">
+        <p @click="handleScroll">DETAIL</p>
+        <p class="px-10" @click="handleScroll">AMENITIES & SERVICES</p>
+        <p @click="handleScroll">GALLERY</p>
       </v-row>
 
     </v-container>
@@ -22,7 +22,7 @@
         <v-row>
 
           <v-col cols="12" xl="8" lg="8" md="8" sm="12" class="px-5">
-            <h2 class="pb-10">{{ description.title }}</h2>
+            <h2 class="pb-10" ref="descriptionTitle">{{ description.title }}</h2>
             <p>{{ description.paragraph_1 }}</p>
             <p>{{ description.paragraph_2 }}</p>
             <p>{{ description.paragraph_3 }}</p>
@@ -59,7 +59,7 @@
 
     </v-container>
 
-    <v-container fluid class="amenities-container py-15">
+    <v-container fluid class="amenities-container py-15" ref="amenities">
       <v-row class="py-15">
 
         <v-col cols="0" xl="2" lg="2" md="1" sm="1"></v-col>
@@ -95,7 +95,7 @@
       </v-row>
     </v-container>
 
-    <v-container class="d-flex align-center justify-center flex-wrap py-15">
+    <v-container class="d-flex align-center justify-center flex-wrap py-15" ref="gallery">
       <RoomCard v-for="(img, i) in images" :key="i"
       :image="images[i]"
       :type="types[i]"
@@ -206,7 +206,9 @@ img {
 
 <script>
 import RoomCard from "../../components/RoomCard.vue"
+import aosMixin from "../../mixins/aos"
 export default {
+  mixins: [aosMixin],
   data () {
     return {
       title: '',
@@ -254,6 +256,18 @@ export default {
       },
       prices: [ 199, 249, 299, 399 ]
         
+    }
+  },
+  methods: {
+    handleScroll: function(e) {
+      if (e.target.innerHTML == 'DETAIL') {
+        this.$refs.descriptionTitle.scrollIntoView({ behavior: 'smooth' });
+      } else if(e.target.innerHTML == 'AMENITIES &amp; SERVICES') {
+        this.$refs.amenities.scrollIntoView({ behavior: 'smooth' })
+      } else if (e.target.innerHTML == 'GALLERY') {
+        this.$refs.gallery.scrollIntoView({ behavior: 'smooth' })
+      }
+      
     }
   },
   mounted() {
