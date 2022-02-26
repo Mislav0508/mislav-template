@@ -1,27 +1,57 @@
 <template >
 
   <div >
-    <v-container :class="[ position > 0 || this.route !== '/index' ? 'navbar-scroll d-flex align-center' : 'navbar d-flex align-center']" :style=" position <= 0 ? 'box-shadow: none;' : ''">
+    <v-container :class="[ position > 0 || route !== '/index' ? 'navbar-scroll d-flex align-center' : 'navbar d-flex align-center']" :style=" position <= 0 ? 'box-shadow: none;' : ''">
 
     <v-row class="d-flex justify-md-space-around align-center">    
 
       <v-col class="d-flex justify-center" cols="6" xl="3" lg="2" md="1" sm="2">
-        <NuxtLink to="/" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]" >
-        <div v-html="rawLogo" :class="position > 0 || this.route !== '/index' ? 'd-block d-sm-none logoSecondary' : 'd-block d-sm-none logoPrimary'"/>          
+        <NuxtLink to="/" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]" style="border-bottom:none !important;">
+        <div v-html="rawLogo" :class="position > 0 || route !== '/index' ? 'd-block d-sm-none logoSecondary' : 'd-block d-sm-none logoPrimary'"/>          
         </NuxtLink>
       </v-col>  
 
       <v-col class="d-none d-sm-flex justify-space-around align-center" cols="1" xl="3" lg="4" md="5" sm="8">
         
-        <NuxtLink to="/" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]" >
-        <div v-html="rawLogo" :class="position > 0 || this.route !== '/index' ? 'logoSecondary' : 'logoPrimary'"/>          
+        <NuxtLink to="/" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]" >
+        <div v-html="rawLogo" :class="position > 0 || route !== '/index' ? 'logoSecondary' : 'logoPrimary'"/>          
         </NuxtLink>
-        <NuxtLink to="/" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]">Home</NuxtLink>
-        <NuxtLink to="/rooms" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]">Our Rooms</NuxtLink>
-        <NuxtLink to="/about" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]">About us</NuxtLink>
-        <NuxtLink to="/gallery" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]">Gallery</NuxtLink>
-        <NuxtLink to="/explore" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]">Explore</NuxtLink>
-        <NuxtLink to="/contact" :class="[ position > 0 || this.route !== '/index' ? 'link-scroll' : 'link' ]">Contact</NuxtLink>
+        
+        <NuxtLink to="/" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">Home</NuxtLink>
+
+        <v-menu open-on-hover offset-y bottom>
+          <template v-slot:activator="{ on, attrs }">
+            <p :class="[ position > 0 || route !== '/index' ? 'link-scroll ma-0' : 'link ma-0' ]"
+              v-bind="attrs"
+              v-on="on"
+              style="cursor:pointer;"
+            >
+              Our Rooms
+            </p>
+          </template>
+          <v-list dense>
+            <v-list-item dense nuxt>
+              <NuxtLink to="/rooms" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">
+              <v-list-item-title class="link-scroll" style="font-size:12px; line-height:1rem;">Rooms</v-list-item-title>
+              </NuxtLink>
+            </v-list-item>
+            <v-list-item
+              v-for="(room, i) in rooms"
+              :key="i"
+            >
+            <NuxtLink :to="`/rooms/${room.replace(/\s+/g, '')}`" class="link-scroll">
+              <v-list-item-title class="link-scroll" style="font-size:12px; line-height:1rem;">{{ room }}</v-list-item-title>
+            </NuxtLink>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+
+        <!-- <NuxtLink to="/rooms" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">Our Rooms</NuxtLink> -->
+
+        <NuxtLink to="/about" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">About us</NuxtLink>
+        <NuxtLink to="/gallery" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">Gallery</NuxtLink>
+        <NuxtLink to="/explore" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">Explore</NuxtLink>
+        <NuxtLink to="/contact" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">Contact</NuxtLink>
       </v-col>
 
       <v-col cols="4" xl="2" lg="4" md="1" sm="1"></v-col>
@@ -30,7 +60,7 @@
         <div role="button" 
         :class="sidebar ? 'menu-btn open ' : 'menu-btn'" 
         @click="sidebar = !sidebar">
-          <div :class="position > 0 || this.route !== '/index' ? 'menu-btn__burger_dark' : 'menu-btn__burger'" ></div>
+          <div :class="position > 0 || route !== '/index' ? 'menu-btn__burger_dark' : 'menu-btn__burger'" ></div>
         </div>
       </v-col>
 
@@ -62,7 +92,8 @@ export default {
     return {
       sidebar: false,
       rawLogo,
-      route: null
+      route: null,
+      rooms: [ "Superior Room", "Deluxe Room", "Signature Room", "Luxury Suite Room" ]
     }
   },
   mounted() {
