@@ -189,9 +189,7 @@ img {
   content: '➤';
   position: absolute;
   left: 0;
-
   }
-
   img {
     min-height: 2vw;
   }

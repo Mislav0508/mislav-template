@@ -71,13 +71,13 @@
       </v-row>
     </v-container>
 
-    <v-container data-aos="fade-left" 
+    <v-container class="d-flex align-center" data-aos="fade-left" 
           data-aos-duration="600"
           data-aos-easing="ease-out"
           data-aos-once="true">
       <client-only>
         <carousel v-bind="options" >
-          <slide v-for="(image, i) in images" :key="i" class="img-wrapper">
+          <slide v-for="(image, i) in images" :key="i" class="img-wrapper ">
             <img :src="image" />
           </slide>
         </carousel>
@@ -127,7 +127,12 @@ export default {
       options: {
         loop: true,
         perPage: 5,
-        navigationEnabled: true,
+        navigationEnabled: false,
+        centerMode: true,
+        navigationClickTargetSize: 16,
+        navigationNextLabel: "❯",
+        navigationPrevLabel: "❮",
+        spacePaddingMaxOffsetFactor: 150
       },
       images: [
         "/images/gallery/horizontal/kuhinja_1.jpg",
@@ -167,6 +172,9 @@ export default {
   min-height: 40vh;
   border: 3px solid white;
   object-fit: cover;
+}
+.VueCarousel > .VueCarousel-navigation {
+  @include flexCenter
 }
 
 </style>

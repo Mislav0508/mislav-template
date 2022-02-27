@@ -62,9 +62,30 @@ export default {
   modules: [
     '@nuxtjs/style-resources',
     '@nuxtjs/dotenv',
-    ['nuxt-gmaps', { key: process.env.MAPS_EMBED_API }]
+    ['nuxt-gmaps', { key: process.env.MAPS_EMBED_API }],
+    '@nuxtjs/i18n',
   
   ],
+
+  i18n: {
+    locales: ['en', 'hr', 'de'],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en: {
+          welcome: 'Welcome'
+        },
+        hr: {
+          welcome: 'Dobrodošli'
+        },
+        de: {
+          welcome: 'Willkommen'
+        }
+      }
+    }
+  },
+  
   styleResources: {
     scss: [
         '~/assets/scss/main.scss',

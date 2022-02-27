@@ -6,20 +6,20 @@
     <v-row class="d-flex justify-md-space-around align-center">    
 
       <v-col class="d-flex justify-center" cols="6" xl="3" lg="2" md="1" sm="2">
-        <NuxtLink to="/" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]" style="border-bottom:none !important;">
+        <NuxtLink :to="localePath('/')" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]" style="border-bottom:none !important;">
         <div v-html="rawLogo" :class="position > 0 || route !== '/index' ? 'd-block d-sm-none logoSecondary' : 'd-block d-sm-none logoPrimary'"/>          
         </NuxtLink>
       </v-col>  
 
       <v-col class="d-none d-sm-flex justify-space-around align-center" cols="1" xl="3" lg="4" md="5" sm="8">
         
-        <NuxtLink to="/" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]" >
+        <NuxtLink :to="localePath('/')" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]" >
         <div v-html="rawLogo" :class="position > 0 || route !== '/index' ? 'logoSecondary' : 'logoPrimary'"/>          
         </NuxtLink>
         
-        <NuxtLink to="/" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">Home</NuxtLink>
+        <NuxtLink :to="localePath('/')" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">Home</NuxtLink>
 
-        <v-menu open-on-hover offset-y bottom>
+        <v-menu open-on-hover offset-y bottom >
           <template v-slot:activator="{ on, attrs }">
             <p :class="[ position > 0 || route !== '/index' ? 'link-scroll ma-0' : 'link ma-0' ]"
               v-bind="attrs"
@@ -31,7 +31,7 @@
           </template>
           <v-list dense>
             <v-list-item dense nuxt>
-              <NuxtLink to="/rooms" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">
+              <NuxtLink :to="localePath('/rooms')" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">
               <v-list-item-title class="link-scroll" style="font-size:12px; line-height:1rem;">Rooms</v-list-item-title>
               </NuxtLink>
             </v-list-item>
@@ -39,7 +39,7 @@
               v-for="(room, i) in rooms"
               :key="i"
             >
-            <NuxtLink :to="`/rooms/${room.replace(/\s+/g, '')}`" class="link-scroll">
+            <NuxtLink :to="localePath(`/rooms/${room.replace(/\s+/g, '')}`)" class="link-scroll">
               <v-list-item-title class="link-scroll" style="font-size:12px; line-height:1rem;">{{ room }}</v-list-item-title>
             </NuxtLink>
             </v-list-item>
@@ -48,10 +48,10 @@
 
         <!-- <NuxtLink to="/rooms" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">Our Rooms</NuxtLink> -->
 
-        <NuxtLink to="/about" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">About us</NuxtLink>
-        <NuxtLink to="/gallery" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">Gallery</NuxtLink>
-        <NuxtLink to="/explore" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">Explore</NuxtLink>
-        <NuxtLink to="/contact" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">Contact</NuxtLink>
+        <NuxtLink :to="localePath('/about')" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">About us</NuxtLink>
+        <NuxtLink :to="localePath('/gallery')" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">Gallery</NuxtLink>
+        <NuxtLink :to="localePath('/explore')" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">Explore</NuxtLink>
+        <NuxtLink :to="localePath('/contact')" :class="[ position > 0 || route !== '/index' ? 'link-scroll' : 'link' ]">Contact</NuxtLink>
       </v-col>
 
       <v-col cols="4" xl="2" lg="4" md="1" sm="1"></v-col>
@@ -59,23 +59,15 @@
       <v-col cols="2" xl="3" lg="1" md="1" sm="1">
         <div role="button" 
         :class="sidebar ? 'menu-btn open ' : 'menu-btn'" 
-        @click="sidebar = !sidebar">
+        @click="showSidebar">
           <div :class="position > 0 || route !== '/index' ? 'menu-btn__burger_dark' : 'menu-btn__burger'" ></div>
         </div>
       </v-col>
 
       </v-row>
 
-      <div :class="!sidebar ? 'sidebar' : 'sidebar show-sidebar'">
-        <img src="/images/logo.svg" alt="" style="position:fixed;top:-10vh;transform:scale(0.15)">
-        <NuxtLink to="/" class="link-sidebar">Home</NuxtLink>
-        <NuxtLink to="/rooms" class="link-sidebar">Our rooms</NuxtLink>
-        <NuxtLink to="/about" class="link-sidebar">About us</NuxtLink>
-        <NuxtLink to="/gallery" class="link-sidebar">Gallery</NuxtLink>
-        <NuxtLink to="/explore" class="link-sidebar">Explore</NuxtLink>
-        <NuxtLink to="/contact" class="link-sidebar">Contact</NuxtLink>
-      </div>
-      <div :class="sidebar ? 'overlay' : ''" @click="sidebar = false"></div>
+      <Sidebar />
+      <div :class="sidebar ? 'overlay' : ''" @click="showSidebar"></div>
 
     </v-container>
     <div>
@@ -85,6 +77,7 @@
 </template>
 
 <script>
+import Sidebar from "./Sidebar.vue"
 import rawLogo from "~/static/images/logo.svg?raw";
 export default {
   props: { position: Number },
@@ -98,6 +91,12 @@ export default {
   },
   mounted() {
     this.route = $nuxt.$route.path
+  },
+  methods: {
+    showSidebar() {
+      this.sidebar = !this.sidebar
+      this.$emit("sidebar-navbar", this.sidebar)
+    }
   },
   watch: {
     async $route (to, from) {
@@ -184,47 +183,6 @@ a.nuxt-link-exact-active::after {
 /* LOGOS END */
 
 /* SIDEBAR */
-.sidebar{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 18vw;
-  min-height: 100vh;
-  background: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  transition: all 0.3s ease-out;
-  transform: translate(-100%);
-  will-change: transform;
-  z-index: 9999;
-  overflow: hidden;
-}
-.show-sidebar {
-  transform: translate(0);
-  border-right: 15px solid rgb(230, 230, 230);
-}
-@media only screen and (max-width: 1458px) {
-  .sidebar{
-    min-width: 25vw;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  .sidebar{
-    min-width: 30vw;
-  }
-}
-@media only screen and (max-width: 848px) {
-  .sidebar{
-    min-width: 40vw;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .sidebar{
-    min-width: 80vw;
-  }
-}
 .overlay{
   position: fixed;
   top: 0;
@@ -274,29 +232,6 @@ a.nuxt-link-exact-active::after {
   width: 100%;
 }
 /* LINKS END */
-
-/* LINKS SIDEBAR */
-.link-sidebar{
-  text-decoration: none;
-  color: var(--secondary);
-  font-weight: 800;
-  font-size: 1.4rem;
-  letter-spacing: 1px;
-  font-family: "Roboto", sans-serif;
-  margin: 0.5vh 0;
-}
-.link-sidebar::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 1px;
-  background: var(--secondary);
-  transition: width .3s;
-}
-.link-sidebar:hover::after {
-  width: 100%;
-}
-/* LINKS SIDEBAR END */
 
 /* BURGER MENU */
 .menu-btn {

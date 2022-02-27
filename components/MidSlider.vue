@@ -31,7 +31,7 @@
           </v-row>
 
           <v-row>
-            <NuxtLink :to="`/rooms/${type.replace(/\s+/g, '')}}`"
+            <NuxtLink :to="localePath(`/rooms/${type.replace(/\s+/g, '')}}`)"
             style="text-decoration:none">
               <v-btn outlined tile large color="white" width="180" type="button" class="no-uppercase">
               view detail

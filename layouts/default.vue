@@ -1,6 +1,7 @@
 <template>
   <v-app style="overflow-y: scroll;overflow:hidden;">
-    <Navbar :position="position"/>
+    <Navbar :position="position" @sidebar-navbar="sidebarHandler"/>
+    <Sidebar :showSidebar="sidebar"/>
     <Nuxt />
     <Footer />
     <div v-if="position > 20" class="arrow-container" @click="scrollToTop">
@@ -13,7 +14,8 @@
 export default {
   data () {
     return {
-      position: null
+      position: null,
+      sidebar: false
     }
   },
   beforeMount  () {
@@ -23,6 +25,10 @@ export default {
     window.removeEventListener('scroll', this.checkPosition);
   },
   methods: {
+    sidebarHandler(val) {
+      console.log(val);
+      this.sidebar = val
+    },
     checkPosition() {
       this.position = window.pageYOffset
     },
@@ -32,6 +38,14 @@ export default {
       left: 0, 
       behavior: 'smooth' 
       });
+    }
+  },
+  mounted() {
+    console.log(this.sidebar);
+  },
+  watch: {
+    sidebar (val) {
+      this.sidebar = val
     }
   }
 }
