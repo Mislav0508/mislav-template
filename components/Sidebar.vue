@@ -19,9 +19,9 @@
       <NuxtLink :to="localePath('/contact')" class="link-sidebar">Contact</NuxtLink>
 
       <div class="lang-container" @click="closeSidebar"> 
-        <NuxtLink :to="switchLocalePath('en')">English</NuxtLink>
-        <NuxtLink :to="switchLocalePath('hr')">Croatian</NuxtLink>
-        <NuxtLink :to="switchLocalePath('de')">Deutsch</NuxtLink>
+        <NuxtLink :to="switchLocalePath('en')" hreflang="en">English</NuxtLink>
+        <NuxtLink :to="switchLocalePath('hr')" hreflang="hr">Croatian</NuxtLink>
+        <NuxtLink :to="switchLocalePath('de')" hreflang="de">Deutsch</NuxtLink>
       </div>
 
     </div>
@@ -106,10 +106,10 @@ export default {
 .link-sidebar{
   text-decoration: none;
   color: var(--secondary);
-  font-weight: 800;
-  font-size: 1.4rem;
+  font-weight: 600;
+  font-size: 20px;
   letter-spacing: 1px;
-  font-family: "Roboto", sans-serif;
+  font-family: Raleway, Helvetica, Arial, sans-serif !important;
   margin: 0.5vh 0;
 }
 .link-sidebar::after {

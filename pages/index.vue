@@ -7,30 +7,28 @@
       <v-col cols="12" xl="2" lg="2" md="0"></v-col>
 
       <v-col cols="12" xl="3" lg="3" md="6" sm="" class="d-flex align-start justify-start flex-wrap flex-column px-10 py-15">
-        <p class="font-weight-bold"
-        >ABOUT MISLAV-TEMPLATE</p>
+        <p>ABOUT RENATAS APARTMENTS</p>
         <h2 class="pb-5" data-aos="fade-left" 
         data-aos-duration="600"
         data-aos-easing="ease-out"
+        data-aos-once="true">Renatas Apartments, More than a stay</h2>
+        <p class="font-weight-thin" data-aos="fade-left" 
+        data-aos-duration="700"
+        data-aos-easing="ease-out"
         data-aos-delay="500"
-        data-aos-once="true">Mislav's Hotel More than a stay</h2>
-        <p data-aos="fade-left" 
-        data-aos-duration="600"
+        data-aos-once="true">Pitchfork selfies master cleanse Kickstarter seitan retro. Drinking vinegar stumptown yr pop-up artisan sunt. Deep v cliche lomo biodiesel Neutra selfies. Shorts fixie consequat flexitarian four loko tempor duis single-origin coffee. Banksy, elit small batch freegan sed.</p>
+        <v-img src="/images/home/signature.png" contain class="signature pt-7"
+        data-aos="fade-left" 
+        data-aos-duration="800"
         data-aos-easing="ease-out"
         data-aos-delay="1000"
-        data-aos-once="true">Pitchfork selfies master cleanse Kickstarter seitan retro. Drinking vinegar stumptown yr pop-up artisan sunt. Deep v cliche lomo biodiesel Neutra selfies. Shorts fixie consequat flexitarian four loko tempor duis single-origin coffee. Banksy, elit small batch freegan sed.</p>
-        <v-img src="/images/home/signature.png" class="signature my-3"
-        data-aos="fade-left" 
-        data-aos-duration="600"
+        data-aos-once="true"></v-img>
+        <p data-aos="fade-left" 
+        data-aos-duration="900"
         data-aos-easing="ease-out"
         data-aos-delay="1500"
-        data-aos-once="true"></v-img>
-        <p class="font-weight-bold" data-aos="fade-left" 
-        data-aos-duration="600"
-        data-aos-easing="ease-out"
-        data-aos-delay="2000"
         data-aos-once="true"
-        >MISLAV CRNKOVIĆ - GENERAL MANAGER</p>
+        >RENATA CRNKOVIĆ - GENERAL MANAGER</p>
       </v-col>
 
       <v-col cols="12" xl="3" lg="3" md="6" sm="">
@@ -96,7 +94,8 @@
         data-aos-duration="1000"
         data-aos-easing="ease-out"
         data-aos-delay="500"
-        data-aos-once="true">Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica.</p>
+        data-aos-once="true"
+        class="font-weight-thin">Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica.</p>
       </v-col>
 
       <v-col cols="12" xl="2" lg="2" md="1" sm="12"></v-col>
@@ -198,25 +197,28 @@
         <v-col cols="12" xl="2" lg="2" md="0"></v-col>
 
         <v-col cols="12" xl="3" lg="5" md="6" sm="" class="d-flex align-start justify-start flex-wrap flex-column px-10 py-15" >
-          <p class="font-weight-bold"
-          >ABOUT MISLAV-TEMPLATE</p>
+          <p class="font-weight-normal"
+          >ABOUT RENATAS APARTMENTS</p>
           <h2 class="pb-3" data-aos="fade-left" 
           data-aos-duration="600"
           data-aos-easing="ease-out"
           data-aos-delay="500"
-          data-aos-once="true">Explore Mislav's Hotel</h2>
+          data-aos-once="true">Explore Renata's Hotel</h2>
           <p data-aos="fade-left" 
           data-aos-duration="600"
           data-aos-easing="ease-out"
           data-aos-delay="1000"
-          data-aos-once="true">Pitchfork selfies master cleanse Kickstarter seitan retro. Drinking vinegar stumptown yr pop-up artisan sunt. Deep v cliche lomo biodiesel Neutra selfies. Shorts fixie consequat flexitarian four loko tempor duis single-origin coffee. Banksy, elit small batch freegan sed.</p>
-          <p class="font-weight-bold" 
-          data-aos="fade-left" 
-          data-aos-duration="600"
-          data-aos-easing="ease-out"
-          data-aos-delay="1500"
           data-aos-once="true"
-          >Discover More</p>
+          class="font-weight-thin">Pitchfork selfies master cleanse Kickstarter seitan retro. Drinking vinegar stumptown yr pop-up artisan sunt. Deep v cliche lomo biodiesel Neutra selfies. Shorts fixie consequat flexitarian four loko tempor duis single-origin coffee. Banksy, elit small batch freegan sed.</p>
+          <NuxtLink :to="localePath('/about')" style="text-decoration:none;color:#222222;">
+            <p class="font-weight-bold" 
+            data-aos="fade-left" 
+            data-aos-duration="600"
+            data-aos-easing="ease-out"
+            data-aos-delay="1500"
+            data-aos-once="true"
+            style="border-bottom:1px solid #222222;">Discover More</p>
+          </NuxtLink>
         </v-col>
 
         <v-col cols="12" xl="3" lg="3" md="6" sm="">
@@ -241,9 +243,15 @@ import Slider from "../components/Slider.vue"
 import MidSlider from "../components/MidSlider.vue"
 import aosMixin from "../mixins/aos"
 export default {
+  head: {
+    title: 'Home page',
+    meta: [
+      { hid: 'description', name: 'description', content: 'Home page description' }
+    ],
+  },
   mixins: [aosMixin],
   data () {
-      return {
+      return {   
         ids: 1,
         types: "Deluxe Room",
         prices: "$250",
@@ -262,15 +270,12 @@ export default {
         imgSizes: [ 2, 1, 1, 2, 2 ],
         translateX: 50,
       }
-    },
-  mounted() {
-    
-  }
+    }
 }
 </script>
 <style lang="scss" scoped>
 .signature{
-  max-width: clamp(9rem, 20vw, 13rem);
+  max-width: clamp(12rem, 20vw, 15rem);
 }
 .square-img-small{
   @include square-img-small;

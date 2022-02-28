@@ -45,12 +45,13 @@
 
         <v-col cols="12" xl="3" lg="3" md="3" sm="3"></v-col>
 
-        <v-col cols="12" xl="4" lg="4" md="4" sm="4">
+        <v-col cols="12" xl="5" lg="5" md="5" sm="5">
           <p data-aos="fade-right" 
           data-aos-duration="1000"
           data-aos-easing="ease-out"
           data-aos-delay="500"
-          data-aos-once="true">Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse nihil, flexitarian Truffaut synth art party deep v chillwave. Seitan High Life reprehenderit consectetur cupidatat kogi. Et leggings fanny pack.</p>
+          data-aos-once="true"
+          class="pr-10">Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse nihil, flexitarian Truffaut synth art party deep v chillwave. Seitan High Life reprehenderit consectetur cupidatat kogi. Et leggings fanny pack.</p>
         </v-col>
 
         <v-col cols="12" xl="3" lg="3" md="3" sm="3">
@@ -60,18 +61,18 @@
           data-aos-easing="ease-out"
           data-aos-delay="1500"
           data-aos-once="true"></v-img>
-          <p class="font-weight-bold" data-aos="fade-left" 
+          <p class="font-weight-normal" data-aos="fade-left" 
           data-aos-easing="ease-out"
           data-aos-delay="1000"
           data-aos-once="true"
-          >MISLAV CRNKOVIĆ - GENERAL MANAGER</p>
+          >RENATA CRNKOVIĆ - GENERAL MANAGER</p>
         </v-col>
 
-        <v-col cols="12" xl="2" lg="2" md="2" sm="2"></v-col>
+        <v-col cols="12" xl="1" lg="1" md="1" sm="1"></v-col>
       </v-row>
     </v-container>
 
-    <v-container class="d-flex align-center" data-aos="fade-left" 
+    <v-container data-aos="fade-left" 
           data-aos-duration="600"
           data-aos-easing="ease-out"
           data-aos-once="true">
@@ -152,7 +153,7 @@ export default {
 
 <style lang="scss" scoped>
 .signature{
-  max-width: clamp(9rem, 20vw, 13rem);
+  max-width: clamp(12rem, 20vw, 15rem);
 }
 .block-1-rooms{
   min-height: 30vh;

@@ -22,9 +22,11 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200&display=swap' },
+      href: 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800&display=swap' },
       { rel: 'stylesheet',
-      href: "https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" },
+      href: "https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600;600;700;800&display=swap" },
+      { rel: 'stylesheet',
+      href: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800&display=swap" },
       
     ]
   },
@@ -63,26 +65,33 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxtjs/dotenv',
     ['nuxt-gmaps', { key: process.env.MAPS_EMBED_API }],
-    '@nuxtjs/i18n',
+    '@nuxtjs/i18n'
   
   ],
 
   i18n: {
-    locales: ['en', 'hr', 'de'],
+    locales: [
+    { code: 'en', iso: 'en-UK', file: 'en.js' },
+    { code: 'hr', iso: 'hr-HR', file: 'hr.js' },
+    { code: 'de', iso: 'de-DE', file: 'de.js' }],
+    baseUrl: 'https://my-nuxt-app.com',
     defaultLocale: 'en',
-    vueI18n: {
-      fallbackLocale: 'en',
-      messages: {
-        en: {
-          welcome: 'Welcome'
-        },
-        hr: {
-          welcome: 'Dobrodošli'
-        },
-        de: {
-          welcome: 'Willkommen'
-        }
-      }
+    langDir: '~/locales/',
+    strategy: 'prefix_except_default',
+    detectBrowserLanguage: {
+      alwaysRedirect: true, fallbackLocale: 'en', redirectOn: 'root', useCookie: true, cookieCrossOrigin: false, cookieDomain: null, cookieKey: 'i18n_redirected', cookieSecure: false
+    }
+  },
+
+  head () {
+    const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
+    return {
+      meta: [ // Each object in this array is its own meta tag
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial scale=1' },
+        { hid: 'keywords', name: 'keywords', content: 'Novi Vinodolski, Croatia, Hrvatska, Adriatic sea, sea, more, coast, vacation' },
+        ...i18nHead.meta
+      ]
     }
   },
   

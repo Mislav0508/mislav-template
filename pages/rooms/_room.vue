@@ -131,9 +131,6 @@
   position: absolute;
   bottom: 20%;
   color: var(--primary);
-  p {
-  font-weight: 900;
-  }
 }
 // BLOCK 2 CARD
 .card-wrapper {
@@ -197,6 +194,10 @@ img {
   position: relative;
   list-style: none;
 }
+}
+// BLOCK 4 ROOMS
+h2{
+  letter-spacing: 0px ;
 }
 
 

@@ -11,7 +11,7 @@
 
       <input type="hidden" name="form-name" value="templateForm">
 
-      <h2>Do you have any wishes or questions?</h2>
+      <h2>Do you have any wishes <br> or questions?</h2>
 
       <v-text-field
         color="#222222"

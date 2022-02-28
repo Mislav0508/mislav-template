@@ -10,8 +10,8 @@
         data-aos-duration="1000"
         data-aos-easing="ease-out"
         data-aos-delay="500"
-        data-aos-once="true" class="pb-5">Apartments in Novi Vinodolski</h2>
-        <p data-aos="fade-right" 
+        data-aos-once="true" class="pt-10 pb-2">Apartments in Novi Vinodolski</h2>
+        <p class="pb-5" data-aos="fade-right" 
         data-aos-duration="1000"
         data-aos-easing="ease-out"
         data-aos-delay="1000"

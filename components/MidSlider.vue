@@ -6,9 +6,9 @@
         
         <v-col class="px-xl-15 py-xl-7">
 
-          <h3 class="mb-3">{{ type }}</h3>
+          <h2 class="mb-3">{{ type }}</h2>
           <p class="mb-0">From</p>
-          <h3 class="font-weight-bold mb-10">{{ price }}</h3>
+          <h2 class="font-weight-bold mb-10">{{ price }}</h2>
 
           <v-row class="mb-4 ">
 
@@ -119,7 +119,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-//  @import '~assets/css/main.scss';
+p, h2{
+  letter-spacing: 0px ;
+}
 .whole-container{
   background-color: #222222;
   color: var(--primary);
@@ -159,7 +161,7 @@ export default {
   p{
     color: var(--primary);
   }
-  h3{
+  h2{
     color: var(--primary);
   }
 .sliderMid{

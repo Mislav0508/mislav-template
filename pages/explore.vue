@@ -5,15 +5,14 @@
       <v-col cols="0" xl="2" lg="2" md="1" sm="1"></v-col>
 
       <v-col cols="12" xl="7" lg="7" md="11" sm="11">
-        <h2 class="py-10" data-aos="fade-up" 
+        <h2 class="pt-10 pb-2" data-aos="fade-up" 
+        data-aos-duration="1000"
+        data-aos-easing="ease-out"
+        data-aos-once="true">Apartments in Novi Vinodolski</h2>
+        <p class="pb-5" data-aos="fade-up" 
         data-aos-duration="1000"
         data-aos-easing="ease-out"
         data-aos-delay="500"
-        data-aos-once="true">Apartments in Novi Vinodolski</h2>
-        <p data-aos="fade-up" 
-        data-aos-duration="1000"
-        data-aos-easing="ease-out"
-        data-aos-delay="1000"
         data-aos-once="true">Unwind the clock of modern life. Unlock the door to a wonder of the world.</p>
         <p data-aos="fade-up" 
         data-aos-duration="1000"

@@ -20,8 +20,8 @@
         <NuxtLink :to="localePath('/')" :class="[ position > 0 || route !== '/' ? 'link-scroll' : 'link' ]">Home</NuxtLink>
 
         <v-menu open-on-hover offset-y bottom >
-          <template v-slot:activator="{ on, attrs }">
-            <p :class="[ position > 0 || route !== '/' ? 'link-scroll ma-0' : 'link ma-0' ]"
+          <template v-slot:activator="{ on, attrs }" >
+            <p :class="[ position > 0 || route !== '/' ? 'link-scroll ma-0' : 'link ma-0' ]" id="v-menu"
               v-bind="attrs"
               v-on="on"
               style="cursor:pointer;"
@@ -187,13 +187,16 @@ a.nuxt-link-exact-active::after {
 /* LOGOS END */
 
 /* LINKS NAVBAR */
+#v-menu {
+  padding-bottom: 1.5px;
+}
 .link{
   text-decoration: none;
   color: var(--primary);
-  font-weight: 550 !important;
+  font-weight: 600;
   font-size: 13px;
-  letter-spacing: 1px;
-  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.5px;
+  font-family: 'Raleway', Helvetica, Arial, sans-serif !important;
 }
 .link::after {
   content: '';
@@ -209,10 +212,10 @@ a.nuxt-link-exact-active::after {
 .link-scroll{
   text-decoration: none;
   color: var(--secondary);
-  font-weight: 550 !important;
+  font-weight: 600;
   font-size: 13px;
-  letter-spacing: 1px;
-  font-family: Raleway, Helvetica, Arial, sans-serif;
+  letter-spacing: 0.5px;
+  font-family: 'Raleway', Helvetica, Arial, sans-serif !important;
 }
 .link-scroll::after{
   content: '';

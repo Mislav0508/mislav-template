@@ -14,8 +14,8 @@
 
     <Footer />
 
-    <div v-if="position > 20" class="arrow-container" @click="scrollToTop">
-      <i class="arrow "></i>      
+    <div v-if="position > 20" class="up-arrow-container" @click="scrollToTop">
+      <i class="up-arrow "></i>      
     </div>
   </v-app>
 </template>
@@ -36,7 +36,6 @@ export default {
   },
   methods: {
     sidebarHandler(val) {
-      console.log(val);
       this.sidebar = val
     },
     checkPosition() {
@@ -50,9 +49,6 @@ export default {
       });
     }
   },
-  mounted() {
-    console.log(this.sidebar);
-  },
   watch: {
     sidebar (val) {
       this.sidebar = val
@@ -60,11 +56,35 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style>
 #app {
-  font-family: 'Roboto Slab', serif;  
+  font-family: 'Nunito Sans', 'Raleway', sans-serif;
 }
-.arrow-container{
+p{
+  font-size: clamp(14px, 0.5vw, 18px);
+  font-weight: 200;
+  line-height: 1.4rem;
+  letter-spacing: 1.5px;
+  font-size: 100%;
+}
+h1 {
+  font-size: clamp(36px, 5vw, 100px);
+  font-weight: 400;
+}
+h2{
+  font-size: clamp(28px, 5vw, 42px);
+  line-height: 1.2em;
+  color: var(--secondary);
+  font-weight: 400;
+}
+@media screen and (min-width: 2500px) {
+  p {
+    font-size: 20px;
+    line-height: 1.6rem;
+  }
+}
+/* ARROW UP */
+.up-arrow-container{
   bottom: 1.5vh; 
   right: 1vw;
   position: fixed;
@@ -74,7 +94,7 @@ export default {
   background: rgba(0, 0, 0, 0.4);
   z-index: 9999;
 }
-.arrow{
+.up-arrow{
   border: solid var(--primary);
   border-width: 0 3px 3px 0;
   display: inline-block;

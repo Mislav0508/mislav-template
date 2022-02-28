@@ -83,8 +83,8 @@ export default {
 }
 h3{
   font-size: clamp(20px, 1.5vw, 35px);
-  font-family: 'Roboto Slab', serif;
-  font-weight: 600;
+  font-weight: 400;
+  letter-spacing: 0px
 }
 // PLUS SIGN
 .img-container{
