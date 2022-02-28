@@ -71,12 +71,12 @@ export default {
 
   i18n: {
     locales: [
-    { code: 'en', iso: 'en-UK', file: 'en.js' },
-    { code: 'hr', iso: 'hr-HR', file: 'hr.js' },
-    { code: 'de', iso: 'de-DE', file: 'de.js' }],
+    { code: 'en', iso: 'en-UK', file: 'en' },
+    { code: 'hr', iso: 'hr-HR', file: 'hr' },
+    { code: 'de', iso: 'de-DE', file: 'de' }],
     baseUrl: 'https://my-nuxt-app.com',
     defaultLocale: 'en',
-    langDir: '~/locales/',
+    langDir: 'locales/',
     strategy: 'prefix_except_default',
     detectBrowserLanguage: {
       alwaysRedirect: true, fallbackLocale: 'en', redirectOn: 'root', useCookie: true, cookieCrossOrigin: false, cookieDomain: null, cookieKey: 'i18n_redirected', cookieSecure: false

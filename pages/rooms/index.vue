@@ -1,10 +1,10 @@
 <template>
   <div>
-    <v-container class="block-1-rooms d-flex align-center pt-lg-15 mt-lg-10 mt-sm-7">
+    <v-container class="block-1-rooms d-flex align-center pt-15 mt-lg-10 mt-sm-7">
 
-      <v-col cols="4" xl="2" lg="2" md="1" sm="1"></v-col>
+      <v-col cols="0" xl="2" lg="2" md="1" sm="1"></v-col>
 
-      <v-col cols="4" xl="10" lg="10" md="11" sm="11">
+      <v-col cols="12" xl="10" lg="10" md="11" sm="11">
         <h2 data-aos="fade-up" 
         data-aos-duration="1000"
         data-aos-easing="ease-out"
@@ -125,50 +125,57 @@ import MidSlider from "../../components/MidSlider.vue"
 import aosMixin from "../../mixins/aos"
 export default {
   mixins: [aosMixin],
+  nuxtI18n: {
+    paths: {
+      en: '/rooms', 
+      hr: '/sobe',
+      de: '/zimmer'
+    }
+  },
   data () {
-      return {
-        ids: [ 1, 2, 3, 4 ],
-        types: [ "Superior Room", "Deluxe Room", "Signature Room", "Luxury Suite Room" ],
-        prices: [ "$199", "$249", "$299", "$399" ],
-        beds: [ "twin bed", "king bed", "king bed", "king bed" ],
-        capacities: [ "2 adults 1 children", "3 adults 1 children", "3 adults 2 children", "4 adults 2 children" ],
-        room_sizes: [ "30", "55", "70", "120" ],
-        views: [ "sea view", "sea view", "sea view", "sea view"],
-        recommends: [ "great for business trip", "great for business trip", "great for families", "great for families" ],
-        images:  [
-          [
-          "/images/home/midSlider/midSlider-1.jpg",
-          "/images/home/midSlider/midSlider-2.jpg",
-          "/images/home/midSlider/midSlider-3.jpg",
-          "/images/home/midSlider/midSlider-4.jpg",
-          "/images/home/midSlider/midSlider-5.jpg",
-          ],
-          [
-          "/images/home/midSlider/midSlider-1.jpg",
-          "/images/home/midSlider/midSlider-2.jpg",
-          "/images/home/midSlider/midSlider-3.jpg",
-          "/images/home/midSlider/midSlider-4.jpg",
-          "/images/home/midSlider/midSlider-5.jpg",
-          ],
-          [
-          "/images/home/midSlider/midSlider-1.jpg",
-          "/images/home/midSlider/midSlider-2.jpg",
-          "/images/home/midSlider/midSlider-3.jpg",
-          "/images/home/midSlider/midSlider-4.jpg",
-          "/images/home/midSlider/midSlider-5.jpg",
-          ],
-          [
-          "/images/home/midSlider/midSlider-1.jpg",
-          "/images/home/midSlider/midSlider-2.jpg",
-          "/images/home/midSlider/midSlider-3.jpg",
-          "/images/home/midSlider/midSlider-4.jpg",
-          "/images/home/midSlider/midSlider-5.jpg",
-          ],
+    return {
+      ids: [ 1, 2, 3, 4 ],
+      types: [ "Superior Room", "Deluxe Room", "Signature Room", "Luxury Suite Room" ],
+      prices: [ "$199", "$249", "$299", "$399" ],
+      beds: [ "twin bed", "king bed", "king bed", "king bed" ],
+      capacities: [ "2 adults 1 children", "3 adults 1 children", "3 adults 2 children", "4 adults 2 children" ],
+      room_sizes: [ "30", "55", "70", "120" ],
+      views: [ "sea view", "sea view", "sea view", "sea view"],
+      recommends: [ "great for business trip", "great for business trip", "great for families", "great for families" ],
+      images:  [
+        [
+        "/images/home/midSlider/midSlider-1.jpg",
+        "/images/home/midSlider/midSlider-2.jpg",
+        "/images/home/midSlider/midSlider-3.jpg",
+        "/images/home/midSlider/midSlider-4.jpg",
+        "/images/home/midSlider/midSlider-5.jpg",
         ],
-        imgSizes: [[ 2, 1, 1, 2, 2 ], [ 2, 1, 1, 2, 2 ], [ 2, 1, 1, 2, 2 ], [ 2, 1, 1, 2, 2 ]],
-        translateX: [ 50, 50, 50, 50 ]
+        [
+        "/images/home/midSlider/midSlider-1.jpg",
+        "/images/home/midSlider/midSlider-2.jpg",
+        "/images/home/midSlider/midSlider-3.jpg",
+        "/images/home/midSlider/midSlider-4.jpg",
+        "/images/home/midSlider/midSlider-5.jpg",
+        ],
+        [
+        "/images/home/midSlider/midSlider-1.jpg",
+        "/images/home/midSlider/midSlider-2.jpg",
+        "/images/home/midSlider/midSlider-3.jpg",
+        "/images/home/midSlider/midSlider-4.jpg",
+        "/images/home/midSlider/midSlider-5.jpg",
+        ],
+        [
+        "/images/home/midSlider/midSlider-1.jpg",
+        "/images/home/midSlider/midSlider-2.jpg",
+        "/images/home/midSlider/midSlider-3.jpg",
+        "/images/home/midSlider/midSlider-4.jpg",
+        "/images/home/midSlider/midSlider-5.jpg",
+        ],
+      ],
+      imgSizes: [[ 2, 1, 1, 2, 2 ], [ 2, 1, 1, 2, 2 ], [ 2, 1, 1, 2, 2 ], [ 2, 1, 1, 2, 2 ]],
+      translateX: [ 50, 50, 50, 50 ]
 
-        }
+      }
   },
 
 }
