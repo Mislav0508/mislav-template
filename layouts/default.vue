@@ -1,9 +1,19 @@
 <template>
   <v-app style="overflow-y: scroll;overflow:hidden;">
-    <Navbar :position="position" @sidebar-navbar="sidebarHandler"/>
-    <Sidebar :showSidebar="sidebar"/>
+
+    <Navbar 
+    :position="position" 
+    @sidebar-navbar="sidebarHandler" 
+    :sidebarComponent="sidebar"/>
+
+    <Sidebar 
+    :showSidebar="sidebar"
+    @closeSidebar="sidebarHandler"/>
+
     <Nuxt />
+
     <Footer />
+
     <div v-if="position > 20" class="arrow-container" @click="scrollToTop">
       <i class="arrow "></i>      
     </div>
@@ -14,7 +24,7 @@
 export default {
   data () {
     return {
-      position: null,
+      position: 0,
       sidebar: false
     }
   },

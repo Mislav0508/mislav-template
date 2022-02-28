@@ -15,8 +15,14 @@
       <NuxtLink :to="localePath('/gallery')" class="link-sidebar">Gallery</NuxtLink>
 
       <NuxtLink :to="localePath('/explore')" class="link-sidebar">Explore</NuxtLink>
-      
+
       <NuxtLink :to="localePath('/contact')" class="link-sidebar">Contact</NuxtLink>
+
+      <div class="lang-container" @click="closeSidebar"> 
+        <NuxtLink :to="switchLocalePath('en')">English</NuxtLink>
+        <NuxtLink :to="switchLocalePath('hr')">Croatian</NuxtLink>
+        <NuxtLink :to="switchLocalePath('de')">Deutsch</NuxtLink>
+      </div>
 
     </div>
 
@@ -30,27 +36,23 @@ export default {
   },
   data() {
     return {
-      sidebar: false,
-      route: null,
+      sidebar: false
     }
   },
-  mounted() {
-    this.route = $nuxt.$route.path
-    console.log(this.showSidebar);
+  methods: {
+    closeSidebar () {
+      this.$emit('closeSidebar', false)
+    }
   },
   watch: {
-    async $route (to, from) {
-      this.route = "/" + to.name
-      this.sidebar = false
-    },
     showSidebar(val){
       this.sidebar = val
-    }
+    },
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 /* SIDEBAR */
 .sidebar{
   position: fixed;
@@ -59,9 +61,7 @@ export default {
   width: 18vw;
   min-height: 100vh;
   background: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCenter;
   flex-direction: column;
   transition: all 0.3s ease-out;
   transform: translate(-100%);
@@ -124,4 +124,8 @@ export default {
   width: 100%;
 }
 /* LINKS SIDEBAR END */
+.lang-container{
+  position: absolute;
+  bottom: 4vh;
+}
 </style>
