@@ -124,14 +124,14 @@
 import MidSlider from "../../components/MidSlider.vue"
 import aosMixin from "../../mixins/aos"
 export default {
-  mixins: [aosMixin],
   nuxtI18n: {
     paths: {
-      en: '/rooms', 
+      en: '/our-rooms',
       hr: '/sobe',
-      de: '/zimmer'
+      de: '/unsere-zimmer'     
     }
   },
+  mixins: [aosMixin],
   data () {
     return {
       ids: [ 1, 2, 3, 4 ],

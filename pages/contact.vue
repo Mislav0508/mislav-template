@@ -112,6 +112,13 @@
 import aosMixin from "../mixins/aos"
 import ContactForm from "../components/ContactForm.vue"
 export default {
+  nuxtI18n: {
+    paths: {
+      en: '/contact',
+      hr: '/kontakt',
+      de: '/kontakt'     
+    }
+  },
   mixins: [aosMixin],
   data() {
   return {

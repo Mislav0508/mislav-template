@@ -243,11 +243,13 @@ import Slider from "../components/Slider.vue"
 import MidSlider from "../components/MidSlider.vue"
 import aosMixin from "../mixins/aos"
 export default {
-  head: {
-    title: 'Home page',
-    meta: [
-      { hid: 'description', name: 'description', content: 'Home page description' }
-    ],
+  head() {
+    return {
+      title: this.$t('seo_home_title'),
+      meta: [
+        { hid: 'description', name: 'description', content: this.$t('seo_home_description') }
+      ],
+      }
   },
   mixins: [aosMixin],
   data () {

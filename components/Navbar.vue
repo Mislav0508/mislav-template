@@ -17,7 +17,7 @@
         <div v-html="rawLogo" :class="position > 0 || route !== '/index' ? 'logoSecondary' : 'logoPrimary'"/>          
         </NuxtLink>
         
-        <NuxtLink :to="localePath('/')" :class="[ position > 0 || route !== '/' ? 'link-scroll' : 'link' ]">
+        <NuxtLink :to="localePath('/')" :class="[ position > 0 || route !== '/' ? 'link-scroll' : 'link' ]" >
         {{ $t('navbar_home') }}</NuxtLink>
 
         <v-menu open-on-hover offset-y bottom >

@@ -129,6 +129,13 @@
 import RoomCard from "../components/RoomCard.vue"
 import aosMixin from "../mixins/aos"
 export default {  
+  nuxtI18n: {
+    paths: {
+      en: '/explore',
+      hr: '/istrazi',
+      de: '/entdecken'     
+    }
+  },
   mixins: [aosMixin],
   data () {
     return {

@@ -89,7 +89,7 @@ export default {
       meta: [ // Each object in this array is its own meta tag
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial scale=1' },
-        { hid: 'keywords', name: 'keywords', content: 'Novi Vinodolski, Croatia, Hrvatska, Adriatic sea, sea, more, coast, vacation' },
+        { hid: 'keywords', name: 'keywords', content: 'Novi Vinodolski, Croatia, Hrvatska, Adriatic sea, Renata, more, coast, vacation' },
         ...i18nHead.meta
       ]
     }

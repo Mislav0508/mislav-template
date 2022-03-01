@@ -50,6 +50,13 @@
 <script>
 import GalleryItem from "../components/GalleryItem.vue"
 export default {
+  nuxtI18n: {
+  paths: {
+    en: '/gallery',
+    hr: '/galerija',
+    de: '/galerie'     
+  }
+  },
   components: { GalleryItem },
   data() {
     return {

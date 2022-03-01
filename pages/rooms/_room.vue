@@ -207,6 +207,14 @@ h2{
 import RoomCard from "../../components/RoomCard.vue"
 import aosMixin from "../../mixins/aos"
 export default {
+  // IF ROOMS HAVE DIFFERENT TRANSLATED NAMES THEY CAN BE TRANSLATED LIKE THIS:
+  // async asyncData ({ store }) {
+  //   await store.dispatch('i18n/setRouteParams', {
+  //     en: { room: 'my-post' },
+  //     hr: { room: 'moja-soba' },
+  //     de: { room: 'mein-zimmer' }
+  //   }) 
+  // },
   mixins: [aosMixin],
   data () {
     return {

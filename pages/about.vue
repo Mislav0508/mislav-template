@@ -122,6 +122,13 @@
 <script>
 import aosMixin from "../mixins/aos"
 export default {
+  nuxtI18n: {
+    paths: {
+      en: '/about',
+      hr: '/o-nama',
+      de: '/uber-uns'     
+    }
+  },
   mixins: [aosMixin],
   data() {
     return {
