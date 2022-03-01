@@ -1,3 +1,21 @@
 {
-  "navbar_home": "Startseite"
+  "seo": {
+    "seo_home_title": "Ferienwohnungen Renata",
+    "seo_home_description": "Ferienwohnungen Renata"
+  },
+  "navbar": {
+    "home": "Startseite",
+    "our_rooms": "Zimmern",
+    "rooms": {
+      "rooms": "Zimmern",
+      "Superior": "Superior Zimmer",
+      "Deluxe": "Deluxe Zimmer",
+      "Signature": "Signature Zimmer",
+      "Luxury": "Luxury Suite Zimmer"
+    },
+    "about": "Über uns",
+    "gallery": "Galerie",
+    "explore": "Entdecken",
+    "contact": "Kontakt"
+  }
 }

@@ -6,22 +6,22 @@
 
       <img src="/images/logo.svg" alt="" style="position:fixed;top:-10vh;transform:scale(0.15)">
 
-      <NuxtLink :to="localePath('/')" class="link-sidebar">Home</NuxtLink>
+      <NuxtLink :to="localePath('/')" class="link-sidebar">{{ $t('navbar.home') }}</NuxtLink>
 
-      <NuxtLink :to="localePath('/rooms')" class="link-sidebar">Our rooms</NuxtLink>
+      <NuxtLink :to="localePath('/rooms')" class="link-sidebar">{{ $t('navbar.our_rooms') }}</NuxtLink>
 
-      <NuxtLink :to="localePath('/about')" class="link-sidebar">About us</NuxtLink>
+      <NuxtLink :to="localePath('/about')" class="link-sidebar">{{ $t('navbar.about') }}</NuxtLink>
 
-      <NuxtLink :to="localePath('/gallery')" class="link-sidebar">Gallery</NuxtLink>
+      <NuxtLink :to="localePath('/gallery')" class="link-sidebar">{{ $t('navbar.gallery') }}</NuxtLink>
 
-      <NuxtLink :to="localePath('/explore')" class="link-sidebar">Explore</NuxtLink>
+      <NuxtLink :to="localePath('/explore')" class="link-sidebar">{{ $t('navbar.explore') }}</NuxtLink>
 
-      <NuxtLink :to="localePath('/contact')" class="link-sidebar">Contact</NuxtLink>
+      <NuxtLink :to="localePath('/contact')" class="link-sidebar">{{ $t('navbar.contact') }}</NuxtLink>
 
       <div class="lang-container" @click="closeSidebar"> 
-        <NuxtLink :to="switchLocalePath('en')" hreflang="en">English</NuxtLink>
-        <NuxtLink :to="switchLocalePath('hr')" hreflang="hr">Croatian</NuxtLink>
-        <NuxtLink :to="switchLocalePath('de')" hreflang="de">Deutsch</NuxtLink>
+        <NuxtLink :to="switchLocalePath('en')" hreflang="en"><img src="/images/flags/uk.png" alt="" class="lang-img"></NuxtLink>
+        <NuxtLink :to="switchLocalePath('hr')" hreflang="hr"><img src="/images/flags/croatia.png" alt="" class="lang-img mx-3"></NuxtLink>
+        <NuxtLink :to="switchLocalePath('de')" hreflang="de"><img src="/images/flags/germany.png" alt="" class="lang-img"></NuxtLink>
       </div>
 
     </div>
@@ -126,6 +126,11 @@ export default {
 /* LINKS SIDEBAR END */
 .lang-container{
   position: absolute;
-  bottom: 4vh;
+  bottom: 2vh;
+  padding: 1rem 1.5rem 0.5rem 1.5rem;
+  @include flexCenter
+}
+.lang-img{
+  max-width: 2rem;
 }
 </style>

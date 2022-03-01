@@ -1,3 +1,21 @@
-{
-  "navbar_home": "Početna"
+{ 
+  "seo": {
+    "seo_home_title": "Apartmani Renata",
+    "seo_home_description": "Apartmani Renata"
+  },
+  "navbar": {
+    "home": "Početna",
+    "our_rooms": "Naše sobe",
+    "rooms": {
+      "rooms": "Sobe",
+      "Superior": "Superior Soba",
+      "Deluxe": "Deluxe Soba",
+      "Signature": "Signature Soba",
+      "Luxury": "Luxury Suite Soba"
+    },
+    "about": "O nama",
+    "gallery": "Galerija",
+    "explore": "Istraži",
+    "contact": "Kontakt"
+  }
 }

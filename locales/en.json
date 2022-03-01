@@ -1,5 +1,21 @@
 {
-  "seo_home_title": "Apartments Renata",
-  "seo_home_description": "Apartments Renata",
-  "navbar_home": "Home"
+  "seo": {
+    "seo_home_title": "Apartments Renata",
+    "seo_home_description": "Apartments Renata"
+  },
+  "navbar": {
+    "home": "Home",
+    "our_rooms": "Our Rooms",
+    "rooms": {
+      "rooms": "Rooms",
+      "Superior": "Superior Room",
+      "Deluxe": "Deluxe Room",
+      "Signature": "Signature Room",
+      "Luxury": "Luxury Suite Room"
+    },
+    "about": "About us",
+    "gallery": "Gallery",
+    "explore": "Explore",
+    "contact": "Contact"
+  }
 }

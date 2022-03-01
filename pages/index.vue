@@ -17,7 +17,7 @@
         data-aos-easing="ease-out"
         data-aos-delay="500"
         data-aos-once="true">Pitchfork selfies master cleanse Kickstarter seitan retro. Drinking vinegar stumptown yr pop-up artisan sunt. Deep v cliche lomo biodiesel Neutra selfies. Shorts fixie consequat flexitarian four loko tempor duis single-origin coffee. Banksy, elit small batch freegan sed.</p>
-        <v-img src="/images/home/signature.png" contain class="signature pt-7"
+        <v-img src="/images/home/signature2.png" class="signature pt-7"
         data-aos="fade-left" 
         data-aos-duration="800"
         data-aos-easing="ease-out"
@@ -245,9 +245,9 @@ import aosMixin from "../mixins/aos"
 export default {
   head() {
     return {
-      title: this.$t('seo_home_title'),
+      title: this.$t('seo.seo_home_title'),
       meta: [
-        { hid: 'description', name: 'description', content: this.$t('seo_home_description') }
+        { hid: 'description', name: 'description', content: this.$t('seo.seo_home_description') }
       ],
       }
   },

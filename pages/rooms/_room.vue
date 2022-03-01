@@ -321,7 +321,6 @@ export default {
       this.capacity.adults = this.capacity.adults.filter(x => x !== this.capacity.adults[0])
       this.capacity.children = this.capacity.children.filter(x => x !== this.capacity.children[0])
       this.prices = this.prices.filter(x => x !== this.prices[0])
-      console.log(this.images);
     } else if (this.$route.params.room.includes('DeluxeRoom')) {
       this.title = 'Deluxe Room'
       this.subtitle = 'GREAT FOR DELUXE TRIP'
@@ -358,7 +357,6 @@ export default {
       this.capacity.adults = this.capacity.adults.filter(x => x !== this.capacity.adults[1])
       this.capacity.children = this.capacity.children.filter(x => x !== this.capacity.children[1])
       this.prices = this.prices.filter(x => x !== this.prices[1])
-      console.log(this.title);
     } else if (this.$route.params.room.includes('SignatureRoom')) {
       this.title = 'Signature Room'
       this.subtitle = 'GREAT FOR SIGNATURE TRIP'
@@ -395,7 +393,6 @@ export default {
       this.capacity.adults = this.capacity.adults.filter(x => x !== this.capacity.adults[2])
       this.capacity.children = this.capacity.children.filter(x => x !== this.capacity.children[2])
       this.prices = this.prices.filter(x => x !== this.prices[2])
-      console.log(this.title);
     } else if (this.$route.params.room.includes('LuxurySuiteRoom')) {
       this.title = 'Luxury Suite Room'
       this.subtitle = 'GREAT FOR LUXURY TRIP'
@@ -432,7 +429,6 @@ export default {
       this.capacity.adults = this.capacity.adults.filter(x => x !== this.capacity.adults[3])
       this.capacity.children = this.capacity.children.filter(x => x !== this.capacity.children[3])
       this.prices = this.prices.filter(x => x !== this.prices[3])
-      console.log(this.title);
     }
   }
 }
