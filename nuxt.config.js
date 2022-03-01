@@ -77,7 +77,7 @@ export default {
     baseUrl: 'https://my-nuxt-app.com',
     defaultLocale: 'en',
     langDir: 'locales/',
-    strategy: 'prefix_except_default',
+    strategy: 'prefix',
     detectBrowserLanguage: {
       alwaysRedirect: true, fallbackLocale: 'en', redirectOn: 'root', useCookie: true, cookieCrossOrigin: false, cookieDomain: null, cookieKey: 'i18n_redirected', cookieSecure: false
     }
@@ -89,7 +89,7 @@ export default {
       meta: [ // Each object in this array is its own meta tag
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial scale=1' },
-        { hid: 'keywords', name: 'keywords', content: 'Novi Vinodolski, Croatia, Hrvatska, Adriatic sea, Renata, more, coast, vacation' },
+        { hid: 'keywords', name: 'keywords', content: 'Novi Vinodolski, Croatia, Hrvatska, Kroatien, Adriatic sea, Renata, Adriatisches Meer, coast, vacation, Urlaub' },
         ...i18nHead.meta
       ]
     }

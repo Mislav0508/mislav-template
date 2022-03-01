@@ -215,6 +215,13 @@ export default {
   //     de: { room: 'mein-zimmer' }
   //   }) 
   // },
+  nuxtI18n: {
+    paths: {
+      en: '/our-rooms/:room',
+      hr: '/sobe/:room',
+      ede: '/unsere-zimmer/:room'
+    }
+  },
   mixins: [aosMixin],
   data () {
     return {
