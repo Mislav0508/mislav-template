@@ -3,6 +3,11 @@
     "seo_home_title": "Apartmani Renata",
     "seo_home_description": "Apartmani Renata"
   },
+  "picker": {
+    "en": "Engleski",
+    "hr": "Hrvatski",
+    "de": "Njemački"
+  },
   "navbar": {
     "home": "Početna",
     "our_rooms": "Naše sobe",

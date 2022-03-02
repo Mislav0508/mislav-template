@@ -3,6 +3,11 @@
     "seo_home_title": "Apartments Renata",
     "seo_home_description": "Apartments Renata"
   },
+  "picker": {
+    "en": "English",
+    "hr": "Croatian",
+    "de": "German"
+  },
   "navbar": {
     "home": "Home",
     "our_rooms": "Our Rooms",

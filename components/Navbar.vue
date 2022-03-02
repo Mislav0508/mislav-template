@@ -57,12 +57,13 @@
 
       <v-col cols="4" xl="2" lg="4" md="1" sm="1"></v-col>
 
-      <v-col cols="2" xl="3" lg="1" md="1" sm="1">
+      <v-col cols="2" xl="3" lg="1" md="1" sm="1" class="d-flex align-center justify-center">
         <div role="button" 
         :class="sidebar ? 'menu-btn open ' : 'menu-btn'" 
         @click="showSidebar">
           <div :class="position > 0 || route !== 3 ? 'menu-btn__burger_dark' : 'menu-btn__burger'" ></div>
         </div>
+        <Picker />
       </v-col>
 
       </v-row>
@@ -80,7 +81,12 @@
 <script>
 import Sidebar from "./Sidebar.vue"
 import rawLogo from "~/static/images/logo.svg?raw";
+import Picker from "../components/LanguagePicker.vue"
 export default {
+  components: {
+    Sidebar,
+    Picker
+  },
   props: { 
     position: Number,
     sidebarComponent: Boolean

@@ -71,9 +71,9 @@ export default {
 
   i18n: {
     locales: [
-    { code: 'en', iso: 'en-UK', file: 'en' },
-    { code: 'hr', iso: 'hr-HR', file: 'hr' },
-    { code: 'de', iso: 'de-DE', file: 'de' }],
+    { code: 'en', iso: 'en-UK', name: 'English', file: 'en' },
+    { code: 'hr', iso: 'hr-HR', name: 'Hrvatski', file: 'hr' },
+    { code: 'de', iso: 'de-DE', name: 'Deutsch', file: 'de' }],
     baseUrl: 'https://my-nuxt-app.com',
     defaultLocale: 'en',
     langDir: 'locales/',

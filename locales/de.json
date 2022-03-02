@@ -3,6 +3,11 @@
     "seo_home_title": "Ferienwohnungen Renata",
     "seo_home_description": "Ferienwohnungen Renata"
   },
+  "picker": {
+    "en": "Englisch",
+    "hr": "Kroatisch",
+    "de": "Deutsch"
+  },
   "navbar": {
     "home": "Startseite",
     "our_rooms": "Zimmern",
