@@ -13,9 +13,9 @@
 
       <v-col class="d-none d-sm-flex justify-space-around align-center" cols="1" xl="3" lg="4" md="5" sm="8">
         
-        <NuxtLink :to="localePath('/')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]" >
+        <!-- <NuxtLink :to="localePath('/')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]" >
         <div v-html="rawLogo" :class="position > 0 || route !== '/index' ? 'logoSecondary' : 'logoPrimary'"/>          
-        </NuxtLink>
+        </NuxtLink> -->
         
         <NuxtLink :to="localePath('/')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]" >
         {{ $t('navbar.home') }}</NuxtLink>
@@ -114,14 +114,6 @@ export default {
 </script>
 
 <style scoped>
-a.nuxt-link-exact-active::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: var(--secondary);
-  transition: width .3s;
-}
 .navbar{
   z-index: 9999;
   overflow: hidden;
@@ -231,6 +223,14 @@ a.nuxt-link-exact-active::after {
   width: 100%;
 }
 /* ACTIVE LINK */
+/* a.nuxt-link-exact-active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--secondary);
+  transition: width .3s;
+} */
 a.nuxt-link-exact-active[data-v-cfc91daa]::after {
   content: '';
   display: block;

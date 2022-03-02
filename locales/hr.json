@@ -17,5 +17,25 @@
     "gallery": "Galerija",
     "explore": "Istraži",
     "contact": "Kontakt"
+  },
+  "slider": {
+    "titles": {
+      "one": "Novi Vinodolski",
+      "two": "Luksuzni komfor",
+      "three": "Apartmani uz more",
+      "four": "Srce Hrvatske"
+    },
+    "subtitles": {
+      "one": "Otključajte vrata svjetskog čuda",
+      "two": "Dizajn, kurirana umjetnost i gostoljubivi timovi",
+      "three": "Više od mjesta za boravak!",
+      "four": "Otkrijte čaroliju hrvatske obale"
+    }
+  },
+  "footer": {
+    "address": "adresa",
+    "reservation": "rezervacije",
+    "rating": "Apartmani sa pet zvjezdica",
+    "awards": "Nagrade"
   }
 }

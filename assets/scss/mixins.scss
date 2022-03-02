@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
 }
+
 // BLOCKS
 @mixin block-img-margin-left {
   min-height: 70vh;
@@ -16,6 +17,7 @@
   top: 40%;
   left: 25%;
 }
+
 // IMAGES
 @mixin square-img-small {
   min-height: 45vh;
@@ -23,6 +25,7 @@
   min-width: 30vw;
   max-width: 30vw;
 }
+
 // ARROWS
 @mixin arrow-container-left {
   // top: 43vh; 
@@ -64,6 +67,7 @@
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);   
 }
+
 // PLUS SIGN
 @mixin img-container {
   position: relative;

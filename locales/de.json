@@ -17,5 +17,25 @@
     "gallery": "Galerie",
     "explore": "Entdecken",
     "contact": "Kontakt"
+  },
+  "slider": {
+    "titles": {
+      "one": "Novi Vinodolski",
+      "two": "Luxuriöser Komfort",
+      "three": "Apartments am Strand",
+      "four": "Herz von Kroatien"
+    },
+    "subtitles": {
+      "one": "Öffnen Sie die Tür zu einem Weltwunder",
+      "two": "Design, kuratierte Kunst und einladende Teams",
+      "three": "Mehr als eine Unterkunft!",
+      "four": "Entdecken Sie den Zauber der kroatischen Küste"
+    }
+  },
+  "footer": {
+    "address": "Adresse",
+    "reservation": "Reservierungen",
+    "rating": "Fünf-Sterne-Wohnungen",
+    "awards": "Auszeichnungen"
   }
 }

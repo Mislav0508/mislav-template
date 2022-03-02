@@ -7,8 +7,8 @@
       :class="[ i === index ? 'activeSlide' :  i === index - 1 || (index === 0 && i === images.length - 1) ? 'lastSlide' : 'nextSlide' ]"
       >
       <img :src="image" alt="img" >
-      <h1 :class="[ i === index ? 'activeTitle' : '' ]">{{ captions[i] }} </h1>
-      <p :class="[ i === index ? 'activeSubtitle' : '' ]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, veniam?</p>
+      <h1 :class="[ i === index ? 'activeTitle' : '' ]">{{ $t(`slider.titles.${titles[i]}`) }} </h1>
+      <p :class="[ i === index ? 'activeSubtitle' : '' ]">{{ $t(`slider.subtitles.${subtitles[i]}`) }}</p>
     </div>
     <div class="arrow-container-left" @click="prev">
       <i class="arrow left"></i>      
@@ -47,11 +47,17 @@ export default {
           "/images/home/slider-home-3.jpg",
           "/images/home/slider-home-4.jpg",
           ],
-          captions: [
-            "First slide",
-            "Second slide",
-            "Third slide",
-            "Fourth slide",
+          titles: [
+            "one",
+            "two",
+            "three",
+            "four",
+          ],
+          subtitles: [
+            "one",
+            "two",
+            "three",
+            "four",
           ],
           touchstartX: 0,
           touchendX: 0
@@ -129,17 +135,10 @@ export default {
   transform: translateX(0);
   transition: all 2s ease-out;
 }
-@keyframes lastSlide {
-  
-}
 .slide.lastSlide {
   position: absolute;
   transform: translateX(-100%);
   transition: all 2s ease-out;
-}
-@keyframes nextSlide {
-  0% {}
-  100% {}
 }
 .slide.nextSlide {
   position: absolute;

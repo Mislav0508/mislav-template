@@ -10,23 +10,24 @@
       <v-col cols="12" xl="2" lg="2" md="2" sm="0"></v-col>
 
       <v-col cols="6" xl="2" lg="2" md="2" sm="6" style="border-bottom: 1px solid white">
-        <h2>our address</h2>
-        <p class="font-weight-bold">Mislav's Beach Hotel</p>
+        <h2>{{ $t('footer.address') }}</h2>
+        <p class="font-weight-bold">Renata's Apartments</p>
         <p>Pod Sveti Mikulj 7</p>
         <p>Novi Vinodolski</p>
       </v-col>
       <v-col cols="6" xl="2" lg="2" md="2" sm="6" style="border-bottom: 1px solid white">
-        <h2>reservation</h2>
+        <h2>{{ $t('footer.reservation') }}</h2>
         <p>Tel.: +41 (0)54 2344 00</p>
         <p>Fax: +41 (0)542344 99</p>
-        <p>mislav0508@hotmail.com</p>
+        <p>renata@gmail.com</p>
       </v-col>
       <v-col cols="6" xl="2" lg="2" md="2" sm="6" style="border-bottom: 1px solid white">
-        <h2>newsletter</h2>
-        <v-btn outlined class="white--text">Sign up</v-btn>
+        <h2>Superior</h2>
+        <p>{{ $t('footer.rating') }}</p>
+        <font-awesome-icon v-for="i in 5" :key="i" icon="star"/>
       </v-col>
       <v-col cols="6" xl="2" lg="2" md="2" sm="6" style="border-bottom: 1px solid white">
-        <h2>awards</h2>
+        <h2>{{ $t('footer.awards') }}</h2>
         <v-row class="d-flex align-center justify-center">
           <v-img
           lazy-src="https://picsum.photos/id/11/10/6"
@@ -57,12 +58,12 @@
         <v-col cols="12" xl="2" lg="1" md="0" sm="1"></v-col>
 
         <v-col cols="12" xl="3" lg="4" md="5" sm="12" class="d-flex justify-space-around flex-wrap">
-          <NuxtLink :to="localePath('/')" class="footer-link">Home</NuxtLink>
-          <NuxtLink :to="localePath('/rooms')" class="footer-link">Our rooms</NuxtLink>
-          <NuxtLink :to="localePath('/about')" class="footer-link">About us</NuxtLink>
-          <NuxtLink :to="localePath('/gallery')" class="footer-link">Gallery</NuxtLink>
-          <NuxtLink :to="localePath('/explore')" class="footer-link">Explore</NuxtLink>
-          <NuxtLink :to="localePath('/contact')"  class="footer-link">Contact</NuxtLink>
+          <NuxtLink :to="localePath('/')" class="footer-link">{{ $t('navbar.home') }}</NuxtLink>
+          <NuxtLink :to="localePath('/rooms')" class="footer-link">{{ $t('navbar.our_rooms') }}</NuxtLink>
+          <NuxtLink :to="localePath('/about')" class="footer-link">{{ $t('navbar.about') }}</NuxtLink>
+          <NuxtLink :to="localePath('/gallery')" class="footer-link">{{ $t('navbar.gallery') }}</NuxtLink>
+          <NuxtLink :to="localePath('/explore')" class="footer-link">{{ $t('navbar.explore') }}</NuxtLink>
+          <NuxtLink :to="localePath('/contact')"  class="footer-link">{{ $t('navbar.contact') }}</NuxtLink>
         </v-col>
 
         <v-col cols="0" xl="2" lg="2" md="2" sm="0"></v-col>

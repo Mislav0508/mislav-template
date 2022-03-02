@@ -17,5 +17,25 @@
     "gallery": "Gallery",
     "explore": "Explore",
     "contact": "Contact"
+  },
+  "slider": {
+    "titles": {
+      "one": "Novi Vinodolski",
+      "two": "Luxury Comfort",
+      "three": "Beachfront Apartments",
+      "four": "Heart of Croatia"
+    },
+    "subtitles": {
+      "one": "Unlock the door to a wonder of the world",
+      "two": "Design, curated art and welcoming teams",
+      "three": "More than a place to stay!",
+      "four": "Discover the magic of the croatian coast"
+    }
+  },
+  "footer": {
+    "address": "our address",
+    "reservation": "reservation",
+    "rating": "Five star apartments",
+    "awards": "Awards"
   }
 }
