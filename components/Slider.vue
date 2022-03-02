@@ -7,8 +7,8 @@
       :class="[ i === index ? 'activeSlide' :  i === index - 1 || (index === 0 && i === images.length - 1) ? 'lastSlide' : 'nextSlide' ]"
       >
       <img :src="image" alt="img" >
-      <h1 :class="[ i === index ? 'activeTitle' : '' ]">{{ $t(`slider.titles.${titles[i]}`) }} </h1>
-      <p :class="[ i === index ? 'activeSubtitle' : '' ]">{{ $t(`slider.subtitles.${subtitles[i]}`) }}</p>
+      <h1 ref="title" :class="[ i === index ? 'activeTitle' : '' ]">{{ $t(`slider.titles.${titles[i]}`) }} </h1>
+      <p ref="subtitle" :class="[ i === index ? 'activeSubtitle' : '' ]">{{ $t(`slider.subtitles.${subtitles[i]}`) }}</p>
     </div>
     <div class="arrow-container-left" @click="prev">
       <i class="arrow left"></i>      
@@ -70,10 +70,10 @@ export default {
       next() {
         this.index = this.index + 1
       },
-      handleGesture() {
-      if (this.touchendX < this.touchstartX) this.next()
-      if (this.touchendX > this.touchstartX) this.prev()
-      }
+      // handleGesture() {
+      // if (this.touchendX < this.touchstartX) this.next()
+      // if (this.touchendX > this.touchstartX) this.prev()
+      // }
   },
   watch: {
     index() {
@@ -98,17 +98,21 @@ export default {
       this.next() 
     }, 100000);
 
-    const slider = document.querySelector('.slider')
+    // const slider = document.querySelector('.slider')
 
-    slider.addEventListener('touchstart', e => {
-      this.touchstartX = e.changedTouches[0].screenX
-    })
+    // slider.addEventListener('touchstart', e => {
+    //   this.touchstartX = e.changedTouches[0].screenX
+    // })
 
-    slider.addEventListener('touchend', e => {
-      this.touchendX = e.changedTouches[0].screenX
-      handleGesture()
-    })
-  }
+    // slider.addEventListener('touchend', e => {
+    //   this.touchendX = e.changedTouches[0].screenX
+    //   handleGesture()
+    // })
+    let title = this.$refs.title
+    title[0].classList.remove("activeTitle")
+    let subtitle = this.$refs.subtitle
+    subtitle[0].classList.remove("activeSubtitle")
+  },
 }
 </script>
 
@@ -125,9 +129,6 @@ export default {
   opacity: 0;
   position: absolute;
   @include flexCenter;
-}
-@keyframes activeSlide {
-  
 }
 .slide.activeSlide {
   opacity: 1;
@@ -179,7 +180,6 @@ p{
   text-align: center;
   animation-name: activeSubtitle;
   animation-duration: 3.5s;
-  padding: clamp(3rem, 10vw, 2rem);
 }
 .slider-line{
   position: relative;

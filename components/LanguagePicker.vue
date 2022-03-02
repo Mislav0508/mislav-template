@@ -1,5 +1,5 @@
 <template>
-  <div class="custom-select">
+  <div>
 
     <select class="px-2 text-center" 
     v-model="selectedValue" @change="onChange(selectedValue)">
@@ -12,8 +12,6 @@
 
     </select>
 
-    <span class="custom-arrow"></span>
-
   </div>
 </template>
 
@@ -21,7 +19,12 @@
 export default {
   data() {
     return {
-      selectedValue: ""
+      selectedValue: "",
+      // flags: [
+      //   "/images/flags/picker-uk.png",
+      //   "/images/flags/picker-hr.png",
+      //   "/images/flags/picker-de.png",
+      // ]
     };
   },
   created() {
@@ -29,7 +32,6 @@ export default {
   },
   methods: {
     onChange(event) {
-      console.log(event);
       this.$router.replace(this.switchLocalePath(event));
     }
   }
@@ -37,20 +39,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.custom-select {
-  
-}
 select {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 1.0);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 1.0);
   font-size: 1rem;
   background: #4d5061;
   color: var(--primary);
   // appearance: none;
-  border: 0;
+  // border: 0;
   
 }
-option{
-  
-}
-
 </style>

@@ -5,11 +5,7 @@
 
     <v-row class="d-flex justify-md-space-around align-center">    
 
-      <v-col class="d-flex justify-center" cols="6" xl="3" lg="2" md="1" sm="2">
-        <NuxtLink :to="localePath('/')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]" style="border-bottom:none !important;">
-        <div v-html="rawLogo" :class="position > 0 || route !== 3 ? 'd-block d-sm-none logoSecondary' : 'd-block d-sm-none logoPrimary'"/>          
-        </NuxtLink>
-      </v-col>  
+      <v-col cols="6" xl="3" lg="2" md="1" sm="1"></v-col>  
 
       <v-col class="d-none d-sm-flex justify-space-around align-center" cols="1" xl="3" lg="4" md="5" sm="8">
         
@@ -57,13 +53,13 @@
 
       <v-col cols="4" xl="2" lg="4" md="1" sm="1"></v-col>
 
-      <v-col cols="2" xl="3" lg="1" md="1" sm="1" class="d-flex align-center justify-center">
+      <v-col cols="2" xl="3" lg="1" md="1" sm="2" class="d-flex align-center justify-center">
         <div role="button" 
         :class="sidebar ? 'menu-btn open ' : 'menu-btn'" 
         @click="showSidebar">
           <div :class="position > 0 || route !== 3 ? 'menu-btn__burger_dark' : 'menu-btn__burger'" ></div>
         </div>
-        <Picker />
+        <Picker class="d-none d-sm-flex"/>
       </v-col>
 
       </v-row>
