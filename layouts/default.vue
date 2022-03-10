@@ -1,5 +1,5 @@
 <template>
-  <v-app style="overflow-y: scroll;overflow:hidden;">
+  <v-app style="overflow-y: scroll;overflow:hidden;" id="app">
 
     <Navbar 
     :position="position" 
@@ -56,9 +56,9 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="scss">
 #app {
-  font-family: 'Nunito Sans', 'Raleway', sans-serif;
+  font-family: $heading-font-family;
 }
 p{
   font-size: clamp(14px, 0.5vw, 18px);
@@ -69,7 +69,8 @@ p{
 }
 h1 {
   font-size: clamp(36px, 5vw, 100px);
-  font-weight: 400;
+  font-weight: 200;
+
 }
 h2{
   font-size: clamp(28px, 5vw, 42px);

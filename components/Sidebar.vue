@@ -109,7 +109,7 @@ export default {
   font-weight: 600;
   font-size: 20px;
   letter-spacing: 1px;
-  font-family: Raleway, Helvetica, Arial, sans-serif !important;
+  // font-family: Raleway, Helvetica, Arial, sans-serif !important;
   margin: 0.5vh 0;
 }
 .link-sidebar::after {

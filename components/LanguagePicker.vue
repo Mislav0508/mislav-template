@@ -40,10 +40,11 @@ export default {
 
 <style lang="scss" scoped>
 select {
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 1.0);
+  // box-shadow: 2px 2px 2px rgba(0, 0, 0, 1.0);
   font-size: 1rem;
   background: #4d5061;
   color: var(--primary);
+  border: 2px solid #4d5061;
   // appearance: none;
   // border: 0;
   

@@ -117,6 +117,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .slider{
   position: relative;
   width: 100vw;
@@ -124,6 +125,7 @@ export default {
   max-height: 90vh;
   @include flexCenter;
   background: rgba(0, 0, 0, 0.8);
+  
 }
 .slide{
   opacity: 0;

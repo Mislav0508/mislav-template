@@ -21,24 +21,19 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800&display=swap' },
-      { rel: 'stylesheet',
-      href: "https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;600;600;700;800&display=swap" },
-      { rel: 'stylesheet',
-      href: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800&display=swap" },
-      
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap' }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/css/main.css'
+    '@/assets/css/global.css',
+
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/assets/css/main.css',
+    '@/assets/css/global.css',
     { src: './plugins/vue-carousel.js', mode: 'client' },
   ],
 
@@ -50,10 +45,9 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     '@nuxtjs/fontawesome',
-    "@nuxtjs/svg",
-    '@nuxtjs/google-fonts',
-    '@nuxtjs/style-resources'
+    "@nuxtjs/svg",    
   ],
+
   fontawesome: {
     icons: {
       solid: true
@@ -65,7 +59,7 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxtjs/dotenv',
     ['nuxt-gmaps', { key: process.env.MAPS_EMBED_API }],
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
   
   ],
 
@@ -103,25 +97,29 @@ export default {
   },
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
+    preset: 'vue-cli-plugin-vuetify-preset-crane/preset',
     customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: false,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
-      }
-    }
+    treeShake: true,
+    defaultAssets: false
+    // theme: {
+    //   dark: false,
+    //   themes: {
+    //     dark: {
+    //       primary: colors.blue.darken2,
+    //       accent: colors.grey.darken3,
+    //       secondary: colors.amber.darken3,
+    //       info: colors.teal.lighten1,
+    //       warning: colors.amber.base,
+    //       error: colors.deepOrange.accent4,
+    //       success: colors.green.accent3
+    //     }
+    //   }
+    // }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    transpile: ["vue-cli-plugin-vuetify-preset-crane"],
   },
   
 }

@@ -5,13 +5,25 @@
 
     <v-row class="d-flex justify-md-space-around align-center">    
 
-      <v-col cols="6" xl="3" lg="2" md="1" sm="1"></v-col>  
+      <v-col cols="6" xl="3" lg="2" md="2" sm="1">
+
+        <div class="d-none d-md-flex flex-column justify-center align-center text-center pt-1" >
+          <div class="d-flex">
+            <font-awesome-icon v-for="i in 4" :key="i" icon="star" :class="[ position > 0 || route !== 3 ? 'star_scroll' : 'star' ]"/>
+          </div>
+          <h2 :class="[ position > 0 || route !== 3 ? 'logo_title_scroll' : 'logo_title' ]">Apartments</h2>
+          <h3 :class="[ position > 0 || route !== 3 ? 'logo_subtitle_scroll' : 'logo_subtitle' ]">Renata</h3>
+        </div>
+
+      </v-col>  
 
       <v-col class="d-none d-sm-flex justify-space-around align-center" cols="1" xl="3" lg="4" md="5" sm="8">
         
         <!-- <NuxtLink :to="localePath('/')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]" >
         <div v-html="rawLogo" :class="position > 0 || route !== '/index' ? 'logoSecondary' : 'logoPrimary'"/>          
         </NuxtLink> -->
+
+        
         
         <NuxtLink :to="localePath('/')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]" >
         {{ $t('navbar.home') }}</NuxtLink>
@@ -36,7 +48,7 @@
               v-for="(room, i) in rooms"
               :key="i"
             >
-            <NuxtLink :to="localePath(`/rooms/${room.replace(/\s+/g, '')}`)" class="link-scroll">
+            <NuxtLink :to="localePath(`/rooms/${room.replace(/\s+/g, '')}Room`)" class="link-scroll">
               <v-list-item-title class="link-scroll" style="font-size:12px; line-height:1rem;">{{ $t(`navbar.rooms.${room}`) }}</v-list-item-title>
             </NuxtLink>
             </v-list-item>
@@ -115,7 +127,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .navbar{
   z-index: 9999;
   overflow: hidden;
@@ -125,7 +137,8 @@ export default {
   max-width: 100vw;
   max-height: 74px;
   min-height: 74px;
-  transition: all .5s ease;  
+  transition: all .5s ease; 
+  font-family: $heading-font-family;
 }
 .navbar-scroll{
   z-index: 9999;
@@ -144,7 +157,45 @@ export default {
   min-height: fit-content;
 }
 /* LOGOS */
-.logoSecondary{
+.logo_title,.logo_subtitle {
+  color: var(--primary);
+  /* font-family: 'Raleway', sans-serif; */
+}
+.logo_title {
+  letter-spacing: 2px;
+  font-size: xx-large;
+  font-weight: lighter;
+}
+.logo_title_scroll{
+  letter-spacing: 2px;
+  font-size: xx-large;
+  font-weight: lighter;
+}
+.logo_title_scroll,.logo_subtitle_scroll {
+  color: var(--secondary);
+  /* font-family: 'Raleway', sans-serif; */
+}
+.logo_subtitle {
+  letter-spacing: 8px;
+  font-weight: 100;
+  margin-top: -0.5rem;
+}
+.logo_subtitle_scroll {
+  letter-spacing: 8px;
+  font-weight: 100;
+  margin-top: -0.5rem;
+}
+.star {
+  color: var(--primary);
+  transform: scale(0.7);
+  margin-bottom: -5px;
+}
+.star_scroll {
+  color: var(--secondary);
+  transform: scale(0.7);
+  margin-bottom: -5px;
+}
+/* .logoSecondary{
   max-width: 0vw;
   max-height: 0vh;
   transform: scale(0.1) translateY(-8rem) translateX(-100vw);  
@@ -179,7 +230,7 @@ export default {
   .logoSecondary >>> svg,.logoPrimary >>> svg{
   transform: scale(1.2);
   }
-}
+} */
 /* LOGOS END */
 
 /* LINKS NAVBAR */
@@ -190,9 +241,8 @@ export default {
   text-decoration: none;
   color: var(--primary);
   font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  font-family: 'Raleway', Helvetica, Arial, sans-serif !important;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 .link::after {
   content: '';
@@ -209,9 +259,8 @@ export default {
   text-decoration: none;
   color: var(--secondary);
   font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  font-family: 'Raleway', Helvetica, Arial, sans-serif !important;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 .link-scroll::after{
   content: '';
