@@ -6,6 +6,8 @@ export default {
   target: 'static',
   ssr: true,
 
+  generate: { fallback: true },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - mislav-template',
@@ -17,7 +19,8 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
+      { hid: 'keywords', name: 'keywords', content: 'Novi Vinodolski, Croatia, Hrvatska, Kroatien, Adriatic sea, Renata, Adriatisches Meer, coast, vacation, Urlaub' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -45,7 +48,7 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     '@nuxtjs/fontawesome',
-    "@nuxtjs/svg",    
+    "@nuxtjs/svg"    
   ],
 
   fontawesome: {
@@ -77,17 +80,6 @@ export default {
     }
   },
 
-  head () {
-    const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
-    return {
-      meta: [ // Each object in this array is its own meta tag
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial scale=1' },
-        { hid: 'keywords', name: 'keywords', content: 'Novi Vinodolski, Croatia, Hrvatska, Kroatien, Adriatic sea, Renata, Adriatisches Meer, coast, vacation, Urlaub' },
-        ...i18nHead.meta
-      ]
-    }
-  },
   
   styleResources: {
     scss: [
@@ -100,20 +92,6 @@ export default {
     customVariables: ['~/assets/variables.scss'],
     treeShake: true,
     defaultAssets: false
-    // theme: {
-    //   dark: false,
-    //   themes: {
-    //     dark: {
-    //       primary: colors.blue.darken2,
-    //       accent: colors.grey.darken3,
-    //       secondary: colors.amber.darken3,
-    //       info: colors.teal.lighten1,
-    //       warning: colors.amber.base,
-    //       error: colors.deepOrange.accent4,
-    //       success: colors.green.accent3
-    //     }
-    //   }
-    // }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

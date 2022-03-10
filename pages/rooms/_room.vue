@@ -219,7 +219,7 @@ export default {
     paths: {
       en: '/our-rooms/:room',
       hr: '/sobe/:room',
-      ede: '/unsere-zimmer/:room'
+      de: '/unsere-zimmer/:room'
     }
   },
   mixins: [aosMixin],

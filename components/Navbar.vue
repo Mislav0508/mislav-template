@@ -116,7 +116,6 @@ export default {
   watch: {
     $route (to, from) {
       this.route = $nuxt.$route.path.length
-      console.log(this.route);
       this.sidebar = false
       this.$emit("sidebar-navbar", this.sidebar)
     },

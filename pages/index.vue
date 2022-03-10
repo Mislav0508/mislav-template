@@ -23,7 +23,7 @@
         data-aos-easing="ease-out"
         data-aos-delay="1000"
         data-aos-once="true"></v-img>
-        <p data-aos="fade-left" 
+        <p class="font-weight-medium" data-aos="fade-left" 
         data-aos-duration="900"
         data-aos-easing="ease-out"
         data-aos-delay="1500"
