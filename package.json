@@ -17,7 +17,6 @@
     "nuxt": "^2.15.7",
     "nuxt-gmaps": "^1.2.10",
     "vue-carousel": "^0.18.0",
-    "vue-cli-plugin-vuetify-preset-crane": "^1.0.3",
     "vuetify": "^2.5.5"
   },
   "devDependencies": {

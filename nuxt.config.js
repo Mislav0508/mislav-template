@@ -97,7 +97,6 @@ export default {
   },
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    preset: 'vue-cli-plugin-vuetify-preset-crane/preset',
     customVariables: ['~/assets/variables.scss'],
     treeShake: true,
     defaultAssets: false
@@ -119,7 +118,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ["vue-cli-plugin-vuetify-preset-crane"],
+    
   },
   
 }

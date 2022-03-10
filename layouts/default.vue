@@ -58,7 +58,7 @@ export default {
 </script>
 <style lang="scss">
 #app {
-  font-family: $heading-font-family;
+  font-family: $heading-font-family ;
 }
 p{
   font-size: clamp(14px, 0.5vw, 18px);
