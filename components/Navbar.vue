@@ -159,7 +159,6 @@ export default {
 /* LOGOS */
 .logo_title,.logo_subtitle {
   color: var(--primary);
-  /* font-family: 'Raleway', sans-serif; */
 }
 .logo_title {
   letter-spacing: 2px;
@@ -173,16 +172,15 @@ export default {
 }
 .logo_title_scroll,.logo_subtitle_scroll {
   color: var(--secondary);
-  /* font-family: 'Raleway', sans-serif; */
 }
 .logo_subtitle {
   letter-spacing: 8px;
-  font-weight: 100;
+  font-weight: 300;
   margin-top: -0.5rem;
 }
 .logo_subtitle_scroll {
   letter-spacing: 8px;
-  font-weight: 100;
+  font-weight: 300;
   margin-top: -0.5rem;
 }
 .star {
@@ -241,7 +239,7 @@ export default {
   text-decoration: none;
   color: var(--primary);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 1px;
 }
 .link::after {
@@ -259,7 +257,7 @@ export default {
   text-decoration: none;
   color: var(--secondary);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: 1px;
 }
 .link-scroll::after{

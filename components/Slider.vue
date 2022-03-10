@@ -7,8 +7,8 @@
       :class="[ i === index ? 'activeSlide' :  i === index - 1 || (index === 0 && i === images.length - 1) ? 'lastSlide' : 'nextSlide' ]"
       >
       <img :src="image" alt="img" >
-      <h1 ref="title" :class="[ i === index ? 'activeTitle' : '' ]">{{ $t(`slider.titles.${titles[i]}`) }} </h1>
-      <p ref="subtitle" :class="[ i === index ? 'activeSubtitle' : '' ]">{{ $t(`slider.subtitles.${subtitles[i]}`) }}</p>
+      <h1 ref="title" :class="[ i === index ? 'activeTitle font-weight-medium mb-15 pb-15' : 'font-weight-medium mb-15 pb-15' ]">{{ $t(`slider.titles.${titles[i]}`) }} </h1>
+      <p ref="subtitle" :class="[ i === index ? 'activeSubtitle font-weight-regular mb-15 pb-15' : 'font-weight-regular mb-15 pb-15' ]">{{ $t(`slider.subtitles.${subtitles[i]}`) }}</p>
     </div>
     <div class="arrow-container-left" @click="prev">
       <i class="arrow left"></i>      
@@ -42,10 +42,10 @@ export default {
           rectActive: null,
           rectNext: null,
           images: [
-          "/images/home/slider-home-1.jpg",
-          "/images/home/slider-home-2.jpg",
-          "/images/home/slider-home-3.jpg",
-          "/images/home/slider-home-4.jpg",
+          "/images/slider/slider-home-8.jpeg",
+          "/images/slider/slider-home-6.jpeg",
+          "/images/slider/slider-home-14.jpeg",
+          "/images/slider/slider-home-15.jpeg",
           ],
           titles: [
             "one",
@@ -117,12 +117,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+p{
+  font-size: clamp(16px, 0.5vw, 18px);
+}
 
 .slider{
   position: relative;
   width: 100vw;
-  min-height: 90vh;
-  max-height: 90vh;
+  min-height: 89vh;
+  max-height: 89vh;
   @include flexCenter;
   background: rgba(0, 0, 0, 0.8);
   
@@ -150,10 +153,10 @@ export default {
 }
 img{
   width: 100vw;
-  min-height: 90vh;
-  max-height: 90vh;
+  min-height: 89vh;
+  max-height: 89vh;
   object-fit: cover;
-  filter: brightness(80%);
+  filter: brightness(75%);
 }
 h1,p{
   position: absolute;

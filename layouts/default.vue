@@ -61,11 +61,10 @@ export default {
   font-family: $heading-font-family ;
 }
 p{
-  font-size: clamp(14px, 0.5vw, 18px);
-  font-weight: 200;
+  font-size: clamp(13px, 0.5vw, 18px);
+  font-weight: 400;
   line-height: 1.4rem;
   letter-spacing: 1.5px;
-  font-size: 100%;
 }
 h1 {
   font-size: clamp(36px, 5vw, 100px);

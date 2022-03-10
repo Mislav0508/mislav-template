@@ -7,12 +7,12 @@
       <v-col cols="12" xl="2" lg="2" md="0"></v-col>
 
       <v-col cols="12" xl="3" lg="3" md="6" sm="" class="d-flex align-start justify-start flex-wrap flex-column px-10 py-15">
-        <p>ABOUT RENATAS APARTMENTS</p>
+        <p class="font-weight-bold">ABOUT RENATAS APARTMENTS</p>
         <h2 class="pb-5" data-aos="fade-left" 
         data-aos-duration="600"
         data-aos-easing="ease-out"
         data-aos-once="true">Renatas Apartments, More than a stay</h2>
-        <p class="font-weight-thin" data-aos="fade-left" 
+        <p class="font-weight-light" data-aos="fade-left" 
         data-aos-duration="700"
         data-aos-easing="ease-out"
         data-aos-delay="500"
@@ -34,9 +34,9 @@
       <v-col cols="12" xl="3" lg="3" md="6" sm="">
         <div class="img-container d-flex align-center justify-center">
           <v-img
-            class="square-img-small"
+            class="square-img-small-wide"
             lazy-src="https://picsum.photos/id/11/10/6"
-            src="/images/home/pexels-oliver-sjöström-1433052.jpg"
+            src="/images/home/home_pic2.jpeg"
           ></v-img>
         </div>
       </v-col>
@@ -95,7 +95,7 @@
         data-aos-easing="ease-out"
         data-aos-delay="500"
         data-aos-once="true"
-        class="font-weight-thin">Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica.</p>
+        class="font-weight-regular">Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica.</p>
       </v-col>
 
       <v-col cols="12" xl="2" lg="2" md="1" sm="12"></v-col>
@@ -197,7 +197,7 @@
         <v-col cols="12" xl="2" lg="2" md="0"></v-col>
 
         <v-col cols="12" xl="3" lg="5" md="6" sm="" class="d-flex align-start justify-start flex-wrap flex-column px-10 py-15" >
-          <p class="font-weight-normal"
+          <p class="font-weight-bold"
           >ABOUT RENATAS APARTMENTS</p>
           <h2 class="pb-3" data-aos="fade-left" 
           data-aos-duration="600"
@@ -209,7 +209,7 @@
           data-aos-easing="ease-out"
           data-aos-delay="1000"
           data-aos-once="true"
-          class="font-weight-thin">Pitchfork selfies master cleanse Kickstarter seitan retro. Drinking vinegar stumptown yr pop-up artisan sunt. Deep v cliche lomo biodiesel Neutra selfies. Shorts fixie consequat flexitarian four loko tempor duis single-origin coffee. Banksy, elit small batch freegan sed.</p>
+          class="font-weight-regular">Pitchfork selfies master cleanse Kickstarter seitan retro. Drinking vinegar stumptown yr pop-up artisan sunt. Deep v cliche lomo biodiesel Neutra selfies. Shorts fixie consequat flexitarian four loko tempor duis single-origin coffee. Banksy, elit small batch freegan sed.</p>
           <NuxtLink :to="localePath('/about')" style="text-decoration:none;color:#222222;">
             <p class="font-weight-bold" 
             data-aos="fade-left" 
@@ -226,7 +226,7 @@
             <v-img
               class="square-img-small"
               lazy-src="https://picsum.photos/id/11/10/6"
-              src="/images/home/pexels-oliver-sjöström-1433052.jpg"
+              src="/images/home/home_pic1.jpeg"
             ></v-img>
           </div>
         </v-col>
@@ -277,7 +277,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .signature{
-  max-width: clamp(12rem, 20vw, 15rem);
+  max-width: clamp(12rem, 20vw, 17rem);
+}
+.square-img-small-wide{
+  min-height: 45vh;
+  max-height: 45vh;
+  min-width: 35vw;
+  max-width: 35vw;
 }
 .square-img-small{
   @include square-img-small;
@@ -289,7 +295,7 @@ export default {
   @include text-container;
 }
 @media only screen and (max-width: 960px) {
-  .square-img-small{
+  .square-img-small, .square-img-small-wide{
     min-height: 60vh;
     max-height: 60vh;
     min-width: 40vw;
@@ -301,7 +307,7 @@ export default {
   }
 }
 @media only screen and (max-width: 600px) {
-  .square-img-small{
+  .square-img-small, .square-img-small-wide{
     min-width: 100vw;
     max-width: 100vw;
   }
@@ -318,7 +324,7 @@ export default {
 }
 }
 @media only screen and (min-width: 2600px) {
-  /* .square-img-small{
+  /* .square-img-small, .square-img-small-wide{
   min-height: 45vh;
   max-height: 45vh;
   min-width: 15vw;

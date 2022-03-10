@@ -30,7 +30,7 @@
         <v-img
           class="block-img-center"
           lazy-src="https://picsum.photos/id/11/10/6"
-          src="/images/home/slider-home-2.jpg"
+          src="/images/slider/slider-home-2.jpg"
           data-aos="fade-in" 
           data-aos-duration="1000"
           data-aos-easing="ease-out"
@@ -59,7 +59,7 @@
         <v-img
           class="block-img-square"
           lazy-src="https://picsum.photos/id/11/10/6"
-          src="/images/home/slider-home-3.jpg"
+          src="/images/slider/slider-home-3.jpg"
           data-aos="fade-up" 
           data-aos-duration="1000"
           data-aos-easing="ease-in"
@@ -76,7 +76,7 @@
         <v-img
           class="block-img-square"
           lazy-src="https://picsum.photos/id/11/10/6"
-          src="/images/home/slider-home-4.jpg"
+          src="/images/slider/slider-home-4.jpg"
           data-aos="fade-up" 
           data-aos-duration="1000"
           data-aos-easing="ease-in"

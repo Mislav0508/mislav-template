@@ -47,6 +47,7 @@ select {
   border: 2px solid #4d5061;
   // appearance: none;
   // border: 0;
+  cursor: pointer;
   
 }
 </style>
