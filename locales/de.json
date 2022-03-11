@@ -20,9 +20,9 @@
   },
   "navbar": {
     "home": "Startseite",
-    "our_rooms": "Zimmern",
+    "our_rooms": "Zimmer",
     "rooms": {
-      "rooms": "Zimmern",
+      "rooms": "Zimmer",
       "Superior": "Superior Zimmer",
       "Deluxe": "Deluxe Zimmer",
       "Signature": "Signature Zimmer",

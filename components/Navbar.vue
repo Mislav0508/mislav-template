@@ -7,6 +7,7 @@
 
       <v-col cols="8" xl="3" lg="2" md="2" sm="1">
 
+        <NuxtLink :to="localePath('/')" style="text-decoration:none;border-bottom:none;">
         <div class="d-sm-none d-md-flex flex-md-column justify-center align-center text-center pt-1" >
           <div class="d-flex justify-center align-center">
             <font-awesome-icon v-for="i in 4" :key="i" icon="star" :class="[ position > 0 || route !== 3 ? 'star_scroll' : 'star' ]"/>
@@ -14,6 +15,7 @@
           <h2 :class="[ position > 0 || route !== 3 ? 'logo_title_scroll' : 'logo_title' ]">Apartments</h2>
           <h3 :class="[ position > 0 || route !== 3 ? 'logo_subtitle_scroll' : 'logo_subtitle' ]">Renata</h3>
         </div>
+        </NuxtLink>
 
       </v-col>  
 
@@ -25,12 +27,12 @@
 
         
         
-        <NuxtLink :to="localePath('/')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]" >
+        <NuxtLink :to="localePath('/')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]" :id="this.$route.name.includes('index') && position > 0 ? 'active-link-secondary' : this.$route.name.includes('index') ? 'active-link-primary' : ''">
         {{ $t('navbar.home') }}</NuxtLink>
 
         <v-menu open-on-hover offset-y bottom >
           <template v-slot:activator="{ on, attrs }" >
-            <p :class="[ position > 0 || route !== 3 ? 'link-scroll ma-0' : 'link ma-0' ]" id="v-menu"
+            <p :class="[ position > 0 || route !== 3 ? 'link-scroll ma-0' : 'link ma-0' ]" :id="$nuxt.$route.name.includes('rooms') && position > 0 ? 'active-link-secondary' : $nuxt.$route.name.includes('rooms') ? 'active-link-primary' : ''"
               v-bind="attrs"
               v-on="on"
               style="cursor:pointer;"
@@ -57,10 +59,10 @@
 
         <!-- <NuxtLink to="/rooms" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]">Our Rooms</NuxtLink> -->
 
-        <NuxtLink :to="localePath('/about')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]">{{ $t('navbar.about') }}</NuxtLink>
-        <NuxtLink :to="localePath('/gallery')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]">{{ $t('navbar.gallery') }}</NuxtLink>
-        <NuxtLink :to="localePath('/explore')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]">{{ $t('navbar.explore') }}</NuxtLink>
-        <NuxtLink :to="localePath('/contact')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]">{{ $t('navbar.contact') }}</NuxtLink>
+        <NuxtLink :to="localePath('/about')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]" :id="this.$route.name.includes('about') ? 'active-link-secondary': ''">{{ $t('navbar.about') }}</NuxtLink>
+        <NuxtLink :to="localePath('/gallery')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]" :id="this.$route.name.includes('gallery') ? 'active-link-secondary': ''">{{ $t('navbar.gallery') }}</NuxtLink>
+        <NuxtLink :to="localePath('/explore')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]" :id="this.$route.name.includes('explore') ? 'active-link-secondary': ''">{{ $t('navbar.explore') }}</NuxtLink>
+        <NuxtLink :to="localePath('/contact')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]" :id="this.$route.name.includes('contact') ? 'active-link-secondary': ''">{{ $t('navbar.contact') }}</NuxtLink>
       </v-col>
 
       <v-col cols="2" xl="2" lg="4" md="1" sm="1"></v-col>
@@ -122,6 +124,10 @@ export default {
     sidebarComponent(val){
       this.sidebar = val
     },
+  },
+  mounted() {
+    console.log(this.$route.name.includes('about') ? true : false);
+    console.log($nuxt.$route.path);
   }
 }
 </script>
@@ -279,6 +285,22 @@ export default {
 .link-scroll:hover::after{
   width: 100%;
 }
+#active-link-secondary::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--secondary);
+  transition: width .3s;
+}
+#active-link-primary::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--primary);
+  transition: width .3s;
+}
 /* ACTIVE LINK */
 /* a.nuxt-link-exact-active::after {
   content: '';
@@ -288,14 +310,14 @@ export default {
   background: var(--secondary);
   transition: width .3s;
 } */
-a.nuxt-link-exact-active[data-v-cfc91daa]::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: var(--primary);
-  transition: width .3s;
-}
+// a.nuxt-link-exact-active[data-v-cfc91daa]::after {
+//   content: '';
+//   display: block;
+//   width: 100%;
+//   height: 1px;
+//   background: var(--primary);
+//   transition: width .3s;
+// }
 /* LINKS END */
 
 /* BURGER MENU */
