@@ -41,13 +41,12 @@ export default {
 <style lang="scss" scoped>
 select {
   // box-shadow: 2px 2px 2px rgba(0, 0, 0, 1.0);
-  font-size: 1rem;
+  font-size: 0.9rem;
   background: #4d5061;
   color: var(--primary);
   border: 1px solid var(--primary);
-  // appearance: none;
-  // border: 0;
-  cursor: pointer;
-  
+  cursor: pointer; 
+  padding: 0.2rem; 
 }
+
 </style>

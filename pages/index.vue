@@ -269,7 +269,7 @@ export default {
         images: [
           "/images/home/midSlider/midSlider-1.jpg",
           "/images/home/midSlider/midSlider-2.jpg",
-          "/images/home/midSlider/midSlider-3.jpg",
+          "/images/home/midSlider/midSlider-3.jpeg",
           "/images/home/midSlider/midSlider-4.jpg",
           "/images/home/midSlider/midSlider-5.jpg",
         ],
