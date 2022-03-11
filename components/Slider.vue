@@ -156,7 +156,7 @@ img{
   min-height: 89vh;
   max-height: 89vh;
   object-fit: cover;
-  filter: brightness(75%);
+  filter: brightness(80%);
 }
 h1,p{
   position: absolute;

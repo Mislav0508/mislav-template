@@ -112,6 +112,18 @@
 import aosMixin from "../mixins/aos"
 import ContactForm from "../components/ContactForm.vue"
 export default {
+  head() {
+    const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
+    return {
+      title: this.$t('seo.seo_contact_title'),
+      meta: [ // Each object in this array is its own meta tag
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial scale=1' },
+        { hid: 'description', name: 'description', content: this.$t('seo.seo_contact_description') },
+        ...i18nHead.meta
+      ]
+    }      
+  },
   nuxtI18n: {
     paths: {
       en: '/contact',

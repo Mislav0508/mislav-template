@@ -244,12 +244,16 @@ import MidSlider from "../components/MidSlider.vue"
 import aosMixin from "../mixins/aos"
 export default {
   head() {
+    const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
     return {
       title: this.$t('seo.seo_home_title'),
-      meta: [
-        { hid: 'description', name: 'description', content: this.$t('seo.seo_home_description') }
-      ],
-      }
+      meta: [ // Each object in this array is its own meta tag
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial scale=1' },
+        { hid: 'description', name: 'description', content: this.$t('seo.seo_home_description') },
+        ...i18nHead.meta
+      ]
+    }      
   },
   mixins: [aosMixin],
   data () {

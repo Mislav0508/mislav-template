@@ -1,7 +1,17 @@
 {
   "seo": {
     "seo_home_title": "Ferienwohnungen Renata",
-    "seo_home_description": "Ferienwohnungen Renata"
+    "seo_home_description": "Ferienwohnungen Renata",
+    "seo_rooms_title": "Unsere Zimmer",
+    "seo_rooms_description": "Ferienwohnungen Renata - Unsere Zimmer",
+    "seo_about_title": "Ueber uns",
+    "seo_about_description": "Ferienwohnungen Renata - Ueber uns",
+    "seo_gallery_title": "Galerie",
+    "seo_gallery_description": "Ferienwohnungen Renata - Galerie",
+    "seo_explore_title": "Entdecken",
+    "seo_explore_description": "Ferienwohnungen Renata - Entdecken",
+    "seo_contact_title": "Kontakt",
+    "seo_contact_description": "Ferienwohnungen Renata - Kontakt"
   },
   "picker": {
     "en": "Englisch",

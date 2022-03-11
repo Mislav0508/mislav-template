@@ -8,7 +8,7 @@
           v-for="(locale, index) in $i18n.locales"
           :key="index"
           :value="locale.code"
-        >{{locale.name}}</option>
+        >{{ $t(`picker.${locale.code}`) }}</option>
 
     </select>
 
@@ -44,7 +44,7 @@ select {
   font-size: 1rem;
   background: #4d5061;
   color: var(--primary);
-  border: 2px solid #4d5061;
+  border: 1px solid var(--primary);
   // appearance: none;
   // border: 0;
   cursor: pointer;

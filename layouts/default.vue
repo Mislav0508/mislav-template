@@ -22,6 +22,17 @@
 
 <script>
 export default {
+  head () {
+    const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
+    return {
+      meta: [ // Each object in this array is its own meta tag
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial scale=1' },
+        { hid: 'keywords', name: 'keywords', content: 'Novi Vinodolski, Croatia, Hrvatska, Kroatien, Adriatic sea, Renata, Adriatisches Meer, coast, vacation, Urlaub' },
+        ...i18nHead.meta
+      ]
+    }
+  },
   data () {
     return {
       position: 0,

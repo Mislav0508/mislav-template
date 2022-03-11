@@ -5,10 +5,10 @@
 
     <v-row class="d-flex justify-md-space-around align-center">    
 
-      <v-col cols="6" xl="3" lg="2" md="2" sm="1">
+      <v-col cols="8" xl="3" lg="2" md="2" sm="1">
 
-        <div class="d-none d-md-flex flex-column justify-center align-center text-center pt-1" >
-          <div class="d-flex">
+        <div class="d-sm-none d-md-flex flex-md-column justify-center align-center text-center pt-1" >
+          <div class="d-flex justify-center align-center">
             <font-awesome-icon v-for="i in 4" :key="i" icon="star" :class="[ position > 0 || route !== 3 ? 'star_scroll' : 'star' ]"/>
           </div>
           <h2 :class="[ position > 0 || route !== 3 ? 'logo_title_scroll' : 'logo_title' ]">Apartments</h2>
@@ -63,9 +63,9 @@
         <NuxtLink :to="localePath('/contact')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]">{{ $t('navbar.contact') }}</NuxtLink>
       </v-col>
 
-      <v-col cols="4" xl="2" lg="4" md="1" sm="1"></v-col>
+      <v-col cols="2" xl="2" lg="4" md="1" sm="1"></v-col>
 
-      <v-col cols="2" xl="3" lg="1" md="1" sm="2" class="d-flex align-center justify-center">
+      <v-col cols="1" xl="3" lg="1" md="1" sm="2" class="d-flex align-center justify-center">
         <div role="button" 
         :class="sidebar ? 'menu-btn open ' : 'menu-btn'" 
         @click="showSidebar">
@@ -127,6 +127,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media only screen and (max-width: 600px) {
+  h2{
+    font-size: 1px;
+  }
+  h3 {
+    font-size: 1px;
+  }
+}
 .navbar{
   z-index: 9999;
   overflow: hidden;
@@ -163,6 +171,7 @@ export default {
   letter-spacing: 2px;
   font-size: xx-large;
   font-weight: lighter;
+  
 }
 .logo_title_scroll{
   letter-spacing: 2px;

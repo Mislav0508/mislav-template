@@ -201,7 +201,7 @@ p, h2{
   // top: 25vh; 
   left: 35vw;
   position: absolute;
-  padding: 0.5rem 0.6rem 0.6rem 1rem;  
+  padding: 0.7rem 0.8rem 0.6rem 1.1rem;  
   cursor: pointer;
   transition: all 0.1s linear;
   background: rgba(0, 0, 0, 0.4);
@@ -217,7 +217,7 @@ p, h2{
   position: absolute;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 100%;
-  padding: 0.5rem 1rem 0.6rem  0.6rem;
+  padding: 0.7rem 1.1rem 0.6rem  0.8rem;
   cursor: pointer;
   transition: all 0.1s linear;
   &:hover{
