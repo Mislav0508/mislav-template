@@ -45,7 +45,7 @@
       
       <v-col cols="12" xl="8" lg="8" md="8" sm="12" class="containers-R ma-0 pa-0 d-flex align-center">
         
-          <div class="sliderMid">
+          <div class="sliderMid" :id="type.replaceAll(' ','')">
 
             <div class="slideMid" v-for="(img, i) in image" :key="i">
               <img :src="img" alt="img" :class="imageSize[i] == 1 ? 'imagesS' : 'imagesL'">
@@ -83,11 +83,10 @@ export default {
    },
   data () {
     return {
-      translateX: null
+      translateX: null,
+      touchstartX: 0,
+      touchendX: 0
     }
-  },
-  beforeMount() {
-    
   },
   mounted() {
     this.translateX = this.translate
@@ -96,6 +95,21 @@ export default {
 
     myElements.forEach((element, i) => {
       myElements[i].style.transform = "translateX(" + this.translateX + "rem)"
+    })
+
+    // TOUCH GESTURES
+    const type = this.type.replaceAll(' ','')
+    const slider = document.querySelector(`#${type}`)
+  
+    slider.addEventListener('touchstart', e => {
+      console.log("starT",e.changedTouches[0].screenX);
+      this.touchstartX = e.changedTouches[0].screenX
+    })
+
+    slider.addEventListener('touchend', e => {
+      console.log("End",e.changedTouches[0].screenX);
+      this.touchendX = e.changedTouches[0].screenX
+      this.handleGesture()
     })
 
   },
@@ -113,6 +127,10 @@ export default {
       var myElements = document.querySelectorAll('.sliderMid');
       let id = this._props.id
       myElements[id - 1].style.transform = "translateX(" + this.translateX + "rem)"
+    },
+    handleGesture() {
+      if (this.touchendX < this.touchstartX) this.next()
+      if (this.touchendX > this.touchstartX) this.prev()
     }
   }
 }

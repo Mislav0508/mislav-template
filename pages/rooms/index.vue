@@ -188,7 +188,7 @@ export default {
       translateX: [ 50, 50, 50, 50 ]
 
       }
-  },
+  }
 
 }
 </script>

@@ -72,10 +72,10 @@ export default {
       next() {
         this.index = this.index + 1
       },
-      // handleGesture() {
-      // if (this.touchendX < this.touchstartX) this.next()
-      // if (this.touchendX > this.touchstartX) this.prev()
-      // }
+      handleGesture() {
+      if (this.touchendX < this.touchstartX) this.next()
+      if (this.touchendX > this.touchstartX) this.prev()
+      }
   },
   watch: {
     index() {
@@ -90,9 +90,6 @@ export default {
       this.interval = setInterval(() => {
         this.next() 
       }, 100000);
-    },
-    touchstartX() {
-       
     }
   },
   mounted() {
@@ -100,16 +97,17 @@ export default {
       this.next() 
     }, 100000);
 
-    // const slider = document.querySelector('.slider')
+    const slider = document.querySelector('.slider')
 
-    // slider.addEventListener('touchstart', e => {
-    //   this.touchstartX = e.changedTouches[0].screenX
-    // })
+    slider.addEventListener('touchstart', e => {
+      this.touchstartX = e.changedTouches[0].screenX
+    })
 
-    // slider.addEventListener('touchend', e => {
-    //   this.touchendX = e.changedTouches[0].screenX
-    //   handleGesture()
-    // })
+    slider.addEventListener('touchend', e => {
+      this.touchendX = e.changedTouches[0].screenX
+      this.handleGesture()
+    })
+
     let title = this.$refs.title
     title[0].classList.remove("activeTitle")
     let subtitle = this.$refs.subtitle
@@ -229,8 +227,11 @@ p{
   @include left
 }
 @media screen and (max-width: 600px) {
-  .text-container{
-    top: 20vh;
-  }
+  .arrow-container-left{
+  display: none;
+}
+.arrow-container-right{
+  display: none;
+}
 }
 </style>
