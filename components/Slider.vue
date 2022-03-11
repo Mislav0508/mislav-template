@@ -7,8 +7,10 @@
       :class="[ i === index ? 'activeSlide' :  i === index - 1 || (index === 0 && i === images.length - 1) ? 'lastSlide' : 'nextSlide' ]"
       >
       <img :src="image" alt="img" >
-      <h1 ref="title" :class="[ i === index ? 'activeTitle font-weight-medium mb-15 pb-15' : 'font-weight-medium mb-15 pb-15' ]">{{ $t(`slider.titles.${titles[i]}`) }} </h1>
-      <p ref="subtitle" :class="[ i === index ? 'activeSubtitle font-weight-regular mb-15 pb-15' : 'font-weight-regular mb-15 pb-15' ]">{{ $t(`slider.subtitles.${subtitles[i]}`) }}</p>
+      <div class="text-container">
+        <h1 ref="title" :class="[ i === index ? 'activeTitle font-weight-medium' : 'font-weight-medium' ]">{{ $t(`slider.titles.${titles[i]}`) }} </h1>
+        <p ref="subtitle" :class="[ i === index ? 'activeSubtitle font-weight-regular px-15 px-sm-5' : 'font-weight-regular px-15 px-sm-5' ]">{{ $t(`slider.subtitles.${subtitles[i]}`) }}</p>
+      </div>
     </div>
     <div class="arrow-container-left" @click="prev">
       <i class="arrow left"></i>      
@@ -135,21 +137,28 @@ p{
   position: absolute;
   @include flexCenter;
 }
+.text-container{
+  position: absolute;
+  top: 30vh;
+  min-width: 100vw;
+  min-height: 20vh;
+  @include flexCenter;
+}
 .slide.activeSlide {
   opacity: 1;
   position: absolute;
   transform: translateX(0);
-  transition: all 2s ease-out;
+  transition: all 1.5s ease-out;
 }
 .slide.lastSlide {
   position: absolute;
   transform: translateX(-100%);
-  transition: all 2s ease-out;
+  transition: all 1.5s ease-out;
 }
 .slide.nextSlide {
   position: absolute;
   transform: translateX(100%);
-  transition: all 2s ease-out;
+  transition: all 1.5s ease-out;
 }
 img{
   width: 100vw;
@@ -173,7 +182,7 @@ p{
 }
 .activeTitle{
   animation-name: activeTitle;
-  animation-duration: 3s;
+  animation-duration: 2s;
 }
 @keyframes activeSubtitle {
   0%   { opacity: 0; transform: translateY(25vh);}
@@ -184,7 +193,7 @@ p{
 .activeSubtitle{
   text-align: center;
   animation-name: activeSubtitle;
-  animation-duration: 3.5s;
+  animation-duration: 2.5s;
 }
 .slider-line{
   position: relative;
@@ -219,5 +228,9 @@ p{
 .left {
   @include left
 }
-
+@media screen and (max-width: 600px) {
+  .text-container{
+    top: 20vh;
+  }
+}
 </style>
