@@ -1,7 +1,7 @@
 <template >
 
   <div >
-    <v-container :class="[ position > 0 || route !== 3 ? 'navbar-scroll d-flex align-center' : 'navbar d-flex align-center']" :style=" position <= 0 ? 'box-shadow: none;' : ''">
+    <v-container :class="[ position > 0 || route !== 3 || $nuxt.$route.name.includes('privacy') ? 'navbar-scroll d-flex align-center' : 'navbar d-flex align-center']" :style=" position <= 0 ? 'box-shadow: none;' : ''">
 
     <v-row class="d-flex justify-md-space-around align-center">    
 

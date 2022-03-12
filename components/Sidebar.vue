@@ -4,34 +4,42 @@
 
     <div :class="!sidebar ? 'sidebar' : 'sidebar show-sidebar'">
 
-      <img src="/images/logo.svg" alt="" style="position:fixed;top:-10vh;transform:scale(0.15)">
+      <!-- <img src="/images/logo.svg" alt="" style="position:fixed;top:-15vh;transform:scale(0.15)"> -->
 
-      <NuxtLink :to="localePath('/')" class="link-sidebar">{{ $t('navbar.home') }}</NuxtLink>
+      <v-container class="d-flex align-center flex-column">
 
-      <div class="d-flex align-center flex-column" @click="dropdown = !dropdown">
-        <div class="d-flex align-center">
-          <p class="link-sidebar py-1" style="cursor:pointer">{{ $t('navbar.our_rooms') }}</p>
-          <i :class="dropdown ? 'up-arrow-scroll' : 'down-arrow-scroll'"></i>
-        </div>
-        <div class="linksContainer d-flex justify-center flex-column align-center" ref="linksContainerRef">
-          <div class="links d-flex justify-center flex-column align-center" ref="linksRef">
-            <NuxtLink :to="localePath('/rooms')" style="text-decoration:none;">
-              <v-list-item-title class="link-sidebar">{{ $t('navbar.rooms.rooms') }}</v-list-item-title>
-            </NuxtLink>
-            <NuxtLink v-for="(room,i) in rooms" :key="i" :to="localePath(`/rooms/${room.replace(/\s+/g, '')}Room`)" class="link-sidebar" >
-              {{ $t(`navbar.rooms.${room}`) }}
-            </NuxtLink>
+        <NuxtLink :to="localePath('/')" class="link-sidebar">{{ $t('navbar.home') }}</NuxtLink>
+
+        <div class="d-flex align-center flex-column" @click="dropdown = !dropdown">
+          <div class="d-flex align-center">
+            <p class="link-sidebar py-1" style="cursor:pointer">{{ $t('navbar.our_rooms') }}</p>
+            <i :class="dropdown ? 'up-arrow-scroll' : 'down-arrow-scroll'"></i>
+          </div>
+          <div class="linksContainer d-flex justify-center flex-column align-center" ref="linksContainerRef">
+            <div class="links d-flex justify-center flex-column align-center" ref="linksRef">
+              <NuxtLink :to="localePath('/rooms')" style="text-decoration:none;">
+                <v-list-item-title class="link-sidebar">{{ $t('navbar.rooms.rooms') }}</v-list-item-title>
+              </NuxtLink>
+              <NuxtLink v-for="(room,i) in rooms" :key="i" :to="localePath(`/rooms/${room.replace(/\s+/g, '')}Room`)" class="link-sidebar" >
+                {{ $t(`navbar.rooms.${room}`) }}
+              </NuxtLink>
+            </div>
           </div>
         </div>
-      </div>
 
-      <NuxtLink :to="localePath('/about')" class="link-sidebar">{{ $t('navbar.about') }}</NuxtLink>
+        <div class="d-flex justify-center align-center flex-column">
+          <NuxtLink :to="localePath('/about')" class="link-sidebar">{{ $t('navbar.about') }}</NuxtLink>
 
-      <NuxtLink :to="localePath('/gallery')" class="link-sidebar">{{ $t('navbar.gallery') }}</NuxtLink>
+          <NuxtLink :to="localePath('/gallery')" class="link-sidebar">{{ $t('navbar.gallery') }}</NuxtLink>
 
-      <NuxtLink :to="localePath('/explore')" class="link-sidebar">{{ $t('navbar.explore') }}</NuxtLink>
+          <NuxtLink :to="localePath('/explore')" class="link-sidebar">{{ $t('navbar.explore') }}</NuxtLink>
 
-      <NuxtLink :to="localePath('/contact')" class="link-sidebar">{{ $t('navbar.contact') }}</NuxtLink>
+          <NuxtLink :to="localePath('/contact')" class="link-sidebar">{{ $t('navbar.contact') }}</NuxtLink>
+
+          <NuxtLink :to="localePath('/privacypolicy')" class="link-sidebar">Privacy Policy</NuxtLink>
+        </div>
+        
+      </v-container>
 
       <div class="lang-container" @click="closeSidebar"> 
         <NuxtLink :to="switchLocalePath('en')" hreflang="en"><img src="/images/flags/uk.png" alt="" class="lang-img"></NuxtLink>
@@ -64,6 +72,7 @@ export default {
   watch: {
     showSidebar(val){
       this.sidebar = val
+      this.dropdown = false
     },
     dropdown(val) {
       const linksHeight = this.$refs.linksRef.getBoundingClientRect().height;
