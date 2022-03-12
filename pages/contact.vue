@@ -5,7 +5,7 @@
 
       <v-col cols="0" xl="2" lg="2" md="1" sm="1"></v-col>
 
-      <v-col cols="12" xl="10" lg="10" md="11" sm="11">
+      <v-col cols="12" xl="10" lg="10" md="11" sm="11" class="mt-15 mt-sm-0 pr-10 pr-sm-0">
         <h2 data-aos="fade-right" 
         data-aos-duration="1000"
         data-aos-easing="ease-out"

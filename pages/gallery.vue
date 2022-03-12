@@ -2,9 +2,9 @@
   <div >
     <v-container class="block-1-rooms d-flex align-center pt-lg-15 mt-lg-10 mt-sm-7" >
 
-      <v-col cols="4" xl="2" lg="2" md="1" sm="1"></v-col>
+      <v-col cols="0" xl="2" lg="2" md="1" sm="1"></v-col>
 
-      <v-col cols="4" xl="10" lg="10" md="11" sm="11">
+      <v-col cols="12" xl="10" lg="10" md="11" sm="11" class="mt-15 mt-sm-0 pr-10 pr-sm-0">
         <h2 data-aos="fade-up" 
         data-aos-duration="1000"
         data-aos-easing="ease-out"

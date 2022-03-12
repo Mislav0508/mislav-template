@@ -4,7 +4,7 @@
 
       <v-col cols="0" xl="2" lg="2" md="1" sm="1"></v-col>
 
-      <v-col cols="12" xl="7" lg="7" md="11" sm="11">
+      <v-col cols="12" xl="7" lg="7" md="11" sm="11" class="mt-15 mt-sm-0 pr-10 pr-sm-0">
         <h2 class="pt-10 pb-2" data-aos="fade-up" 
         data-aos-duration="1000"
         data-aos-easing="ease-out"
