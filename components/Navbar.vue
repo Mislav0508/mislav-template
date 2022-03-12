@@ -178,15 +178,7 @@ export default {
 }
 /* ARROW UP */
 .down-arrow{
-  border: solid var(--primary);
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 0.15rem;
-  cursor: pointer;
-  z-index: 5;
-  transition: all 0.2s linear;
-  transform: rotate(45deg);
-  margin: 0px 0px 5px 4px;
+  @include down-arrow
 }
 .down-arrow-scroll{
   border: solid var(--secondary);

@@ -8,7 +8,22 @@
 
       <NuxtLink :to="localePath('/')" class="link-sidebar">{{ $t('navbar.home') }}</NuxtLink>
 
-      <NuxtLink :to="localePath('/rooms')" class="link-sidebar">{{ $t('navbar.our_rooms') }}</NuxtLink>
+      <div class="d-flex align-center flex-column" @click="dropdown = !dropdown">
+        <div class="d-flex align-center">
+          <p class="link-sidebar py-1" style="cursor:pointer">{{ $t('navbar.our_rooms') }}</p>
+          <i :class="dropdown ? 'up-arrow-scroll' : 'down-arrow-scroll'"></i>
+        </div>
+        <div class="linksContainer d-flex justify-center flex-column align-center" ref="linksContainerRef">
+          <div class="links d-flex justify-center flex-column align-center" ref="linksRef">
+            <NuxtLink :to="localePath('/rooms')" style="text-decoration:none;">
+              <v-list-item-title class="link-sidebar">{{ $t('navbar.rooms.rooms') }}</v-list-item-title>
+            </NuxtLink>
+            <NuxtLink v-for="(room,i) in rooms" :key="i" :to="localePath(`/rooms/${room.replace(/\s+/g, '')}Room`)" class="link-sidebar" >
+              {{ $t(`navbar.rooms.${room}`) }}
+            </NuxtLink>
+          </div>
+        </div>
+      </div>
 
       <NuxtLink :to="localePath('/about')" class="link-sidebar">{{ $t('navbar.about') }}</NuxtLink>
 
@@ -36,7 +51,9 @@ export default {
   },
   data() {
     return {
-      sidebar: false
+      sidebar: false,
+      rooms: [ 'Superior', 'Deluxe', 'Signature', 'Luxury' ],
+      dropdown: false
     }
   },
   methods: {
@@ -48,6 +65,15 @@ export default {
     showSidebar(val){
       this.sidebar = val
     },
+    dropdown(val) {
+      const linksHeight = this.$refs.linksRef.getBoundingClientRect().height;
+      console.log(linksHeight);
+      if (val) {
+        this.$refs.linksContainerRef.style.height = `${linksHeight}px`;
+      } else {
+        this.$refs.linksContainerRef.style.height = '0px';
+      }
+    }
   }
 }
 </script>
@@ -132,5 +158,21 @@ export default {
 }
 .lang-img{
   max-width: 2rem;
+}
+.down-arrow-scroll{
+  @include down-arrow-scroll
+}
+.up-arrow-scroll {
+  @include up-arrow-scroll
+}
+.linksContainer {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 600px) {
+  .linksContainer {
+    // height: auto !important;
+  }
 }
 </style>
