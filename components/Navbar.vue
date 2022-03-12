@@ -5,7 +5,7 @@
 
     <v-row class="d-flex justify-md-space-around align-center">    
 
-      <v-col cols="8" xl="3" lg="2" md="2" sm="1">
+      <v-col cols="8" xl="3" lg="2" md="2" sm="1" class="d-flex justify-sm-end align-center">
 
         <NuxtLink :to="localePath('/')" style="text-decoration:none;border-bottom:none;">
         <div class="d-sm-none d-md-flex flex-md-column justify-center align-center text-center pt-1" >
@@ -19,7 +19,7 @@
 
       </v-col>  
 
-      <v-col class="d-none d-sm-flex justify-space-around align-center" cols="1" xl="3" lg="4" md="5" sm="8">
+      <v-col class="d-none d-sm-flex justify-space-between align-center" cols="1" xl="3" lg="4" md="5" sm="8">
         
         <!-- <NuxtLink :to="localePath('/')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]" >
         <div v-html="rawLogo" :class="position > 0 || route !== '/index' ? 'logoSecondary' : 'logoPrimary'"/>          
@@ -32,14 +32,20 @@
 
         <v-menu open-on-hover offset-y bottom >
           <template v-slot:activator="{ on, attrs }" >
-            <p :class="[ position > 0 || route !== 3 ? 'link-scroll ma-0' : 'link ma-0' ]" :id="$nuxt.$route.name.includes('rooms') && position > 0 ? 'active-link-secondary' : $nuxt.$route.name.includes('rooms') ? 'active-link-primary' : ''"
-              v-bind="attrs"
-              v-on="on"
-              style="cursor:pointer;"
-            >
-              {{ $t('navbar.our_rooms') }}
-            </p>
+            <div class="d-flex align-center">
+              <p :class="[ position > 0 || route !== 3 ? 'link-scroll ma-0' : 'link ma-0' ]" :id="$nuxt.$route.name.includes('rooms') && position > 0 ? 'active-link-secondary' : $nuxt.$route.name.includes('rooms') ? 'active-link-primary' : ''"
+                v-bind="attrs"
+                v-on="on"
+                style="cursor:pointer;"
+              >
+                {{ $t('navbar.our_rooms') }}
+              </p>
+              <i v-bind="attrs"
+                v-on="on" :class="[ position > 0 || route !== 3 ? 'down-arrow-scroll' : 'down-arrow' ]"></i>      
+            </div>
+            
           </template>
+
           <v-list dense>
             <v-list-item dense nuxt>
               <NuxtLink :to="localePath('/rooms')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]">
@@ -55,6 +61,7 @@
             </NuxtLink>
             </v-list-item>
           </v-list>
+
         </v-menu>
 
         <!-- <NuxtLink to="/rooms" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]">Our Rooms</NuxtLink> -->
@@ -168,6 +175,29 @@ export default {
 }
 ::v-deep .v-application--wrap {
   min-height: fit-content;
+}
+/* ARROW UP */
+.down-arrow{
+  border: solid var(--primary);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 0.15rem;
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.2s linear;
+  transform: rotate(45deg);
+  margin: 0px 0px 5px 4px;
+}
+.down-arrow-scroll{
+  border: solid var(--secondary);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 0.15rem;
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.2s linear;
+  transform: rotate(45deg);
+  margin: 0px 0px 5px 4px;
 }
 /* LOGOS */
 .logo_title,.logo_subtitle {

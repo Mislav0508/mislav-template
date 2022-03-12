@@ -102,12 +102,10 @@ export default {
     const slider = document.querySelector(`#${type}`)
   
     slider.addEventListener('touchstart', e => {
-      console.log("starT",e.changedTouches[0].screenX);
       this.touchstartX = e.changedTouches[0].screenX
     })
 
     slider.addEventListener('touchend', e => {
-      console.log("End",e.changedTouches[0].screenX);
       this.touchendX = e.changedTouches[0].screenX
       this.handleGesture()
     })

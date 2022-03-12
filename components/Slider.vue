@@ -128,12 +128,13 @@ p{
   max-height: 89vh;
   @include flexCenter;
   background: rgba(0, 0, 0, 0.8);
-  
+
 }
 .slide{
   opacity: 0;
   position: absolute;
   @include flexCenter;
+
 }
 .text-container{
   position: absolute;

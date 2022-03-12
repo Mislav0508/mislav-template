@@ -281,7 +281,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .signature{
-  max-width: clamp(12rem, 20vw, 17rem);
+  max-width: clamp(17rem, 5vw, 20rem);
 }
 .square-img-small-wide{
   min-height: 45vh;
