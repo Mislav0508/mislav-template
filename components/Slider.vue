@@ -193,11 +193,11 @@ p{
   min-width: clamp(2rem, 2vw, 2.5rem);
   min-height: 3px;
   background: var(--primary);
-  border-radius: 5px;
+  // border-radius: 5px;
   box-shadow: 0 2px 5px rgba(255,101,47,.2);
   cursor: pointer;
   margin: 0 0.4rem;
-  opacity: 0.5;
+  opacity: 0.5;  
   &:hover{
     opacity: 1;
   }

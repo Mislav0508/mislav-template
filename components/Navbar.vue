@@ -124,18 +124,14 @@ export default {
   },
   watch: {
     $route (to, from) {
-      console.log($nuxt.$route);
-      this.route = $nuxt.$route.path.length
+      // console.log($nuxt.$route);
+      // this.route = $nuxt.$route.path.length
       this.sidebar = false
       this.$emit("sidebar-navbar", this.sidebar)
     },
     sidebarComponent(val){
       this.sidebar = val
     },
-  },
-  mounted() {
-    console.log(this.$route.name.includes('about') ? true : false);
-    console.log($nuxt.$route.path);
   }
 }
 </script>

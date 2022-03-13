@@ -76,7 +76,6 @@ export default {
     },
     dropdown(val) {
       const linksHeight = this.$refs.linksRef.getBoundingClientRect().height;
-      console.log(linksHeight);
       if (val) {
         this.$refs.linksContainerRef.style.height = `${linksHeight}px`;
       } else {

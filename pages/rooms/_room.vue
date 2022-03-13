@@ -215,6 +215,18 @@ export default {
   //     de: { room: 'mein-zimmer' }
   //   }) 
   // },
+  head() {
+  const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
+  return {
+    title: this.$t('seo.seo_rooms_title'),
+    meta: [ // Each object in this array is its own meta tag
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial scale=1' },
+      { hid: 'description', name: 'description', content: this.$t('seo.seo_rooms_description') + ` - ${ this.params}` },
+      ...i18nHead.meta
+    ]
+  }      
+  },
   nuxtI18n: {
     paths: {
       en: '/our-rooms/:room',
@@ -225,6 +237,7 @@ export default {
   mixins: [aosMixin],
   data () {
     return {
+      params: '',
       title: '',
       subtitle: '',
       description: {
@@ -430,6 +443,11 @@ export default {
       this.capacity.children = this.capacity.children.filter(x => x !== this.capacity.children[3])
       this.prices = this.prices.filter(x => x !== this.prices[3])
     }
+
+    let params = $nuxt.$route.params.room
+    params = params.split('Room')
+    this.params = params[0]
+    console.log(this.params);
   }
 }
 </script>
