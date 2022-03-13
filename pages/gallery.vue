@@ -188,7 +188,7 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-  @include flexCenter
+  @include flexCenter;
 }
 .modal-img{
   width: 100%;

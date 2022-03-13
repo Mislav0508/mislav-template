@@ -7,13 +7,13 @@
       :class="[ i === index ? 'activeSlide' :  i === index - 1 || (index === 0 && i === images.length - 1) ? 'lastSlide' : 'nextSlide' ]"
       >
       <img :src="image" alt="img" >
-      <h1 ref="title" :class="[ i === index ? 'activeTitle font-weight-medium mb-15 pb-15' : 'font-weight-medium mb-15 pb-15' ]">{{ $t(`slider.titles.${titles[i]}`) }} </h1>
-      <p ref="subtitle" :class="[ i === index ? 'activeSubtitle font-weight-regular mb-15 pb-15' : 'font-weight-regular mb-15 pb-15' ]">{{ $t(`slider.subtitles.${subtitles[i]}`) }}</p>
+      <h1 ref="title" :class="[ i === index ? 'activeTitle font-weight-medium mb-15 pb-5 pb-sm-10 px-1' : 'text-center font-weight-medium mb-15 pb-5 pb-sm-10 px-1' ]">{{ $t(`slider.titles.${titles[i]}`) }} </h1>
+      <p ref="subtitle" :class="[ i === index ? 'activeSubtitle font-weight-regular mb-15 pb-15 px-5' : 'text-center font-weight-regular mb-15 pb-15 px-5' ]">{{ $t(`slider.subtitles.${subtitles[i]}`) }}</p>
     </div>
-    <div class="arrow-container-left" @click="prev">
+    <div class="arrow-container-left d-none d-sm-flex" @click="prev">
       <i class="arrow left"></i>      
     </div>
-    <div class="arrow-container-right"  @click="next">
+    <div class="arrow-container-right d-none d-sm-flex"  @click="next">
       <i class="arrow right"></i>
     </div>
     
@@ -44,8 +44,8 @@ export default {
           images: [
           "/images/slider/slider-home-8.jpeg",
           "/images/slider/slider-home-6.jpeg",
-          "/images/slider/slider-home-14.jpeg",
-          "/images/slider/slider-home-15.jpeg",
+          "/images/slider/slider-home-11.jpeg",
+          "/images/slider/slider-home-2.jpg",
           ],
           titles: [
             "one",
@@ -174,6 +174,7 @@ p{
 .activeTitle{
   animation-name: activeTitle;
   animation-duration: 3s;
+  text-align: center;
 }
 @keyframes activeSubtitle {
   0%   { opacity: 0; transform: translateY(25vh);}
