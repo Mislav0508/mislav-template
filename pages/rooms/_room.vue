@@ -406,7 +406,7 @@ export default {
       this.capacity.adults = this.capacity.adults.filter(x => x !== this.capacity.adults[2])
       this.capacity.children = this.capacity.children.filter(x => x !== this.capacity.children[2])
       this.prices = this.prices.filter(x => x !== this.prices[2])
-    } else if (this.$route.params.room.includes('LuxurySuiteRoom')) {
+    } else if (this.$route.params.room.includes('Luxury')) {
       this.title = 'Luxury Suite Room'
       this.subtitle = 'GREAT FOR LUXURY TRIP'
       this.description.title = 'Great choice for a relaxing vacation for families with children or a group of friends.'
