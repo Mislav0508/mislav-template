@@ -7,8 +7,8 @@
       :class="[ i === index ? 'activeSlide' :  i === index - 1 || (index === 0 && i === images.length - 1) ? 'lastSlide' : 'nextSlide' ]"
       >
       <img :src="image" alt="img" >
-      <h1 ref="title" :class="[ i === index ? 'activeTitle font-weight-medium mb-15 pb-5 pb-sm-10 px-1' : 'text-center font-weight-medium mb-15 pb-5 pb-sm-10 px-1' ]">{{ $t(`slider.titles.${titles[i]}`) }} </h1>
-      <p ref="subtitle" :class="[ i === index ? 'activeSubtitle font-weight-regular mb-15 pb-15 px-5' : 'text-center font-weight-regular mb-15 pb-15 px-5' ]">{{ $t(`slider.subtitles.${subtitles[i]}`) }}</p>
+      <h1 ref="title" :class="[ i === index ? 'activeTitle font-weight-medium mb-15 px-1' : 'text-center font-weight-medium mb-15 px-1' ]">{{ $t(`slider.titles.${titles[i]}`) }} </h1>
+      <p ref="subtitle" :class="[ i === index ? 'activeSubtitle font-weight-regular mb-15 pt-5 pt-sm-10 pb-15 px-5' : 'text-center font-weight-regular mb-15 pt-5 pt-sm-10 pb-15 px-5' ]">{{ $t(`slider.subtitles.${subtitles[i]}`) }}</p>
     </div>
     <div class="arrow-container-left d-none d-sm-flex" @click="prev">
       <i class="arrow left"></i>      
@@ -140,17 +140,17 @@ p{
   opacity: 1;
   position: absolute;
   transform: translateX(0);
-  transition: all 2s ease-out;
+  transition: all 1s ease-out;
 }
 .slide.lastSlide {
   position: absolute;
   transform: translateX(-100%);
-  transition: all 2s ease-out;
+  transition: all 1s ease-out;
 }
 .slide.nextSlide {
   position: absolute;
   transform: translateX(100%);
-  transition: all 2s ease-out;
+  transition: all 1s ease-out;
 }
 img{
   width: 100vw;
@@ -162,6 +162,7 @@ img{
 h1,p{
   position: absolute;
   color: var(--primary);
+  line-height: 1.2;
 }
 p{
   margin-top: 18vh;
@@ -174,7 +175,7 @@ p{
 }
 .activeTitle{
   animation-name: activeTitle;
-  animation-duration: 3s;
+  animation-duration: 2s;
   text-align: center;
 }
 @keyframes activeSubtitle {
@@ -186,7 +187,7 @@ p{
 .activeSubtitle{
   text-align: center;
   animation-name: activeSubtitle;
-  animation-duration: 3.5s;
+  animation-duration: 2.5s;
 }
 .slider-line{
   position: relative;
