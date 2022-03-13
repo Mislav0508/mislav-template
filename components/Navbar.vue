@@ -33,7 +33,7 @@
         <v-menu open-on-hover offset-y bottom >
           <template v-slot:activator="{ on, attrs }" >
             <div class="d-flex align-center">
-              <p :class="[ position > 0 || route !== 3 ? 'link-scroll ma-0' : 'link ma-0' ]" :id="$nuxt.$route.name.includes('rooms') && position > 0 ? 'active-link-secondary' : $nuxt.$route.name.includes('rooms') ? 'active-link-primary' : ''"
+              <p :class="[ position > 0 || route !== 3 ? 'link-scroll ma-0' : 'link ma-0' ]" 
                 v-bind="attrs"
                 v-on="on"
                 style="cursor:pointer;"
@@ -48,7 +48,7 @@
 
           <v-list dense>
             <v-list-item dense nuxt>
-              <NuxtLink :to="localePath('/rooms')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]">
+              <NuxtLink :to="localePath('/rooms')" :class="[ position > 0 || route !== 3 ? 'link-scroll' : 'link' ]" :id="$nuxt.$route.name.includes('rooms_') ? 'active-link-secondary' : ''">
               <v-list-item-title class="link-scroll" style="font-size:12px; line-height:1rem;">{{ $t('navbar.rooms.rooms') }}</v-list-item-title>
               </NuxtLink>
             </v-list-item>
@@ -56,7 +56,7 @@
               v-for="(room, i) in rooms"
               :key="i"
             >
-            <NuxtLink :to="localePath(`/rooms/${room.replace(/\s+/g, '')}Room`)" class="link-scroll">
+            <NuxtLink :to="localePath(`/rooms/${room.replace(/\s+/g, '')}Room`)" class="link-scroll" :id="$nuxt.$route.fullPath.includes(room) ? 'active-link-secondary' : ''">
               <v-list-item-title class="link-scroll" style="font-size:12px; line-height:1rem;">{{ $t(`navbar.rooms.${room}`) }}</v-list-item-title>
             </NuxtLink>
             </v-list-item>
@@ -124,6 +124,7 @@ export default {
   },
   watch: {
     $route (to, from) {
+      console.log($nuxt.$route);
       this.route = $nuxt.$route.path.length
       this.sidebar = false
       this.$emit("sidebar-navbar", this.sidebar)

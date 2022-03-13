@@ -166,6 +166,11 @@ export default {
         "/images/gallery/horizontal/resort_8.jpg",
       ]
     }
+  },
+  mounted() {
+    if (window.screen.width < 960) this.options.perPage = 3
+    if (window.screen.width < 600) this.options.perPage = 2
+
   }
 }
 </script>
