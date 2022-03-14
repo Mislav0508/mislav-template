@@ -198,34 +198,34 @@ export default {
 .logo_title {
   letter-spacing: 2px;
   font-size: xx-large;
-  font-weight: lighter;
+  font-weight: medium;
   
 }
 .logo_title_scroll{
   letter-spacing: 2px;
   font-size: xx-large;
-  font-weight: lighter;
+  font-weight: medium;
 }
 .logo_title_scroll,.logo_subtitle_scroll {
   color: var(--secondary);
 }
 .logo_subtitle {
   letter-spacing: 8px;
-  font-weight: 300;
+  font-weight: 400;
   margin-top: -0.5rem;
 }
 .logo_subtitle_scroll {
   letter-spacing: 8px;
-  font-weight: 300;
+  font-weight: 400;
   margin-top: -0.5rem;
 }
 .star {
-  color: var(--primary);
+  color: gold;
   transform: scale(0.7);
   margin-bottom: -5px;
 }
 .star_scroll {
-  color: var(--secondary);
+  color: gold;
   transform: scale(0.7);
   margin-bottom: -5px;
 }

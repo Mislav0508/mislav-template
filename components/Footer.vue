@@ -24,7 +24,7 @@
       <v-col cols="6" xl="2" lg="2" md="2" sm="6" style="border-bottom: 1px solid white">
         <h2>Superior</h2>
         <p>{{ $t('footer.rating') }}</p>
-        <font-awesome-icon v-for="i in 5" :key="i" icon="star"/>
+        <font-awesome-icon v-for="i in 4" :key="i" icon="star" style="color:gold;" class="mx-1"/>
       </v-col>
       <v-col cols="6" xl="2" lg="2" md="2" sm="6" style="border-bottom: 1px solid white">
         <h2>{{ $t('footer.awards') }}</h2>
