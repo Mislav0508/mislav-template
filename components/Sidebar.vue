@@ -75,7 +75,7 @@ export default {
   watch: {
     showSidebar(val){
       this.sidebar = val
-      this.dropdown = false
+      this.dropdown = false      
     },
     dropdown(val) {
       const linksHeight = this.$refs.linksRef.getBoundingClientRect().height;

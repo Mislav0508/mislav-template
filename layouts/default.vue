@@ -48,6 +48,13 @@ export default {
   methods: {
     sidebarHandler(val) {
       this.sidebar = val
+      if (!val) {
+        document.body.style.position = '';
+        document.body.style.top = '';
+      } else {
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${window.scrollY}px`;
+      }
     },
     checkPosition() {
       this.position = window.pageYOffset

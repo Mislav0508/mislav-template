@@ -149,7 +149,7 @@ p{
 }
 @media only screen and (max-width: 960px) {
   .footer-img{
-    min-height: 95vh;
+    min-height: 105vh;
     min-width: 100vw;
   }
 }

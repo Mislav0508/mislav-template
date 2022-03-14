@@ -88,6 +88,11 @@ export default {
       touchendX: 0
     }
   },
+  watch: {
+    translateX(val) {
+      console.log(val);
+    }
+  },
   mounted() {
     this.translateX = this.translate
 
@@ -114,14 +119,14 @@ export default {
   methods: {
     next() {
       if (this.translateX < -40) return
-      this.translateX = this.translateX - 40
+      this.translateX = this.translateX - 30
       var myElements = document.querySelectorAll('.sliderMid');
       let id = this._props.id
       myElements[id - 1].style.transform = "translateX(" + this.translateX + "rem)"
     },
     prev() {
       if (this.translateX >= 50) return
-      this.translateX = this.translateX + 40
+      this.translateX = this.translateX + 30
       var myElements = document.querySelectorAll('.sliderMid');
       let id = this._props.id
       myElements[id - 1].style.transform = "translateX(" + this.translateX + "rem)"
@@ -211,6 +216,12 @@ p, h2{
   z-index: 0;
   transition: transform 0.9s ease-out;
   /* transform: translateX(0); */
+}
+@media screen and (min-width: 2560px) {
+  .sliderMid, .imagesL, .imagesS, .containers-L, .containers-R {
+    min-height: 35vh;
+    max-height: 35vh;
+  }
 }
 /* ARROWS */
 .arrow-container-left{

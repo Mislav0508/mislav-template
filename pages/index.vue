@@ -328,13 +328,13 @@ export default {
   max-width: 25vw;
 }
 }
-@media only screen and (min-width: 2600px) {
-  /* .square-img-small, .square-img-small-wide{
+@media only screen and (min-width: 2560px) {
+  .square-img-small, .square-img-small-wide{
   min-height: 45vh;
   max-height: 45vh;
-  min-width: 15vw;
-  max-width: 15vw;
-} */
+  min-width: 35vw;
+  max-width: 35vw;
+} 
 }
 
 
