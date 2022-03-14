@@ -8,36 +8,39 @@
 
       <v-container class="d-flex align-center flex-column">
 
-        <NuxtLink :to="localePath('/')" class="link-sidebar">{{ $t('navbar.home') }}</NuxtLink>
+        <v-row class="d-flex align-start flex-column">
+          <NuxtLink :to="localePath('/')" class="link-sidebar">{{ $t('navbar.home') }}</NuxtLink>
 
-        <div class="d-flex align-center flex-column" @click="dropdown = !dropdown">
-          <div class="d-flex align-center">
-            <p class="link-sidebar py-1" style="cursor:pointer">{{ $t('navbar.our_rooms') }}</p>
-            <i :class="dropdown ? 'up-arrow-scroll' : 'down-arrow-scroll'"></i>
-          </div>
-          <div class="linksContainer d-flex justify-center flex-column align-center" ref="linksContainerRef">
-            <div class="links d-flex justify-center flex-column align-center" ref="linksRef">
-              <NuxtLink :to="localePath('/rooms')" style="text-decoration:none;">
-                <v-list-item-title class="link-sidebar">{{ $t('navbar.rooms.rooms') }}</v-list-item-title>
-              </NuxtLink>
-              <NuxtLink v-for="(room,i) in rooms" :key="i" :to="localePath(`/rooms/${room.replace(/\s+/g, '')}Room`)" class="link-sidebar" >
-                {{ $t(`navbar.rooms.${room}`) }}
-              </NuxtLink>
+          <div class="d-flex align-start flex-column" @click="dropdown = !dropdown">
+            <div class="d-flex align-center">
+              <p class="link-sidebar py-1" style="cursor:pointer">{{ $t('navbar.our_rooms') }}</p>
+              <i :class="dropdown ? 'up-arrow-scroll' : 'down-arrow-scroll'"></i>
+            </div>
+            <div class="linksContainer d-flex justify-center flex-column align-start" ref="linksContainerRef">
+              <div class="links d-flex justify-center flex-column align-start" ref="linksRef" >
+                <NuxtLink :to="localePath('/rooms')" style="text-decoration:none;">
+                  <v-list-item-title class="link-sidebar" style="font-size: 15px;">‣ {{ $t('navbar.rooms.rooms') }}</v-list-item-title>
+                </NuxtLink>
+                <NuxtLink v-for="(room,i) in rooms" :key="i" :to="localePath(`/rooms/${room.replace(/\s+/g, '')}Room`)" class="link-sidebar" style="font-size: 15px;">
+                  ‣ {{ $t(`navbar.rooms.${room}`) }}
+                </NuxtLink>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="d-flex justify-center align-center flex-column">
-          <NuxtLink :to="localePath('/about')" class="link-sidebar">{{ $t('navbar.about') }}</NuxtLink>
+          <div class="d-flex justify-center align-start flex-column">
+            <NuxtLink :to="localePath('/about')" class="link-sidebar">{{ $t('navbar.about') }}</NuxtLink>
 
-          <NuxtLink :to="localePath('/gallery')" class="link-sidebar">{{ $t('navbar.gallery') }}</NuxtLink>
+            <NuxtLink :to="localePath('/gallery')" class="link-sidebar">{{ $t('navbar.gallery') }}</NuxtLink>
 
-          <NuxtLink :to="localePath('/explore')" class="link-sidebar">{{ $t('navbar.explore') }}</NuxtLink>
+            <NuxtLink :to="localePath('/explore')" class="link-sidebar">{{ $t('navbar.explore') }}</NuxtLink>
 
-          <NuxtLink :to="localePath('/contact')" class="link-sidebar">{{ $t('navbar.contact') }}</NuxtLink>
+            <NuxtLink :to="localePath('/contact')" class="link-sidebar">{{ $t('navbar.contact') }}</NuxtLink>
 
-          <NuxtLink :to="localePath('/privacypolicy')" class="link-sidebar">Privacy Policy</NuxtLink>
-        </div>
+            <NuxtLink :to="localePath('/privacypolicy')" class="link-sidebar">Privacy Policy</NuxtLink>
+          </div>
+
+        </v-row>
         
       </v-container>
 

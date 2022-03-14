@@ -70,9 +70,10 @@
       <v-col cols="12" xl="2" lg="2" md="1" sm="12" class="py-10"></v-col>
 
       <v-col cols="12" xl="4" lg="4" md="5" sm="6" 
-      data-aos="zoom-in" 
+      data-aos="fade-right" 
       data-aos-duration="1000"
       data-aos-easing="ease-out"
+      data-aos-delay="400"
       data-aos-once="true">
         <div class="img-container d-flex align-center justify-center pa-md-15">
           <v-img
@@ -167,17 +168,17 @@
 
       <div class="text-container d-flex align-start flex-column pr-15">
 
-        <h2 class="white--text font-weight-bold" data-aos="fade-up" 
+        <h2 class="white--text font-weight-bold" data-aos="fade-right" 
         data-aos-duration="1000"
         data-aos-easing="ease-out"
         data-aos-delay="500"
         data-aos-once="true">Signature, Simply Delicious</h2>
-        <p class="white--text text-left font-weight-normal py-3" data-aos="fade-up" 
+        <p class="white--text text-left font-weight-normal py-3" data-aos="fade-right" 
         data-aos-duration="1000"
         data-aos-easing="ease-out"
         data-aos-delay="1000"
         data-aos-once="true">Awarded 14 Gault-Millau points, our cuisine focuses on locally sourced, seasonal ingredients.</p>
-        <v-btn outlined tile large color="white" width="250" type="button" class="no-uppercase font-weight-bold" data-aos="fade-up" 
+        <v-btn outlined tile large color="white" width="250" type="button" class="no-uppercase font-weight-bold" data-aos="fade-right" 
         data-aos-duration="1000"
         data-aos-easing="ease-out"
         data-aos-delay="1500"
