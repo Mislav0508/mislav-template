@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@fawmi/vue-google-maps": "^0.9.4",
+    "@mdi/font": "^6.5.95",
+    "@mdi/js": "^6.5.95",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/i18n": "^7.2.0",
     "aos": "^2.3.4",

@@ -2,6 +2,8 @@
   <v-app style="overflow-y: scroll;overflow:hidden;" id="app">
 
     <Navbar 
+    v-if="!$nuxt.$route.path.includes('login') 
+    && !$nuxt.$route.path.includes('dashboard')"    
     :position="position" 
     @sidebar-navbar="sidebarHandler" 
     :sidebarComponent="sidebar"/>
@@ -12,7 +14,9 @@
 
     <Nuxt />
 
-    <Footer />
+    <Footer 
+    v-if="!$nuxt.$route.path.includes('login') 
+    && !$nuxt.$route.path.includes('dashboard')"/>
 
     <div v-if="position > 20" class="up-arrow-container" @click="scrollToTop">
       <i class="up-arrow "></i>      
@@ -44,6 +48,9 @@ export default {
   },
   beforeDestroy () {
     window.removeEventListener('scroll', this.checkPosition);
+  },
+  mounted() {
+    console.log($nuxt.$route.path);
   },
   methods: {
     sidebarHandler(val) {
