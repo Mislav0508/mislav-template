@@ -1,2 +1,2 @@
 # mislav-template
-html template
+website template
